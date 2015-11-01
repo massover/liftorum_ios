@@ -26,17 +26,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func submitLift(sender: UIButton) {
-        Alamofire.request(.GET, "http://localhost:5000/api/lift")
-            .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
+        let parameters = [
+            "weight": weightTextField.text!,
+            "reps": repsTextField.text!,
+            "user_id": 1,
+            "name": "squat"
+        ]
+        Alamofire.request(
+            .POST,
+            "http://localhost:5000/api/lift",
+            parameters: parameters as? [String : AnyObject],
+            encoding: .JSON
+        ).responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+            
         }
+
     }
     
 
