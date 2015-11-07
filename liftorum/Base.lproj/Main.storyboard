@@ -18,36 +18,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="15k-db-EbM">
-                                <rect key="frame" x="20" y="71" width="560" height="180"/>
+                                <rect key="frame" x="20" y="20" width="560" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-tG-Zmg">
-                                        <rect key="frame" x="0.0" y="0.0" width="54" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3t-81-0Xz">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pUE-0y-4oc">
-                                        <rect key="frame" x="0.0" y="33" width="560" height="30"/>
+                                    <pickerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-S5-rZD">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="75"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-9X-Nt1">
-                                        <rect key="frame" x="0.0" y="75" width="39" height="21"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.90000000000000002"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="f9p-Ir-a4h"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-tG-Zmg">
+                                        <rect key="frame" x="0.0" y="120" width="54" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-Xx-drX">
-                                        <rect key="frame" x="0.0" y="108" width="560" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pUE-0y-4oc">
+                                        <rect key="frame" x="0.0" y="153" width="560" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-Va-DD6">
-                                        <rect key="frame" x="0.0" y="150" width="49" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-9X-Nt1">
+                                        <rect key="frame" x="0.0" y="195" width="39" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-Xx-drX">
+                                        <rect key="frame" x="0.0" y="228" width="560" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-Va-DD6">
+                                        <rect key="frame" x="0.0" y="270" width="49" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
@@ -61,6 +76,8 @@
                                     <constraint firstItem="Hve-Xx-drX" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="OsK-Mo-bRp"/>
                                     <constraint firstItem="pUE-0y-4oc" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="c03-oP-M5P"/>
                                     <constraint firstAttribute="trailing" secondItem="Hve-Xx-drX" secondAttribute="trailing" id="cXI-RX-J4K"/>
+                                    <constraint firstAttribute="trailing" secondItem="LRM-S5-rZD" secondAttribute="trailing" id="fYe-6a-cQS"/>
+                                    <constraint firstItem="LRM-S5-rZD" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="rqB-Ig-9a6"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -73,6 +90,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="liftPickerView" destination="LRM-S5-rZD" id="pMY-On-39F"/>
                         <outlet property="repsTextField" destination="Hve-Xx-drX" id="abz-bn-sJo"/>
                         <outlet property="weightTextField" destination="pUE-0y-4oc" id="f73-EK-Wnb"/>
                     </connections>

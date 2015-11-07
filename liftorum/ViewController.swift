@@ -9,14 +9,19 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    @IBOutlet weak var weightTextField: UITextField!
+    var pickerDataSource = ["Squat", "Bench", "Deadlift"]
     
+    @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var repsTextField: UITextField!
+    @IBOutlet weak var liftPickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.liftPickerView.dataSource = self
+        self.liftPickerView.delegate = self
+        self.liftPickerView.reloadAllComponents()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -25,12 +30,25 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerDataSource[row]
+    }
+    
     @IBAction func submitLift(sender: UIButton) {
+        let row = liftPickerView.selectedRowInComponent(0)
         let parameters = [
             "weight": weightTextField.text!,
             "reps": repsTextField.text!,
             "user_id": 1,
-            "name": "squat"
+            "name": pickerDataSource[row].lowercaseString
         ]
         Alamofire.request(
             .POST,
@@ -46,7 +64,6 @@ class ViewController: UIViewController {
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
             }
-            
         }
 
     }
