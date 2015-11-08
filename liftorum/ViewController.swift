@@ -23,6 +23,10 @@ class ViewController:
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var liftPickerView: UIPickerView!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -59,6 +63,17 @@ class ViewController:
         imageView.image = selectedImage
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender {
+        }
+        
+    }
+    
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     @IBAction func selectVideoFromLibrary(sender: UITapGestureRecognizer) {
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.

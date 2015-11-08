@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Lift Table View Controller-->
         <scene sceneID="Fpz-M9-B5u">
             <objects>
-                <tableViewController id="Y0M-g1-Guk" sceneMemberID="viewController">
+                <tableViewController id="Y0M-g1-Guk" customClass="LiftTableViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji8-Yz-t8O">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,18 +142,29 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Your Lift" id="Rsl-mh-yHi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Osd-2R-bGu"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fS3-aP-m9I"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Osd-2R-bGu">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="Jd2-HY-r2G"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fS3-aP-m9I">
+                            <connections>
+                                <segue destination="J9t-ug-9fE" kind="unwind" unwindAction="unwindToLiftList:" id="tf9-1C-AXo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="cancelButton" destination="Osd-2R-bGu" id="kTc-kT-fVT"/>
                         <outlet property="imageView" destination="j3r-1l-bGL" id="J5x-5Q-zHi"/>
                         <outlet property="liftPickerView" destination="LRM-S5-rZD" id="pMY-On-39F"/>
                         <outlet property="repsTextField" destination="Hve-Xx-drX" id="abz-bn-sJo"/>
+                        <outlet property="saveButton" destination="fS3-aP-m9I" id="B23-e8-V8D"/>
                         <outlet property="weightTextField" destination="pUE-0y-4oc" id="f73-EK-Wnb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="J9t-ug-9fE" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="bx9-Kn-PSv">
                     <connections>
                         <action selector="selectVideoFromLibrary:" destination="BYZ-38-t0r" id="gfo-h5-gD6"/>

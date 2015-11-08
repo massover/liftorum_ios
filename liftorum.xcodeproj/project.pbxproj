@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3ADF90DFCAB69091CA9B855B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B6FF67BC55F26532FE4B64 /* Pods.framework */; };
+		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
 		849A8DE31BE6A39D00F40D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* ViewController.swift */; };
 		849A8DE61BE6A39D00F40D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE41BE6A39D00F40D1C /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		66B6FF67BC55F26532FE4B64 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849A8DE21BE6A39D00F40D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */,
 				849A8DE21BE6A39D00F40D1C /* ViewController.swift */,
+				8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */,
 				849A8DE41BE6A39D00F40D1C /* Main.storyboard */,
 				849A8DE71BE6A39D00F40D1C /* Assets.xcassets */,
 				849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */,
@@ -333,6 +336,7 @@
 			files = (
 				849A8DE31BE6A39D00F40D1C /* ViewController.swift in Sources */,
 				849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */,
+				8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
