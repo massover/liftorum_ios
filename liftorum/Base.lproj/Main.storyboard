@@ -66,7 +66,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-S5-rZD">
+                                    <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-S5-rZD" customClass="LiftPickerView" customModule="liftorum" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="33" width="374" height="75"/>
                                         <animations/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.90000000000000002"/>
@@ -157,7 +157,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="Osd-2R-bGu" id="kTc-kT-fVT"/>
                         <outlet property="imageView" destination="j3r-1l-bGL" id="J5x-5Q-zHi"/>
-                        <outlet property="liftPickerView" destination="LRM-S5-rZD" id="pMY-On-39F"/>
+                        <outlet property="liftPickerView" destination="LRM-S5-rZD" id="G7f-GN-oB5"/>
                         <outlet property="repsTextField" destination="Hve-Xx-drX" id="abz-bn-sJo"/>
                         <outlet property="saveButton" destination="fS3-aP-m9I" id="B23-e8-V8D"/>
                         <outlet property="weightTextField" destination="pUE-0y-4oc" id="f73-EK-Wnb"/>

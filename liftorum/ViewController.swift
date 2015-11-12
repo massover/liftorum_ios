@@ -10,46 +10,56 @@ import UIKit
 import Alamofire
 import MobileCoreServices
 
-class ViewController:
-    UIViewController,
+class LiftPickerView:
+    UIPickerView,
     UIPickerViewDataSource,
-    UIPickerViewDelegate,
-    UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate
+    UIPickerViewDelegate
 {
-
+    
     var pickerDataSource = ["Squat", "Bench", "Deadlift"]
     
-    @IBOutlet weak var weightTextField: UITextField!
-    @IBOutlet weak var repsTextField: UITextField!
-    @IBOutlet weak var liftPickerView: UIPickerView!
-    
-    @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.liftPickerView.dataSource = self
-        self.liftPickerView.delegate = self
-        self.liftPickerView.reloadAllComponents()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.delegate = self
+        self.dataSource = self
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerDataSource.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerDataSource[row]
+    }
+    
+    func getSelectedLiftName() -> String{
+        let row = self.selectedRowInComponent(0)
+        return pickerDataSource[row]
+    }
+    
+}
+
+class ViewController:
+    UIViewController,
+    UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate
+{
+    @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var repsTextField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var liftPickerView: LiftPickerView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -66,6 +76,7 @@ class ViewController:
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
+            print(liftPickerView.getSelectedLiftName())
         }
         
     }
@@ -92,31 +103,31 @@ class ViewController:
     }
     
     
-    @IBAction func submitLift(sender: UIButton) {
-        let row = liftPickerView.selectedRowInComponent(0)
-        let parameters = [
-            "weight": weightTextField.text!,
-            "reps": repsTextField.text!,
-            "user_id": 1,
-            "name": pickerDataSource[row].lowercaseString
-        ]
-        Alamofire.request(
-            .POST,
-            "http://localhost:5000/api/lift",
-            parameters: parameters as? [String : AnyObject],
-            encoding: .JSON
-        ).responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
-        }
-
-    }
+//    @IBAction func submitLift(sender: UIButton) {
+//        let row = liftPickerView.selectedRowInComponent(0)
+//        let parameters = [
+//            "weight": weightTextField.text!,
+//            "reps": repsTextField.text!,
+//            "user_id": 1,
+//            "name": pickerDataSource[row].lowercaseString
+//        ]
+//        Alamofire.request(
+//            .POST,
+//            "http://localhost:5000/api/lift",
+//            parameters: parameters as? [String : AnyObject],
+//            encoding: .JSON
+//        ).responseJSON { response in
+//            print(response.request)  // original URL request
+//            print(response.response) // URL response
+//            print(response.data)     // server data
+//            print(response.result)   // result of response serialization
+//            
+//            if let JSON = response.result.value {
+//                print("JSON: \(JSON)")
+//            }
+//        }
+//
+//    }
 
 
 }
