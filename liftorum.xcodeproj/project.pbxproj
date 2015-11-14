@@ -10,9 +10,10 @@
 		3ADF90DFCAB69091CA9B855B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B6FF67BC55F26532FE4B64 /* Pods.framework */; };
 		843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E51BF7A9200066C48D /* LiftTableViewCell.swift */; };
 		843040E81BF7B3030066C48D /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E71BF7B3030066C48D /* Lift.swift */; };
+		843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E91BF7D2DD0066C48D /* LiftPickerView.swift */; };
 		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
-		849A8DE31BE6A39D00F40D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* ViewController.swift */; };
+		849A8DE31BE6A39D00F40D1C /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* LiftViewController.swift */; };
 		849A8DE61BE6A39D00F40D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE41BE6A39D00F40D1C /* Main.storyboard */; };
 		849A8DE81BE6A39D00F40D1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE71BE6A39D00F40D1C /* Assets.xcassets */; };
 		849A8DEB1BE6A39D00F40D1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */; };
@@ -41,10 +42,11 @@
 		66B6FF67BC55F26532FE4B64 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		843040E51BF7A9200066C48D /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewCell.swift; sourceTree = "<group>"; };
 		843040E71BF7B3030066C48D /* Lift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
+		843040E91BF7D2DD0066C48D /* LiftPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftPickerView.swift; sourceTree = "<group>"; };
 		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		849A8DE21BE6A39D00F40D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		849A8DE21BE6A39D00F40D1C /* LiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftViewController.swift; sourceTree = "<group>"; };
 		849A8DE51BE6A39D00F40D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		849A8DE71BE6A39D00F40D1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		849A8DEA1BE6A39D00F40D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,7 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */,
-				849A8DE21BE6A39D00F40D1C /* ViewController.swift */,
+				849A8DE21BE6A39D00F40D1C /* LiftViewController.swift */,
+				843040E91BF7D2DD0066C48D /* LiftPickerView.swift */,
 				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
 				843040E71BF7B3030066C48D /* Lift.swift */,
 				8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */,
@@ -341,8 +344,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */,
-				849A8DE31BE6A39D00F40D1C /* ViewController.swift in Sources */,
+				849A8DE31BE6A39D00F40D1C /* LiftViewController.swift in Sources */,
 				849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */,
+				843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */,
 				8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */,
 				843040E81BF7B3030066C48D /* Lift.swift in Sources */,
 			);

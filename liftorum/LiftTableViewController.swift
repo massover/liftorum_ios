@@ -44,7 +44,7 @@ class LiftTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToLiftList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? ViewController {
+        if let sourceViewController = sender.sourceViewController as? LiftViewController {
         }
     }
 
