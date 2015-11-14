@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3ADF90DFCAB69091CA9B855B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B6FF67BC55F26532FE4B64 /* Pods.framework */; };
+		843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E51BF7A9200066C48D /* LiftTableViewCell.swift */; };
+		843040E81BF7B3030066C48D /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E71BF7B3030066C48D /* Lift.swift */; };
 		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
 		849A8DE31BE6A39D00F40D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		66B6FF67BC55F26532FE4B64 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843040E51BF7A9200066C48D /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewCell.swift; sourceTree = "<group>"; };
+		843040E71BF7B3030066C48D /* Lift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
 		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 			children = (
 				849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */,
 				849A8DE21BE6A39D00F40D1C /* ViewController.swift */,
+				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
+				843040E71BF7B3030066C48D /* Lift.swift */,
 				8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */,
 				849A8DE41BE6A39D00F40D1C /* Main.storyboard */,
 				849A8DE71BE6A39D00F40D1C /* Assets.xcassets */,
@@ -334,9 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */,
 				849A8DE31BE6A39D00F40D1C /* ViewController.swift in Sources */,
 				849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */,
 				8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */,
+				843040E81BF7B3030066C48D /* Lift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

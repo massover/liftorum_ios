@@ -9,9 +9,15 @@
 import UIKit
 
 class LiftTableViewController: UITableViewController {
+    
+    var lifts = [Lift]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let lift = Lift(username: "massover", createdAt: NSDate())
+        lifts += [lift]
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,12 +35,12 @@ class LiftTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return lifts.count
     }
     
     @IBAction func unwindToLiftList(sender: UIStoryboardSegue) {
@@ -42,15 +48,20 @@ class LiftTableViewController: UITableViewController {
         }
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "LiftTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            cellIdentifier,
+            forIndexPath: indexPath
+        ) as! LiftTableViewCell
+        
+        let lift = lifts[indexPath.row]
+        cell.usernameLabel.text = lift.username
+        cell.createdAtLabel.text = lift.createdAtString()
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
