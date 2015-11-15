@@ -16,12 +16,13 @@ class LiftTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request(.GET, "http://localhost:5000/api/lift/1")
-            .responseObject { (response: Response<Lift, NSError>) in
-                print(response.result.value?.user.username)
-                print(response.result.value?.createdAt.timeAgoSinceNow())
-                print(response.result.value?.id)
-        }
+        Alamofire.request(.GET, "http://localhost:5000/api/lift")
+            .responseCollection { (response: Response<[Lift], NSError>) in
+                for lift in response.result.value!{
+                    print(lift.user.username)
+                    print(lift.createdAt.timeAgoSinceNow())
+                }
+            }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

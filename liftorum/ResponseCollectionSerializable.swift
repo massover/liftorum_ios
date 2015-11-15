@@ -23,7 +23,7 @@ extension Alamofire.Request {
             switch result {
             case .Success(let value):
                 if let response = response {
-                    return .Success(T.collection(response: response, representation: value))
+                    return .Success(T.collection(response: response, representation: value.valueForKeyPath("objects")!))
                 } else {
                     let failureReason = "Response collection could not be serialized due to nil response"
                     let error = Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)

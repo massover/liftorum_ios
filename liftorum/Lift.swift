@@ -17,12 +17,13 @@ func convertISOStringToNSDate(ISOString: String) -> NSDate{
     return dateFormatter.dateFromString(ISOString)!
 }
 
-final class Lift : ResponseObjectSerializable{
+final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let createdAt: NSDate
     let id: Int
     let user: User
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
+        print(representation)
         self.id = representation.valueForKeyPath("id") as! Int
         let createdAt = representation.valueForKeyPath("created_at") as! String
         self.createdAt = convertISOStringToNSDate(createdAt)
@@ -30,6 +31,22 @@ final class Lift : ResponseObjectSerializable{
             response:response,
             representation: representation.valueForKeyPath("user")!
         )!
+    }
+    
+    static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [Lift] {
+        var lifts: [Lift] = []
+        
+        if let representation = representation as? [[String: AnyObject]] {
+            for liftRepresentation in representation {
+                if let lift = Lift(response: response, representation: liftRepresentation) {
+                    lifts.append(lift)
+                }
+            }
+        }
+        
+        return lifts
+        
+        
     }
     
 }
