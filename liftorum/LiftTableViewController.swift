@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LiftTableViewController: UITableViewController {
     
@@ -14,10 +15,13 @@ class LiftTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let lift = Lift(username: "massover", createdAt: NSDate())
-        lifts += [lift]
-        
-        
+        Alamofire.request(.GET, "http://localhost:5000/api/lift/1")
+            .responseObject { (response: Response<Lift, NSError>) in
+                //debugPrint(response)
+                print(response.result.value?.user.username)
+                print(response.result.value?.createdAtString())
+                print(response.result.value?.id)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,7 +61,7 @@ class LiftTableViewController: UITableViewController {
         ) as! LiftTableViewCell
         
         let lift = lifts[indexPath.row]
-        cell.usernameLabel.text = lift.username
+        cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAtString()
         return cell
     }

@@ -11,6 +11,8 @@
 		843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E51BF7A9200066C48D /* LiftTableViewCell.swift */; };
 		843040E81BF7B3030066C48D /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E71BF7B3030066C48D /* Lift.swift */; };
 		843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E91BF7D2DD0066C48D /* LiftPickerView.swift */; };
+		843040EC1BF901F00066C48D /* ResponseObjectSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */; };
+		843040EE1BF902BE0066C48D /* ResponseCollectionSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */; };
 		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
 		849A8DE31BE6A39D00F40D1C /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* LiftViewController.swift */; };
@@ -43,6 +45,8 @@
 		843040E51BF7A9200066C48D /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewCell.swift; sourceTree = "<group>"; };
 		843040E71BF7B3030066C48D /* Lift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
 		843040E91BF7D2DD0066C48D /* LiftPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftPickerView.swift; sourceTree = "<group>"; };
+		843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObjectSerializable.swift; sourceTree = "<group>"; };
+		843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCollectionSerializable.swift; sourceTree = "<group>"; };
 		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */,
 				849A8DE21BE6A39D00F40D1C /* LiftViewController.swift */,
 				843040E91BF7D2DD0066C48D /* LiftPickerView.swift */,
+				843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */,
+				843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */,
 				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
 				843040E71BF7B3030066C48D /* Lift.swift */,
 				8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */,
@@ -344,11 +350,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */,
+				843040EE1BF902BE0066C48D /* ResponseCollectionSerializable.swift in Sources */,
 				849A8DE31BE6A39D00F40D1C /* LiftViewController.swift in Sources */,
 				849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */,
 				843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */,
 				8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */,
 				843040E81BF7B3030066C48D /* Lift.swift in Sources */,
+				843040EC1BF901F00066C48D /* ResponseObjectSerializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

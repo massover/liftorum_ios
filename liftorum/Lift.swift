@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import Alamofire
 
-class Lift {
-    var username: String
-    var createdAt: NSDate
+final class User: ResponseObjectSerializable{
+    let username: String
+    let id: Int
     
-    init(username: String, createdAt: NSDate){
-        self.username = username
-        self.createdAt = createdAt
+    required init?(response: NSHTTPURLResponse, representation: AnyObject) {
+        // map the values to the instance
+        self.id = representation.valueForKeyPath("id") as! Int
+        self.username = representation.valueForKeyPath("username") as! String
     }
+
+}
+
+final class Lift : ResponseObjectSerializable{
+    let createdAt: NSDate
+    let id: Int
+    let user: User
+    
+    init?(response: NSHTTPURLResponse, representation: AnyObject) {
+        self.createdAt = NSDate()
+        self.id = representation.valueForKeyPath("id") as! Int
+        self.user = User(response:response, representation: representation.valueForKeyPath("user")!)!
+    }
+        
     
     func createdAtString() -> String{
         let formatter = NSDateFormatter()
@@ -24,3 +40,6 @@ class Lift {
     }
     
 }
+
+
+
