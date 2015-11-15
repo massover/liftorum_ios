@@ -21,6 +21,8 @@ final class User: ResponseObjectSerializable{
 
 }
 
+import DateTools
+
 func convertISOStringToNSDate(ISOString: String) -> NSDate{
     let dateFormatter = NSDateFormatter()
     dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
@@ -44,11 +46,11 @@ final class Lift : ResponseObjectSerializable{
     }
         
     
-    func createdAtString() -> String{
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        return formatter.stringFromDate(self.createdAt)
-    }
+//    func createdAtString() -> String{
+//        let formatter = NSDateFormatter()
+//        formatter.timeStyle = .ShortStyle
+//        return formatter.stringFromDate(self.createdAt)
+//    }
     
 }
 

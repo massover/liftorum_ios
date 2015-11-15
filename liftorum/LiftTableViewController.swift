@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import DateTools
 
 class LiftTableViewController: UITableViewController {
     
@@ -19,7 +20,7 @@ class LiftTableViewController: UITableViewController {
             .responseObject { (response: Response<Lift, NSError>) in
                 //debugPrint(response)
                 print(response.result.value?.user.username)
-                print(response.result.value?.createdAtString())
+                print(response.result.value?.createdAt)
                 print(response.result.value?.id)
         }
 
@@ -62,7 +63,7 @@ class LiftTableViewController: UITableViewController {
         
         let lift = lifts[indexPath.row]
         cell.usernameLabel.text = lift.user.username
-        cell.createdAtLabel.text = lift.createdAtString()
+        cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
         return cell
     }
     

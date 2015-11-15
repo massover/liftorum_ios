@@ -47,6 +47,7 @@
 		843040E91BF7D2DD0066C48D /* LiftPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftPickerView.swift; sourceTree = "<group>"; };
 		843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObjectSerializable.swift; sourceTree = "<group>"; };
 		843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCollectionSerializable.swift; sourceTree = "<group>"; };
+		843040EF1BF925890066C48D /* liftorum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "liftorum-Bridging-Header.h"; sourceTree = "<group>"; };
 		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 				849A8DE71BE6A39D00F40D1C /* Assets.xcassets */,
 				849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */,
 				849A8DEC1BE6A39D00F40D1C /* Info.plist */,
+				843040EF1BF925890066C48D /* liftorum-Bridging-Header.h */,
 			);
 			path = liftorum;
 			sourceTree = "<group>";
@@ -506,6 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liftorum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "liftorum/liftorum-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -521,6 +524,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.liftorum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "liftorum/liftorum-Bridging-Header.h";
 			};
 			name = Release;
 		};
