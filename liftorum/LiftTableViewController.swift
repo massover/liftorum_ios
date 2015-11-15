@@ -18,9 +18,8 @@ class LiftTableViewController: UITableViewController {
         super.viewDidLoad()
         Alamofire.request(.GET, "http://localhost:5000/api/lift/1")
             .responseObject { (response: Response<Lift, NSError>) in
-                //debugPrint(response)
                 print(response.result.value?.user.username)
-                print(response.result.value?.createdAt)
+                print(response.result.value?.createdAt.timeAgoSinceNow())
                 print(response.result.value?.id)
         }
 

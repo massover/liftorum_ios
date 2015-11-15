@@ -8,19 +8,6 @@
 
 import UIKit
 import Alamofire
-
-final class User: ResponseObjectSerializable{
-    let username: String
-    let id: Int
-    
-    required init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        // map the values to the instance
-        self.id = representation.valueForKeyPath("id") as! Int
-        self.username = representation.valueForKeyPath("username") as! String
-    }
-
-}
-
 import DateTools
 
 func convertISOStringToNSDate(ISOString: String) -> NSDate{
@@ -44,13 +31,6 @@ final class Lift : ResponseObjectSerializable{
             representation: representation.valueForKeyPath("user")!
         )!
     }
-        
-    
-//    func createdAtString() -> String{
-//        let formatter = NSDateFormatter()
-//        formatter.timeStyle = .ShortStyle
-//        return formatter.stringFromDate(self.createdAt)
-//    }
     
 }
 

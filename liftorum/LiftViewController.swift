@@ -69,34 +69,6 @@ class LiftViewController:
         
 
     }
-    
-    
-//    @IBAction func submitLift(sender: UIButton) {
-//        let row = liftPickerView.selectedRowInComponent(0)
-//        let parameters = [
-//            "weight": weightTextField.text!,
-//            "reps": repsTextField.text!,
-//            "user_id": 1,
-//            "name": pickerDataSource[row].lowercaseString
-//        ]
-//        Alamofire.request(
-//            .POST,
-//            "http://localhost:5000/api/lift",
-//            parameters: parameters as? [String : AnyObject],
-//            encoding: .JSON
-//        ).responseJSON { response in
-//            print(response.request)  // original URL request
-//            print(response.response) // URL response
-//            print(response.data)     // server data
-//            print(response.result)   // result of response serialization
-//            
-//            if let JSON = response.result.value {
-//                print("JSON: \(JSON)")
-//            }
-//        }
-//
-//    }
-
 
 }
 
