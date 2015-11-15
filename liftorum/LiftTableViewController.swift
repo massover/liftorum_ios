@@ -18,12 +18,10 @@ class LiftTableViewController: UITableViewController {
         super.viewDidLoad()
         Alamofire.request(.GET, "http://localhost:5000/api/lift")
             .responseCollection { (response: Response<[Lift], NSError>) in
-                for lift in response.result.value!{
-                    print(lift.user.username)
-                    print(lift.createdAt.timeAgoSinceNow())
-                }
+                self.lifts = response.result.value!
+                self.tableView.reloadData()
             }
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -66,7 +64,6 @@ class LiftTableViewController: UITableViewController {
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.

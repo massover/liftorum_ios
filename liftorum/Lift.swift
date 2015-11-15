@@ -23,7 +23,6 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let user: User
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        print(representation)
         self.id = representation.valueForKeyPath("id") as! Int
         let createdAt = representation.valueForKeyPath("created_at") as! String
         self.createdAt = convertISOStringToNSDate(createdAt)
