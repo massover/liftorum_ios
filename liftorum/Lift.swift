@@ -21,8 +21,10 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let createdAt: NSDate
     let id: Int
     let user: User
+    //let video: Video
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
+        print(representation)
         self.id = representation.valueForKeyPath("id") as! Int
         let createdAt = representation.valueForKeyPath("created_at") as! String
         self.createdAt = convertISOStringToNSDate(createdAt)
@@ -30,6 +32,10 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
             response:response,
             representation: representation.valueForKeyPath("user")!
         )!
+//        self.video = Video(
+//            response:response,
+//            representation: representation.valueForKeyPath("video")!
+//        )!
     }
     
     static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [Lift] {

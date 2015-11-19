@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import DateTools
+import Player
 
 class LiftTableViewController: UITableViewController {
     
@@ -58,12 +59,29 @@ class LiftTableViewController: UITableViewController {
             cellIdentifier,
             forIndexPath: indexPath
         ) as! LiftTableViewCell
-        
+
         let lift = lifts[indexPath.row]
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
+        cell.playerView.setNeedsLayout()
+        cell.playerView.layoutIfNeeded()
+        cell.playerView.player.view.frame = cell.playerView.frame
+        let videoUrl = NSURL(string: "https://s3-us-west-2.amazonaws.com/lift-videos-bucket-production/60.MOV")!
+        cell.playerView.player.setUrl(videoUrl)
+        
+        self.addChildViewController(cell.playerView.player)
+        self.view.addSubview(cell.playerView.player.view)
+        cell.playerView.player.didMoveToParentViewController(self)
+        
+
+        
         return cell
     }
+    
+
+    
+    
+
 
     /*
     // Override to support conditional editing of the table view.
