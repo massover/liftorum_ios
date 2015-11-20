@@ -7,35 +7,7 @@
 //
 
 import UIKit
-import Player
 
-class PlayerView: UIView, PlayerDelegate {
-    
-    var player: Player!
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        player = Player()
-        player.delegate = self
-    }
-    
-    // MARK: PlayerDelegate
-    func playerReady(player: Player) {
-    }
-    
-    func playerPlaybackStateDidChange(player: Player) {
-    }
-    
-    func playerBufferingStateDidChange(player: Player) {
-    }
-    
-    func playerPlaybackWillStartFromBeginning(player: Player) {
-    }
-    
-    func playerPlaybackDidEnd(player: Player) {
-    }
-    
-}
 
 class LiftTableViewCell: UITableViewCell{
     
@@ -54,10 +26,5 @@ class LiftTableViewCell: UITableViewCell{
 
         // Configure the view for the selected state
     }
-    
-
-
-
-    
 
 }
