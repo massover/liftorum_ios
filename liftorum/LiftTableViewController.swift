@@ -63,6 +63,9 @@ class LiftTableViewController: UITableViewController {
         let lift = lifts[indexPath.row]
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
+        cell.commentCreatedAtLabel.text = lift.comments[0].createdAt.timeAgoSinceNow()
+        cell.commentTextLabel.text = lift.comments[0].text
+        cell.commentCreatedAtUsername.text = String(lift.comments[0].id)
         cell.playerView.setNeedsLayout()
         cell.playerView.layoutIfNeeded()
         cell.playerView.player.view.frame = cell.playerView.frame
