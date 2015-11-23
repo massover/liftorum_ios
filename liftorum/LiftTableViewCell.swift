@@ -14,13 +14,14 @@ class LiftTableViewCell: UITableViewCell{
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var playerView: PlayerView!
-
-    @IBOutlet weak var commentCreatedAtUsername: UILabel!
-    @IBOutlet weak var commentCreatedAtLabel: UILabel!
-    @IBOutlet weak var commentTextLabel: UILabel!
     
+
+
+    @IBOutlet weak var commentCollectionView: CommentCollectionView!
     @IBOutlet weak var newCommentText: UITextField!
     @IBOutlet weak var newCommentSubmitButton: UIButton!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,3 +36,5 @@ class LiftTableViewCell: UITableViewCell{
     }
 
 }
+
+

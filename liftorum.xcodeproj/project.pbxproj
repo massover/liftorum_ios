@@ -25,6 +25,8 @@
 		849A8DEB1BE6A39D00F40D1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */; };
 		849A8DF61BE6A39D00F40D1C /* liftorumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DF51BE6A39D00F40D1C /* liftorumTests.swift */; };
 		849A8E011BE6A39D00F40D1C /* liftorumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8E001BE6A39D00F40D1C /* liftorumUITests.swift */; };
+		84D69B8D1C02A8A800AC35CC /* CommentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D69B8C1C02A8A800AC35CC /* CommentCollectionView.swift */; };
+		84D69B8F1C02A8D600AC35CC /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D69B8E1C02A8D600AC35CC /* CommentCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		849A8DFC1BE6A39D00F40D1C /* liftorumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liftorumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8E001BE6A39D00F40D1C /* liftorumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liftorumUITests.swift; sourceTree = "<group>"; };
 		849A8E021BE6A39D00F40D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D69B8C1C02A8A800AC35CC /* CommentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCollectionView.swift; sourceTree = "<group>"; };
+		84D69B8E1C02A8D600AC35CC /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7648A9BD3126733A8F72014 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F4A6E1F83E16A6694351E868 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +145,8 @@
 				843040F81C0269750066C48D /* Comment.swift */,
 				843040E91BF7D2DD0066C48D /* LiftPickerView.swift */,
 				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
+				84D69B8E1C02A8D600AC35CC /* CommentCollectionViewCell.swift */,
+				84D69B8C1C02A8A800AC35CC /* CommentCollectionView.swift */,
 				8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */,
 				849A8DE21BE6A39D00F40D1C /* LiftViewController.swift */,
 				843040F61BFEC0FF0066C48D /* PlayerView.swift */,
@@ -369,11 +375,13 @@
 				843040F71BFEC0FF0066C48D /* PlayerView.swift in Sources */,
 				849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */,
 				843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */,
+				84D69B8F1C02A8D600AC35CC /* CommentCollectionViewCell.swift in Sources */,
 				843040F11BF929510066C48D /* User.swift in Sources */,
 				843040F91C0269750066C48D /* Comment.swift in Sources */,
 				8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */,
 				843040E81BF7B3030066C48D /* Lift.swift in Sources */,
 				843040EC1BF901F00066C48D /* ResponseObjectSerializable.swift in Sources */,
+				84D69B8D1C02A8A800AC35CC /* CommentCollectionView.swift in Sources */,
 				843040F31BF963EB0066C48D /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
