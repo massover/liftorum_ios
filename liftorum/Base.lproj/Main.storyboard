@@ -10,31 +10,31 @@
         <scene sceneID="Fpz-M9-B5u">
             <objects>
                 <tableViewController id="Y0M-g1-Guk" customClass="LiftTableViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="563" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji8-Yz-t8O">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji8-Yz-t8O">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LiftTableViewCell" rowHeight="563" id="9XL-eX-Ckq" customClass="LiftTableViewCell" customModule="liftorum" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="563"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LiftTableViewCell" id="9XL-eX-Ckq" customClass="LiftTableViewCell" customModule="liftorum" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XL-eX-Ckq" id="hJW-rr-SSZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="562"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="349"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-zP-Sfh">
-                                            <rect key="frame" x="8" y="8" width="199" height="21"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-zP-Sfh">
+                                            <rect key="frame" x="8" y="8" width="584" height="21"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lift.username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIC-64-iIa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="485" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lift.createdAt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cip-x2-8wW">
-                                                    <rect key="frame" x="100" y="0.0" width="99" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lift.createdAt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cip-x2-8wW">
+                                                    <rect key="frame" x="485" y="0.0" width="99" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,104 +43,43 @@
                                             </subviews>
                                             <animations/>
                                         </stackView>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-ss-vke">
+                                            <rect key="frame" x="8" y="307" width="584" height="30"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-f4-0lQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="476" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="100 Comments"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-gW-fJB">
+                                                    <rect key="frame" x="476" y="0.0" width="108" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Add a comment"/>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                        </stackView>
+                                        <view contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="37" width="600" height="262"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <gestureRecognizers/>
                                         </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WlC-1C-Xu8">
-                                            <rect key="frame" x="8" y="443" width="584" height="30"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLa-fS-4pw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="535" height="30"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTw-hY-XQS">
-                                                    <rect key="frame" x="535" y="0.0" width="49" height="30"/>
-                                                    <animations/>
-                                                    <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
-                                                    <state key="normal" title="Submit"/>
-                                                </button>
-                                            </subviews>
-                                            <animations/>
-                                        </stackView>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zKe-fl-x5l" customClass="CommentCollectionView" customModule="liftorum" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="307" width="584" height="128"/>
-                                            <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uyo-rb-erI">
-                                                <size key="itemSize" width="565" height="87"/>
-                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            </collectionViewFlowLayout>
-                                            <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CommentCollectionViewCell" id="gWP-3b-iMQ" customClass="CommentCollectionViewCell" customModule="liftorum" customModuleProvider="target">
-                                                    <rect key="frame" x="10" y="0.0" width="565" height="87"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                        <rect key="frame" x="0.0" y="0.0" width="565" height="87"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQf-bj-Waa">
-                                                                <rect key="frame" x="8" y="8" width="305" height="21"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="comment.username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEf-e9-Xv3">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="21"/>
-                                                                        <animations/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="comment.createdAt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-5N-5hg">
-                                                                        <rect key="frame" x="153" y="0.0" width="152" height="21"/>
-                                                                        <animations/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <animations/>
-                                                            </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="comment.text" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6t-f5-LcE">
-                                                                <rect key="frame" x="8" y="46" width="568" height="21"/>
-                                                                <animations/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <animations/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    </view>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <connections>
-                                                        <outlet property="createdAtLabel" destination="IqZ-5N-5hg" id="GuM-Jn-z5M"/>
-                                                        <outlet property="textLabel" destination="h6t-f5-LcE" id="oGU-1L-Tp7"/>
-                                                        <outlet property="usernameLabel" destination="JEf-e9-Xv3" id="D6l-Bw-YAw"/>
-                                                    </connections>
-                                                </collectionViewCell>
-                                            </cells>
-                                        </collectionView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="WlC-1C-Xu8" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="EZn-N2-gJd"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="WlC-1C-Xu8" secondAttribute="trailing" id="NEG-Oh-wVe"/>
-                                        <constraint firstItem="zKe-fl-x5l" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="coh-vz-Viv"/>
-                                        <constraint firstItem="zKe-fl-x5l" firstAttribute="trailing" secondItem="hJW-rr-SSZ" secondAttribute="trailingMargin" id="dnv-rl-5pu"/>
+                                        <constraint firstItem="0jh-ss-vke" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="AAC-9Z-bhR"/>
+                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="AAQ-hL-PuR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ihx-fd-FAI" secondAttribute="trailing" id="ISl-Vj-jHP"/>
+                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="kot-5Y-TJr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7PM-zP-Sfh" secondAttribute="trailing" id="tcR-bT-xIO"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0jh-ss-vke" secondAttribute="trailing" id="x1i-jK-Wkh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <outlet property="commentCollectionView" destination="zKe-fl-x5l" id="C7v-6C-fRt"/>
+                                    <outlet property="commentsButton" destination="iYN-f4-0lQ" id="3tc-hO-bwm"/>
                                     <outlet property="createdAtLabel" destination="cip-x2-8wW" id="dY2-wp-8Q6"/>
-                                    <outlet property="newCommentSubmitButton" destination="nTw-hY-XQS" id="vzq-ne-GVa"/>
-                                    <outlet property="newCommentText" destination="bLa-fS-4pw" id="5ba-pi-BUG"/>
                                     <outlet property="playerView" destination="ihx-fd-FAI" id="KUM-Ez-8dy"/>
                                     <outlet property="usernameLabel" destination="mIC-64-iIa" id="PdT-Ya-gef"/>
                                 </connections>

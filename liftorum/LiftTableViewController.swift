@@ -63,23 +63,25 @@ class LiftTableViewController: UITableViewController {
         let lift = lifts[indexPath.row]
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
-        cell.commentCollectionView.comments = lift.comments
-        cell.commentCollectionView.delegate = cell.commentCollectionView
-        cell.commentCollectionView.dataSource = cell.commentCollectionView
-        cell.commentCollectionView.setNeedsLayout()
-        cell.commentCollectionView.layoutIfNeeded()
+        if lift.comments.count == 0{
+            cell.commentsButton.removeFromSuperview()
+        } else if lift.comments.count == 1{
+            let title = String(lift.comments.count) + " Comment"
+            cell.commentsButton.setTitle(title, forState: .Normal)
+        } else {
+            let title = String(lift.comments.count) + " Comments"
+            cell.commentsButton.setTitle(title, forState: .Normal)
+        }
+
+        let videoUrl = NSURL(string: "https://s3-us-west-2.amazonaws.com/lift-videos-bucket-production/60.MOV")!
+        cell.playerView.player.setUrl(videoUrl)
         cell.playerView.setNeedsLayout()
         cell.playerView.layoutIfNeeded()
         cell.playerView.player.view.frame = cell.playerView.frame
-        let videoUrl = NSURL(string: "https://s3-us-west-2.amazonaws.com/lift-videos-bucket-production/60.MOV")!
-        cell.playerView.player.setUrl(videoUrl)
         
         self.addChildViewController(cell.playerView.player)
         self.view.addSubview(cell.playerView.player.view)
         cell.playerView.player.didMoveToParentViewController(self)
-        
-
-        
         return cell
     }
     
