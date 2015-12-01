@@ -20,7 +20,11 @@ class LiftViewController:
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var liftPickerView: LiftPickerView!
-    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var takeVideoButton: UIButton!
+    @IBOutlet weak var selectVideoButton: UIButton!
+    
+    @IBOutlet weak var playerView: PlayerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,34 @@ class LiftViewController:
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    
+    @IBAction func takeVideo(sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) == false {
+            return
+        }
+        
+        let cameraController = UIImagePickerController()
+        cameraController.sourceType = .Camera
+        cameraController.mediaTypes = [kUTTypeMovie as String]
+        cameraController.allowsEditing = false
+        cameraController.delegate = self
+        presentViewController(cameraController, animated: true, completion: nil)
+    }
+
+    @IBAction func selectVideo(sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum) == false {
+            return
+        }
+        
+        let mediaUI = UIImagePickerController()
+        mediaUI.sourceType = .SavedPhotosAlbum
+        mediaUI.mediaTypes = [kUTTypeMovie as String]
+        mediaUI.allowsEditing = true
+        mediaUI.delegate = self
+        presentViewController(mediaUI, animated: true, completion: nil)
+    }
+    
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -36,10 +68,25 @@ class LiftViewController:
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // The info dictionary contains multiple representations of the image, and this uses the original.
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        imageView.image = selectedImage
+        let mediaType = info[UIImagePickerControllerMediaType] as! NSString
         dismissViewControllerAnimated(true, completion: nil)
+        // Handle a movie capture
+        if mediaType == kUTTypeMovie {
+            let path = (info[UIImagePickerControllerMediaURL] as! NSURL).path
+            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path!) {
+                UISaveVideoAtPathToSavedPhotosAlbum(path!, self, nil, nil)
+            }
+            playerView.player.setUrl(info[UIImagePickerControllerMediaURL] as! NSURL)
+            
+            playerView.player.view.frame = playerView.frame
+            playerView.player.view.setNeedsLayout()
+            playerView.player.view.layoutIfNeeded()
+
+            self.addChildViewController(playerView.player)
+            self.view.addSubview(playerView.player.view)
+            playerView.player.didMoveToParentViewController(self)
+        }
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -53,22 +100,5 @@ class LiftViewController:
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    @IBAction func selectVideoFromLibrary(sender: UITapGestureRecognizer) {
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        let imagePickerController = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            imagePickerController.sourceType = .Camera
-            imagePickerController.mediaTypes = [kUTTypeMovie as String]
-            imagePickerController.delegate = self
-            presentViewController(imagePickerController, animated: true, completion: nil)
-        }
-        else {
-            print("No camera available")
-        }
-        
-
-    }
-
 }
 

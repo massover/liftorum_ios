@@ -17,7 +17,7 @@ class LiftTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request(.GET, "http://localhost:5000/api/lift")
+        Alamofire.request(.GET, "http://liftorum.com/api/lift")
             .responseCollection { (response: Response<[Lift], NSError>) in
                 self.lifts = response.result.value!
                 self.tableView.reloadData()
@@ -64,7 +64,7 @@ class LiftTableViewController: UITableViewController {
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
         if lift.comments.count == 0{
-            cell.commentsButton.removeFromSuperview()
+            cell.commentsButton.hidden = true
         } else if lift.comments.count == 1{
             let title = String(lift.comments.count) + " Comment"
             cell.commentsButton.setTitle(title, forState: .Normal)
@@ -77,7 +77,9 @@ class LiftTableViewController: UITableViewController {
         cell.playerView.player.setUrl(videoUrl)
         cell.playerView.setNeedsLayout()
         cell.playerView.layoutIfNeeded()
+        
         cell.playerView.player.view.frame = cell.playerView.frame
+
         
         self.addChildViewController(cell.playerView.player)
         self.view.addSubview(cell.playerView.player.view)
