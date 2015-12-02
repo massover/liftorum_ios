@@ -77,13 +77,12 @@ class LiftViewController:
                 UISaveVideoAtPathToSavedPhotosAlbum(path!, self, nil, nil)
             }
             playerView.player.setUrl(info[UIImagePickerControllerMediaURL] as! NSURL)
-            
             playerView.player.view.frame = playerView.frame
-            playerView.player.view.setNeedsLayout()
-            playerView.player.view.layoutIfNeeded()
-
             self.addChildViewController(playerView.player)
-            self.view.addSubview(playerView.player.view)
+            playerView.addSubview(playerView.player.view)
+            playerView.setNeedsLayout()
+            playerView.layoutIfNeeded()
+            playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
             playerView.player.didMoveToParentViewController(self)
         }
 

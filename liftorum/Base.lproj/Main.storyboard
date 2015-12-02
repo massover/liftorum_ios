@@ -22,7 +22,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="349"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-zP-Sfh">
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-zP-Sfh">
                                             <rect key="frame" x="8" y="8" width="584" height="21"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lift.username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIC-64-iIa">
@@ -41,8 +41,14 @@
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="cip-x2-8wW" firstAttribute="leading" secondItem="mIC-64-iIa" secondAttribute="trailing" id="MpV-mE-Ops"/>
+                                                <constraint firstItem="cip-x2-8wW" firstAttribute="leading" secondItem="mIC-64-iIa" secondAttribute="trailing" id="Uos-iR-oDw"/>
+                                                <constraint firstAttribute="trailing" secondItem="cip-x2-8wW" secondAttribute="trailing" id="ZSz-FP-Tig"/>
+                                                <constraint firstItem="mIC-64-iIa" firstAttribute="leading" secondItem="7PM-zP-Sfh" secondAttribute="leading" id="r1Y-yg-6fc"/>
+                                            </constraints>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-ss-vke">
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-ss-vke">
                                             <rect key="frame" x="8" y="307" width="584" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-f4-0lQ">
@@ -58,7 +64,7 @@
                                             </subviews>
                                             <animations/>
                                         </stackView>
-                                        <view contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
+                                        <view contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="37" width="600" height="262"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,12 +73,16 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="0jh-ss-vke" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="AAC-9Z-bhR"/>
-                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="AAQ-hL-PuR"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ihx-fd-FAI" secondAttribute="trailing" id="ISl-Vj-jHP"/>
-                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="kot-5Y-TJr"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="7PM-zP-Sfh" secondAttribute="trailing" id="tcR-bT-xIO"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="0jh-ss-vke" secondAttribute="trailing" id="x1i-jK-Wkh"/>
+                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="top" secondItem="hJW-rr-SSZ" secondAttribute="topMargin" id="1zP-2J-vpB"/>
+                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="DGG-Vv-JJw"/>
+                                        <constraint firstItem="0jh-ss-vke" firstAttribute="top" secondItem="ihx-fd-FAI" secondAttribute="bottom" constant="40" id="TCz-le-9zK"/>
+                                        <constraint firstItem="0jh-ss-vke" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="a3U-5f-9Ms"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ihx-fd-FAI" secondAttribute="trailing" constant="15" id="frX-Sh-C0x"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7PM-zP-Sfh" secondAttribute="trailing" id="k0f-Qy-m4P"/>
+                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="nhx-cf-4TH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0jh-ss-vke" secondAttribute="bottom" id="tpu-4T-AkX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0jh-ss-vke" secondAttribute="trailing" id="yiq-jK-I5p"/>
+                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="top" secondItem="7PM-zP-Sfh" secondAttribute="bottom" id="yzC-wE-uE5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -102,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="510" y="369"/>
         </scene>
-        <!--Lift View Controller-->
+        <!--Add your lift-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LiftViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,28 +125,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljb-gJ-Vnw">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="398" height="672"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="15k-db-EbM">
-                                        <rect key="frame" x="54" y="8" width="320" height="622"/>
+                                        <rect key="frame" x="47" y="8" width="320" height="627"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3t-81-0Xz">
-                                                <rect key="frame" x="0.0" y="0.0" width="25" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3t-81-0Xz">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-S5-rZD" customClass="LiftPickerView" customModule="liftorum" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="33" width="320" height="75"/>
+                                            <pickerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-S5-rZD" customClass="LiftPickerView" customModule="liftorum" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="33" width="320" height="80"/>
                                                 <animations/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.90000000000000002"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="75" id="f9p-Ir-a4h"/>
+                                                    <constraint firstAttribute="height" constant="80" id="aMm-G9-st7"/>
                                                 </constraints>
                                             </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xay-37-PyE">
-                                                <rect key="frame" x="0.0" y="120" width="44" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xay-37-PyE">
+                                                <rect key="frame" x="0.0" y="125" width="44" height="21"/>
                                                 <animations/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -144,12 +154,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-BR-ybH" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="153" width="320" height="235"/>
+                                                <rect key="frame" x="0.0" y="158" width="320" height="235"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-UU-0ov">
-                                                <rect key="frame" x="0.0" y="400" width="86" height="30"/>
+                                                <rect key="frame" x="0.0" y="405" width="320" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Take a video"/>
                                                 <connections>
@@ -157,7 +167,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r32-pm-S4o">
-                                                <rect key="frame" x="0.0" y="442" width="168" height="30"/>
+                                                <rect key="frame" x="0.0" y="447" width="320" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Select video from library"/>
                                                 <connections>
@@ -165,27 +175,27 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-tG-Zmg">
-                                                <rect key="frame" x="0.0" y="484" width="54" height="21"/>
+                                                <rect key="frame" x="0.0" y="489" width="54" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pUE-0y-4oc">
-                                                <rect key="frame" x="0.0" y="517" width="320" height="30"/>
+                                                <rect key="frame" x="0.0" y="522" width="320" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-9X-Nt1">
-                                                <rect key="frame" x="0.0" y="559" width="39" height="21"/>
+                                                <rect key="frame" x="0.0" y="564" width="39" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-Xx-drX">
-                                                <rect key="frame" x="0.0" y="592" width="320" height="30"/>
+                                                <rect key="frame" x="0.0" y="597" width="320" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -193,39 +203,50 @@
                                         </subviews>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="pUE-0y-4oc" secondAttribute="trailing" id="7XO-HJ-8Vp"/>
-                                            <constraint firstItem="pUE-0y-4oc" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="81U-vv-s7D"/>
-                                            <constraint firstItem="TTo-UU-0ov" firstAttribute="top" secondItem="77Q-BR-ybH" secondAttribute="bottom" constant="12" id="Art-Gf-4Ub"/>
-                                            <constraint firstItem="LRM-S5-rZD" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="MCD-Zs-nKg"/>
-                                            <constraint firstItem="77Q-BR-ybH" firstAttribute="top" secondItem="xay-37-PyE" secondAttribute="bottom" constant="12" id="NcY-gi-PyH"/>
-                                            <constraint firstAttribute="trailing" secondItem="LRM-S5-rZD" secondAttribute="trailing" id="OVT-iR-rVu"/>
-                                            <constraint firstItem="77Q-BR-ybH" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="kSU-Zz-dwN"/>
-                                            <constraint firstAttribute="trailing" secondItem="77Q-BR-ybH" secondAttribute="trailing" id="ok8-cQ-49g"/>
-                                            <constraint firstItem="Hve-Xx-drX" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="qun-TR-vpv"/>
-                                            <constraint firstAttribute="trailing" secondItem="Hve-Xx-drX" secondAttribute="trailing" id="sJd-DA-YiN"/>
+                                            <constraint firstItem="r32-pm-S4o" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="1CG-Vu-xS0"/>
+                                            <constraint firstItem="pUE-0y-4oc" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="2FH-qx-hIY"/>
+                                            <constraint firstItem="TTo-UU-0ov" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="3Ra-Fr-yN5"/>
+                                            <constraint firstAttribute="trailing" secondItem="LRM-S5-rZD" secondAttribute="trailing" id="425-T6-hVM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hve-Xx-drX" secondAttribute="trailing" id="4i1-cF-qbt"/>
+                                            <constraint firstItem="TTo-UU-0ov" firstAttribute="top" secondItem="77Q-BR-ybH" secondAttribute="bottom" constant="12" id="B95-pQ-tS7"/>
+                                            <constraint firstItem="LRM-S5-rZD" firstAttribute="top" secondItem="x3t-81-0Xz" secondAttribute="bottom" constant="12" id="G9O-Uj-BHI"/>
+                                            <constraint firstAttribute="trailing" secondItem="pUE-0y-4oc" secondAttribute="trailing" id="HOF-hh-eRe"/>
+                                            <constraint firstAttribute="trailing" secondItem="EXO-tG-Zmg" secondAttribute="trailing" constant="266" id="Kp1-ob-Toj"/>
+                                            <constraint firstItem="Hve-Xx-drX" firstAttribute="top" secondItem="VrH-9X-Nt1" secondAttribute="bottom" constant="12" id="NDO-Pb-Uyg"/>
+                                            <constraint firstAttribute="trailing" secondItem="xay-37-PyE" secondAttribute="trailing" constant="276" id="OuO-zG-sWY"/>
+                                            <constraint firstItem="xay-37-PyE" firstAttribute="top" secondItem="LRM-S5-rZD" secondAttribute="bottom" constant="12" id="R0k-Az-IVc"/>
+                                            <constraint firstItem="Hve-Xx-drX" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="Sad-yd-uZm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Hve-Xx-drX" secondAttribute="bottom" id="TSB-aw-0eE"/>
+                                            <constraint firstItem="LRM-S5-rZD" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="U3t-OR-hnD"/>
+                                            <constraint firstItem="pUE-0y-4oc" firstAttribute="top" secondItem="EXO-tG-Zmg" secondAttribute="bottom" constant="12" id="Xho-yp-5fq"/>
+                                            <constraint firstItem="r32-pm-S4o" firstAttribute="top" secondItem="TTo-UU-0ov" secondAttribute="bottom" constant="12" id="Zq6-es-G3J"/>
+                                            <constraint firstItem="77Q-BR-ybH" firstAttribute="top" secondItem="xay-37-PyE" secondAttribute="bottom" constant="12" id="bOl-Ia-Fir"/>
+                                            <constraint firstItem="xay-37-PyE" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="eMg-2W-kMc"/>
+                                            <constraint firstItem="EXO-tG-Zmg" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="gTd-TO-OQH"/>
+                                            <constraint firstAttribute="trailing" secondItem="x3t-81-0Xz" secondAttribute="trailing" id="hWa-KA-VNw"/>
+                                            <constraint firstItem="x3t-81-0Xz" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="k9P-5U-TN7"/>
+                                            <constraint firstAttribute="trailing" secondItem="r32-pm-S4o" secondAttribute="trailing" id="oRD-3m-iVE"/>
+                                            <constraint firstItem="VrH-9X-Nt1" firstAttribute="top" secondItem="pUE-0y-4oc" secondAttribute="bottom" constant="12" id="r84-0x-3hA"/>
+                                            <constraint firstAttribute="trailing" secondItem="VrH-9X-Nt1" secondAttribute="trailing" constant="281" id="uga-K5-mWR"/>
+                                            <constraint firstItem="EXO-tG-Zmg" firstAttribute="top" secondItem="r32-pm-S4o" secondAttribute="bottom" constant="12" id="vMG-RG-hFH"/>
+                                            <constraint firstItem="VrH-9X-Nt1" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="wND-tV-Ofo"/>
+                                            <constraint firstAttribute="trailing" secondItem="TTo-UU-0ov" secondAttribute="trailing" id="zMx-B2-CcR"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="15k-db-EbM" firstAttribute="leading" secondItem="ljb-gJ-Vnw" secondAttribute="leading" id="Des-Ha-bTD"/>
-                                    <constraint firstItem="15k-db-EbM" firstAttribute="top" secondItem="ljb-gJ-Vnw" secondAttribute="top" id="Ppg-BB-eTC"/>
-                                    <constraint firstAttribute="trailing" secondItem="15k-db-EbM" secondAttribute="trailing" id="tRh-kw-NFZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="15k-db-EbM" secondAttribute="bottom" constant="20" id="u9X-2S-KQQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="15k-db-EbM" secondAttribute="bottom" constant="80" id="ED2-wS-jjX"/>
+                                    <constraint firstAttribute="trailing" secondItem="15k-db-EbM" secondAttribute="trailing" constant="40" id="Vtm-LU-dmK"/>
+                                    <constraint firstItem="15k-db-EbM" firstAttribute="top" secondItem="ljb-gJ-Vnw" secondAttribute="top" constant="20" id="iWL-zv-gll"/>
+                                    <constraint firstItem="15k-db-EbM" firstAttribute="leading" secondItem="ljb-gJ-Vnw" secondAttribute="leading" constant="40" id="oOt-xP-tcY"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ljb-gJ-Vnw" secondAttribute="trailing" id="KFc-yU-yWu"/>
-                            <constraint firstItem="ljb-gJ-Vnw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NvN-6S-myP"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ljb-gJ-Vnw" secondAttribute="bottom" id="ajZ-Fd-uf5"/>
-                            <constraint firstItem="ljb-gJ-Vnw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bqk-0U-rrp"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Rsl-mh-yHi">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Add your lift" id="Rsl-mh-yHi">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Osd-2R-bGu">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="Jd2-HY-r2G"/>

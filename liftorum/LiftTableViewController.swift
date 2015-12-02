@@ -38,12 +38,10 @@ class LiftTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return lifts.count
     }
     
@@ -77,17 +75,14 @@ class LiftTableViewController: UITableViewController {
         cell.playerView.player.setUrl(videoUrl)
         cell.playerView.setNeedsLayout()
         cell.playerView.layoutIfNeeded()
-        
         cell.playerView.player.view.frame = cell.playerView.frame
-
-        
         self.addChildViewController(cell.playerView.player)
-        self.view.addSubview(cell.playerView.player.view)
+        cell.playerView.addSubview(cell.playerView.player.view)
+        cell.playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
         cell.playerView.player.didMoveToParentViewController(self)
         return cell
     }
     
-
     
     
 
