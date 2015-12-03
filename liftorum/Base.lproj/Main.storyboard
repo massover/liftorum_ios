@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BfE-aR-HTk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -64,7 +65,7 @@
                                             </subviews>
                                             <animations/>
                                         </stackView>
-                                        <view contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
+                                        <view contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="37" width="600" height="262"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,7 +76,6 @@
                                     <constraints>
                                         <constraint firstItem="7PM-zP-Sfh" firstAttribute="top" secondItem="hJW-rr-SSZ" secondAttribute="topMargin" id="1zP-2J-vpB"/>
                                         <constraint firstItem="7PM-zP-Sfh" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="DGG-Vv-JJw"/>
-                                        <constraint firstItem="0jh-ss-vke" firstAttribute="top" secondItem="ihx-fd-FAI" secondAttribute="bottom" constant="40" id="TCz-le-9zK"/>
                                         <constraint firstItem="0jh-ss-vke" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="a3U-5f-9Ms"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ihx-fd-FAI" secondAttribute="trailing" constant="15" id="frX-Sh-C0x"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="7PM-zP-Sfh" secondAttribute="trailing" id="k0f-Qy-m4P"/>
@@ -103,7 +103,7 @@
                     <navigationItem key="navigationItem" title="Liftorum" id="30w-lF-0hW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="z23-yl-eSm">
                             <connections>
-                                <segue destination="Kiz-9g-VNl" kind="modal" identifier="AddLift" id="ezY-bq-dSd"/>
+                                <segue destination="Kiz-9g-VNl" kind="show" identifier="AddLift" id="ezY-bq-dSd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -112,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="510" y="369"/>
         </scene>
-        <!--Add your lift-->
+        <!--Upload your video-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LiftViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,129 +124,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljb-gJ-Vnw">
-                                <rect key="frame" x="0.0" y="64" width="398" height="672"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="15k-db-EbM">
-                                        <rect key="frame" x="47" y="8" width="320" height="627"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3t-81-0Xz">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <pickerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRM-S5-rZD" customClass="LiftPickerView" customModule="liftorum" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="33" width="320" height="80"/>
-                                                <animations/>
-                                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.90000000000000002"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="aMm-G9-st7"/>
-                                                </constraints>
-                                            </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xay-37-PyE">
-                                                <rect key="frame" x="0.0" y="125" width="44" height="21"/>
-                                                <animations/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-BR-ybH" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="158" width="320" height="235"/>
-                                                <animations/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-UU-0ov">
-                                                <rect key="frame" x="0.0" y="405" width="320" height="30"/>
-                                                <animations/>
-                                                <state key="normal" title="Take a video"/>
-                                                <connections>
-                                                    <action selector="takeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5c1-Sy-CJs"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r32-pm-S4o">
-                                                <rect key="frame" x="0.0" y="447" width="320" height="30"/>
-                                                <animations/>
-                                                <state key="normal" title="Select video from library"/>
-                                                <connections>
-                                                    <action selector="selectVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7bE-yQ-0yH"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-tG-Zmg">
-                                                <rect key="frame" x="0.0" y="489" width="54" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pUE-0y-4oc">
-                                                <rect key="frame" x="0.0" y="522" width="320" height="30"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrH-9X-Nt1">
-                                                <rect key="frame" x="0.0" y="564" width="39" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-Xx-drX">
-                                                <rect key="frame" x="0.0" y="597" width="320" height="30"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                            </textField>
-                                        </subviews>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstItem="r32-pm-S4o" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="1CG-Vu-xS0"/>
-                                            <constraint firstItem="pUE-0y-4oc" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="2FH-qx-hIY"/>
-                                            <constraint firstItem="TTo-UU-0ov" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="3Ra-Fr-yN5"/>
-                                            <constraint firstAttribute="trailing" secondItem="LRM-S5-rZD" secondAttribute="trailing" id="425-T6-hVM"/>
-                                            <constraint firstAttribute="trailing" secondItem="Hve-Xx-drX" secondAttribute="trailing" id="4i1-cF-qbt"/>
-                                            <constraint firstItem="TTo-UU-0ov" firstAttribute="top" secondItem="77Q-BR-ybH" secondAttribute="bottom" constant="12" id="B95-pQ-tS7"/>
-                                            <constraint firstItem="LRM-S5-rZD" firstAttribute="top" secondItem="x3t-81-0Xz" secondAttribute="bottom" constant="12" id="G9O-Uj-BHI"/>
-                                            <constraint firstAttribute="trailing" secondItem="pUE-0y-4oc" secondAttribute="trailing" id="HOF-hh-eRe"/>
-                                            <constraint firstAttribute="trailing" secondItem="EXO-tG-Zmg" secondAttribute="trailing" constant="266" id="Kp1-ob-Toj"/>
-                                            <constraint firstItem="Hve-Xx-drX" firstAttribute="top" secondItem="VrH-9X-Nt1" secondAttribute="bottom" constant="12" id="NDO-Pb-Uyg"/>
-                                            <constraint firstAttribute="trailing" secondItem="xay-37-PyE" secondAttribute="trailing" constant="276" id="OuO-zG-sWY"/>
-                                            <constraint firstItem="xay-37-PyE" firstAttribute="top" secondItem="LRM-S5-rZD" secondAttribute="bottom" constant="12" id="R0k-Az-IVc"/>
-                                            <constraint firstItem="Hve-Xx-drX" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="Sad-yd-uZm"/>
-                                            <constraint firstAttribute="bottom" secondItem="Hve-Xx-drX" secondAttribute="bottom" id="TSB-aw-0eE"/>
-                                            <constraint firstItem="LRM-S5-rZD" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="U3t-OR-hnD"/>
-                                            <constraint firstItem="pUE-0y-4oc" firstAttribute="top" secondItem="EXO-tG-Zmg" secondAttribute="bottom" constant="12" id="Xho-yp-5fq"/>
-                                            <constraint firstItem="r32-pm-S4o" firstAttribute="top" secondItem="TTo-UU-0ov" secondAttribute="bottom" constant="12" id="Zq6-es-G3J"/>
-                                            <constraint firstItem="77Q-BR-ybH" firstAttribute="top" secondItem="xay-37-PyE" secondAttribute="bottom" constant="12" id="bOl-Ia-Fir"/>
-                                            <constraint firstItem="xay-37-PyE" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="eMg-2W-kMc"/>
-                                            <constraint firstItem="EXO-tG-Zmg" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="gTd-TO-OQH"/>
-                                            <constraint firstAttribute="trailing" secondItem="x3t-81-0Xz" secondAttribute="trailing" id="hWa-KA-VNw"/>
-                                            <constraint firstItem="x3t-81-0Xz" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="k9P-5U-TN7"/>
-                                            <constraint firstAttribute="trailing" secondItem="r32-pm-S4o" secondAttribute="trailing" id="oRD-3m-iVE"/>
-                                            <constraint firstItem="VrH-9X-Nt1" firstAttribute="top" secondItem="pUE-0y-4oc" secondAttribute="bottom" constant="12" id="r84-0x-3hA"/>
-                                            <constraint firstAttribute="trailing" secondItem="VrH-9X-Nt1" secondAttribute="trailing" constant="281" id="uga-K5-mWR"/>
-                                            <constraint firstItem="EXO-tG-Zmg" firstAttribute="top" secondItem="r32-pm-S4o" secondAttribute="bottom" constant="12" id="vMG-RG-hFH"/>
-                                            <constraint firstItem="VrH-9X-Nt1" firstAttribute="leading" secondItem="15k-db-EbM" secondAttribute="leading" id="wND-tV-Ofo"/>
-                                            <constraint firstAttribute="trailing" secondItem="TTo-UU-0ov" secondAttribute="trailing" id="zMx-B2-CcR"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-UU-0ov">
+                                <rect key="frame" x="20" y="84" width="374" height="30"/>
                                 <animations/>
+                                <state key="normal" title="Take a video"/>
+                                <connections>
+                                    <action selector="takeVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5c1-Sy-CJs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r32-pm-S4o">
+                                <rect key="frame" x="20" y="134" width="374" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Select video from library"/>
+                                <connections>
+                                    <action selector="selectVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7bE-yQ-0yH"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njp-s4-C5h" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="200" width="414" height="311"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="15k-db-EbM" secondAttribute="bottom" constant="80" id="ED2-wS-jjX"/>
-                                    <constraint firstAttribute="trailing" secondItem="15k-db-EbM" secondAttribute="trailing" constant="40" id="Vtm-LU-dmK"/>
-                                    <constraint firstItem="15k-db-EbM" firstAttribute="top" secondItem="ljb-gJ-Vnw" secondAttribute="top" constant="20" id="iWL-zv-gll"/>
-                                    <constraint firstItem="15k-db-EbM" firstAttribute="leading" secondItem="ljb-gJ-Vnw" secondAttribute="leading" constant="40" id="oOt-xP-tcY"/>
+                                    <constraint firstAttribute="width" secondItem="njp-s4-C5h" secondAttribute="height" multiplier="4:3" id="6pl-eP-T92"/>
                                 </constraints>
-                            </scrollView>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="njp-s4-C5h" secondAttribute="trailing" id="8EA-Fw-lNk"/>
+                            <constraint firstItem="r32-pm-S4o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8FV-h1-ebv"/>
+                            <constraint firstItem="njp-s4-C5h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FDL-fU-BEp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r32-pm-S4o" secondAttribute="trailing" id="Krp-Jj-xrY"/>
+                            <constraint firstItem="TTo-UU-0ov" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QlR-wU-HIP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TTo-UU-0ov" secondAttribute="trailing" id="RDQ-MR-wIZ"/>
+                            <constraint firstItem="r32-pm-S4o" firstAttribute="top" secondItem="TTo-UU-0ov" secondAttribute="bottom" constant="20" id="ZZF-jL-O0R"/>
+                            <constraint firstItem="TTo-UU-0ov" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="qCz-nM-Nzx"/>
+                            <constraint firstItem="njp-s4-C5h" firstAttribute="top" secondItem="r32-pm-S4o" secondAttribute="bottom" constant="36" id="yue-1q-Uqy"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add your lift" id="Rsl-mh-yHi">
+                    <navigationItem key="navigationItem" title="Upload your video" id="Rsl-mh-yHi">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Osd-2R-bGu">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="Jd2-HY-r2G"/>
@@ -261,13 +178,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="cancelButton" destination="Osd-2R-bGu" id="kTc-kT-fVT"/>
-                        <outlet property="liftPickerView" destination="LRM-S5-rZD" id="G7f-GN-oB5"/>
-                        <outlet property="playerView" destination="77Q-BR-ybH" id="B0K-Pw-vpz"/>
-                        <outlet property="repsTextField" destination="Hve-Xx-drX" id="abz-bn-sJo"/>
+                        <outlet property="playerView" destination="njp-s4-C5h" id="ITZ-VE-uKX"/>
                         <outlet property="saveButton" destination="fS3-aP-m9I" id="B23-e8-V8D"/>
                         <outlet property="selectVideoButton" destination="r32-pm-S4o" id="E34-hO-8I0"/>
                         <outlet property="takeVideoButton" destination="TTo-UU-0ov" id="tck-8Q-jkt"/>
-                        <outlet property="weightTextField" destination="pUE-0y-4oc" id="f73-EK-Wnb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

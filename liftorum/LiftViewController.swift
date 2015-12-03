@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import MobileCoreServices
+import Player
 
 class LiftViewController:
     UIViewController,
@@ -28,6 +29,10 @@ class LiftViewController:
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playerView.player.view.frame = playerView.bounds
+        self.addChildViewController(playerView.player)
+        playerView.addSubview(playerView.player.view)
+        playerView.player.didMoveToParentViewController(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,16 +79,19 @@ class LiftViewController:
         if mediaType == kUTTypeMovie {
             let path = (info[UIImagePickerControllerMediaURL] as! NSURL).path
             if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path!) {
-                UISaveVideoAtPathToSavedPhotosAlbum(path!, self, nil, nil)
+                //UISaveVideoAtPathToSavedPhotosAlbum(path!, self, nil, nil)
             }
-            playerView.player.setUrl(info[UIImagePickerControllerMediaURL] as! NSURL)
-            playerView.player.view.frame = playerView.frame
-            self.addChildViewController(playerView.player)
-            playerView.addSubview(playerView.player.view)
-            playerView.setNeedsLayout()
-            playerView.layoutIfNeeded()
-            playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
-            playerView.player.didMoveToParentViewController(self)
+            print("made it")
+            let url = info[UIImagePickerControllerMediaURL] as! NSURL
+            print(url)
+            playerView.player.setUrl(url)
+            //notPlayer.delegate = self
+//            playerView.setNeedsLayout()
+//            playerView.layoutIfNeeded()
+            
+//            self.addChildViewController(playerView.player)
+//            playerView.addSubview(playerView.player.view)
+//            playerView.player.didMoveToParentViewController(self)
         }
 
     }

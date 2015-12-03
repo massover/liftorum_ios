@@ -8,6 +8,11 @@
 import UIKit
 import Player
 
+class PV: UIView {
+    
+    
+}
+
 class PlayerView: UIView, PlayerDelegate {
     
     var player: Player!

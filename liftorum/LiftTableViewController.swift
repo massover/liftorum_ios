@@ -75,11 +75,13 @@ class LiftTableViewController: UITableViewController {
         cell.playerView.player.setUrl(videoUrl)
         cell.playerView.setNeedsLayout()
         cell.playerView.layoutIfNeeded()
-        cell.playerView.player.view.frame = cell.playerView.frame
+        cell.playerView.player.view.frame = cell.playerView.bounds
         self.addChildViewController(cell.playerView.player)
         cell.playerView.addSubview(cell.playerView.player.view)
         cell.playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
         cell.playerView.player.didMoveToParentViewController(self)
+        
+        
         return cell
     }
     
