@@ -10,63 +10,63 @@
         <scene sceneID="Fpz-M9-B5u">
             <objects>
                 <tableViewController id="Y0M-g1-Guk" customClass="LiftTableViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji8-Yz-t8O">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="433" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji8-Yz-t8O">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LiftTableViewCell" id="9XL-eX-Ckq" customClass="LiftTableViewCell" customModule="liftorum" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="350"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="433"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9XL-eX-Ckq" id="hJW-rr-SSZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="349"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="432"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-zP-Sfh">
                                             <rect key="frame" x="8" y="8" width="584" height="21"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lift.username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIC-64-iIa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="485" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lift.username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIC-64-iIa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="lift.createdAt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cip-x2-8wW">
-                                                    <rect key="frame" x="485" y="0.0" width="99" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lift.createdAt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cip-x2-8wW">
+                                                    <rect key="frame" x="384" y="0.0" width="200" height="21"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="BpN-kC-Ayc"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstItem="cip-x2-8wW" firstAttribute="leading" secondItem="mIC-64-iIa" secondAttribute="trailing" id="MpV-mE-Ops"/>
-                                                <constraint firstItem="cip-x2-8wW" firstAttribute="leading" secondItem="mIC-64-iIa" secondAttribute="trailing" id="Uos-iR-oDw"/>
-                                                <constraint firstAttribute="trailing" secondItem="cip-x2-8wW" secondAttribute="trailing" id="ZSz-FP-Tig"/>
-                                                <constraint firstItem="mIC-64-iIa" firstAttribute="leading" secondItem="7PM-zP-Sfh" secondAttribute="leading" id="r1Y-yg-6fc"/>
-                                            </constraints>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-ss-vke">
-                                            <rect key="frame" x="8" y="307" width="584" height="30"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-ss-vke">
+                                            <rect key="frame" x="8" y="394" width="584" height="30"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-f4-0lQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="476" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-f4-0lQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                     <animations/>
                                                     <state key="normal" title="100 Comments"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-gW-fJB">
-                                                    <rect key="frame" x="476" y="0.0" width="108" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-gW-fJB">
+                                                    <rect key="frame" x="384" y="0.0" width="200" height="30"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="9YY-rZ-jx6"/>
+                                                    </constraints>
                                                     <state key="normal" title="Add a comment"/>
                                                 </button>
                                             </subviews>
                                             <animations/>
                                         </stackView>
-                                        <view contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="37" width="600" height="262"/>
+                                        <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ihx-fd-FAI" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="37" width="584" height="349"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <gestureRecognizers/>
@@ -74,15 +74,16 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="top" secondItem="hJW-rr-SSZ" secondAttribute="topMargin" id="1zP-2J-vpB"/>
-                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="DGG-Vv-JJw"/>
-                                        <constraint firstItem="0jh-ss-vke" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="a3U-5f-9Ms"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ihx-fd-FAI" secondAttribute="trailing" constant="15" id="frX-Sh-C0x"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="7PM-zP-Sfh" secondAttribute="trailing" id="k0f-Qy-m4P"/>
-                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="nhx-cf-4TH"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="0jh-ss-vke" secondAttribute="bottom" id="tpu-4T-AkX"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="0jh-ss-vke" secondAttribute="trailing" id="yiq-jK-I5p"/>
-                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="top" secondItem="7PM-zP-Sfh" secondAttribute="bottom" id="yzC-wE-uE5"/>
+                                        <constraint firstItem="0jh-ss-vke" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="7bE-sK-EGN"/>
+                                        <constraint firstItem="0jh-ss-vke" firstAttribute="top" secondItem="ihx-fd-FAI" secondAttribute="bottom" constant="8" symbolic="YES" id="8Rx-MW-6XO"/>
+                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="trailing" secondItem="hJW-rr-SSZ" secondAttribute="trailingMargin" id="MdZ-Xt-MH7"/>
+                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="VZo-WG-tCv"/>
+                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="trailing" secondItem="hJW-rr-SSZ" secondAttribute="trailingMargin" id="Ynd-WZ-g96"/>
+                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="leading" secondItem="hJW-rr-SSZ" secondAttribute="leadingMargin" id="iB0-Cd-4jt"/>
+                                        <constraint firstItem="7PM-zP-Sfh" firstAttribute="top" secondItem="hJW-rr-SSZ" secondAttribute="topMargin" id="jqc-Hi-hfa"/>
+                                        <constraint firstAttribute="bottom" secondItem="ihx-fd-FAI" secondAttribute="bottom" constant="46" id="ldG-FF-83n"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0jh-ss-vke" secondAttribute="trailing" id="xcT-Ni-Yt6"/>
+                                        <constraint firstItem="ihx-fd-FAI" firstAttribute="top" secondItem="7PM-zP-Sfh" secondAttribute="bottom" constant="8" id="xw2-kP-vTF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
