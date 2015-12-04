@@ -46,7 +46,7 @@ class LiftTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToLiftList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? LiftViewController {
+        if let sourceViewController = sender.sourceViewController as? LiftFormViewController {
         }
     }
 
@@ -73,8 +73,6 @@ class LiftTableViewController: UITableViewController {
 
         let videoUrl = NSURL(string: "https://s3-us-west-2.amazonaws.com/lift-videos-bucket-production/60.MOV")!
         cell.playerView.player.setUrl(videoUrl)
-        cell.playerView.setNeedsLayout()
-        cell.playerView.layoutIfNeeded()
         cell.playerView.player.view.frame = cell.playerView.bounds
         self.addChildViewController(cell.playerView.player)
         cell.playerView.addSubview(cell.playerView.player.view)

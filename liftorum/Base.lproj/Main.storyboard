@@ -111,12 +111,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mD6-cf-yM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="369"/>
+            <point key="canvasLocation" x="610" y="583"/>
         </scene>
-        <!--Upload your video-->
+        <!--Add a video-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LiftViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VideoFormViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -144,7 +144,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njp-s4-C5h" customClass="PlayerView" customModule="liftorum" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="200" width="414" height="311"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="njp-s4-C5h" secondAttribute="height" multiplier="4:3" id="6pl-eP-T92"/>
                                 </constraints>
@@ -164,31 +163,66 @@
                             <constraint firstItem="njp-s4-C5h" firstAttribute="top" secondItem="r32-pm-S4o" secondAttribute="bottom" constant="36" id="yue-1q-Uqy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Upload your video" id="Rsl-mh-yHi">
+                    <navigationItem key="navigationItem" title="Add a video" id="Rsl-mh-yHi">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Osd-2R-bGu">
                             <connections>
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="Jd2-HY-r2G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fS3-aP-m9I">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="fS3-aP-m9I">
                             <connections>
-                                <segue destination="J9t-ug-9fE" kind="unwind" unwindAction="unwindToLiftList:" id="tf9-1C-AXo"/>
+                                <segue destination="QZS-ln-kZO" kind="show" id="pIB-OD-icE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="cancelButton" destination="Osd-2R-bGu" id="kTc-kT-fVT"/>
+                        <outlet property="nextButton" destination="fS3-aP-m9I" id="IXh-5p-8Y3"/>
                         <outlet property="playerView" destination="njp-s4-C5h" id="ITZ-VE-uKX"/>
-                        <outlet property="saveButton" destination="fS3-aP-m9I" id="B23-e8-V8D"/>
                         <outlet property="selectVideoButton" destination="r32-pm-S4o" id="E34-hO-8I0"/>
                         <outlet property="takeVideoButton" destination="TTo-UU-0ov" id="tck-8Q-jkt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="J9t-ug-9fE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="369"/>
+            <point key="canvasLocation" x="1327" y="651"/>
+        </scene>
+        <!--Save your lift-->
+        <scene sceneID="Nvr-BN-N8V">
+            <objects>
+                <viewController id="4qm-3q-eOM" customClass="LiftFormViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BTK-Ir-XUB"/>
+                        <viewControllerLayoutGuide type="bottom" id="3TH-Dk-e6O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2ZL-2C-vpS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Save your lift" id="5IP-aW-CPw">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="voI-jE-vmY">
+                            <connections>
+                                <action selector="back:" destination="4qm-3q-eOM" id="mCT-Oj-EfX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ORP-oC-jJq">
+                            <connections>
+                                <segue destination="15H-fH-Vhg" kind="unwind" unwindAction="unwindToLiftList:" id="muW-CL-jUm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="voI-jE-vmY" id="Mh6-fm-B5u"/>
+                        <outlet property="saveButton" destination="ORP-oC-jJq" id="AIq-At-alj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2n-Ss-RyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="15H-fH-Vhg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1856" y="657"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U7V-de-sZt">
@@ -207,7 +241,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWb-sK-jmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="369"/>
+            <point key="canvasLocation" x="586" y="-301"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="66j-De-IiF">
@@ -226,7 +260,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gv-Z9-lhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1217" y="369"/>
+            <point key="canvasLocation" x="1245" y="-319"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E7b-w3-QTU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QZS-ln-kZO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EeF-IR-Elg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4qm-3q-eOM" kind="relationship" relationship="rootViewController" id="FtK-HL-Hja"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g74-28-bJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856" y="-387"/>
         </scene>
     </scenes>
 </document>

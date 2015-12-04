@@ -11,7 +11,7 @@ import Alamofire
 import MobileCoreServices
 import Player
 
-class LiftViewController:
+class VideoFormViewController:
     UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate
