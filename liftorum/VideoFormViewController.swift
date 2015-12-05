@@ -75,6 +75,7 @@ class VideoFormViewController:
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // The info dictionary contains multiple representations of the image, and this uses the original.
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
@@ -87,6 +88,16 @@ class VideoFormViewController:
             }
             let url = info[UIImagePickerControllerMediaURL] as! NSURL
             playerView.player.setUrl(url)
+            Alamofire.request(Router.CreateVideo(fileExtension: ".MOV"))
+                .responseObject { (response: Response<Video, NSError>) in
+                    switch response.result {
+                    case .Success:
+                        let video = response.result.value!
+                        print(video.fileExtension)
+                    case .Failure(let error):
+                        print(error)
+                    }
+            }
         }
 
     }

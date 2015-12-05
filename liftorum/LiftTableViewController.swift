@@ -17,11 +17,16 @@ class LiftTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request(.GET, "http://liftorum.com/api/lift")
+        Alamofire.request(Router.ReadLifts())
             .responseCollection { (response: Response<[Lift], NSError>) in
                 self.lifts = response.result.value!
                 self.tableView.reloadData()
-            }
+        }
+//        Alamofire.request(.GET, "http://liftorum.com/api/lift")
+//            .responseCollection { (response: Response<[Lift], NSError>) in
+//                self.lifts = response.result.value!
+//                self.tableView.reloadData()
+//            }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

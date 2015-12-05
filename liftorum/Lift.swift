@@ -22,7 +22,7 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let id: Int
     let user: User
     let comments: [Comment]
-    //let video: Video
+    let video: Video
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
         self.id = representation.valueForKeyPath("id") as! Int
@@ -36,10 +36,10 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
             response: response,
             representation: representation.valueForKeyPath("comments")!
         )
-//        self.video = Video(
-//            response:response,
-//            representation: representation.valueForKeyPath("video")!
-//        )!
+        self.video = Video(
+            response:response,
+            representation: representation.valueForKeyPath("video")!
+        )!
     }
     
     static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [Lift] {
@@ -59,6 +59,5 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     }
     
 }
-
 
 

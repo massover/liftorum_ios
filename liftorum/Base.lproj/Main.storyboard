@@ -54,7 +54,7 @@
                                                     <animations/>
                                                     <state key="normal" title="100 Comments"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-gW-fJB">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-gW-fJB">
                                                     <rect key="frame" x="384" y="0.0" width="200" height="30"/>
                                                     <animations/>
                                                     <constraints>
@@ -148,6 +148,10 @@
                                     <constraint firstAttribute="width" secondItem="njp-s4-C5h" secondAttribute="height" multiplier="4:3" id="6pl-eP-T92"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-sa-5HO">
+                                <rect key="frame" x="40" y="531" width="334" height="2"/>
+                                <animations/>
+                            </progressView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -155,11 +159,14 @@
                             <constraint firstAttribute="trailing" secondItem="njp-s4-C5h" secondAttribute="trailing" id="8EA-Fw-lNk"/>
                             <constraint firstItem="r32-pm-S4o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8FV-h1-ebv"/>
                             <constraint firstItem="njp-s4-C5h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FDL-fU-BEp"/>
+                            <constraint firstItem="oYY-sa-5HO" firstAttribute="top" secondItem="njp-s4-C5h" secondAttribute="bottom" constant="20" id="GaX-Qc-Jfh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r32-pm-S4o" secondAttribute="trailing" id="Krp-Jj-xrY"/>
                             <constraint firstItem="TTo-UU-0ov" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QlR-wU-HIP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TTo-UU-0ov" secondAttribute="trailing" id="RDQ-MR-wIZ"/>
                             <constraint firstItem="r32-pm-S4o" firstAttribute="top" secondItem="TTo-UU-0ov" secondAttribute="bottom" constant="20" id="ZZF-jL-O0R"/>
+                            <constraint firstItem="oYY-sa-5HO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="bE8-gQ-868"/>
                             <constraint firstItem="TTo-UU-0ov" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="qCz-nM-Nzx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oYY-sa-5HO" secondAttribute="trailing" constant="20" id="uuV-uF-7jf"/>
                             <constraint firstItem="njp-s4-C5h" firstAttribute="top" secondItem="r32-pm-S4o" secondAttribute="bottom" constant="36" id="yue-1q-Uqy"/>
                         </constraints>
                     </view>
