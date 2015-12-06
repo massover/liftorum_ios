@@ -11,6 +11,11 @@ import UIKit
 final class Video: ResponseObjectSerializable{
     let id: Int
     let fileExtension: String
+    var filename : String{
+        get{
+            return String(id) + "." + fileExtension
+        }
+    }
     
     required init?(response: NSHTTPURLResponse, representation: AnyObject) {
         // map the values to the instance

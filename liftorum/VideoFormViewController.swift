@@ -16,19 +16,14 @@ class VideoFormViewController:
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate
 {
-//    @IBOutlet weak var weightTextField: UITextField!
-//    @IBOutlet weak var repsTextField: UITextField!
-//    @IBOutlet weak var saveButton: UIBarButtonItem!
-//    @IBOutlet weak var cancelButton: UIBarButtonItem!
-//    @IBOutlet weak var liftPickerView: LiftPickerView!
-    
-
-    
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var takeVideoButton: UIButton!
     @IBOutlet weak var selectVideoButton: UIButton!
     @IBOutlet weak var playerView: PlayerView!
+    
+    var url: NSURL!
+    var video: Video!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,23 +72,21 @@ class VideoFormViewController:
     
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
         dismissViewControllerAnimated(true, completion: nil)
-        // Handle a movie capture
         if mediaType == kUTTypeMovie {
-            let path = (info[UIImagePickerControllerMediaURL] as! NSURL).path
-            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path!) {
-                //UISaveVideoAtPathToSavedPhotosAlbum(path!, self, nil, nil)
+            url = info[UIImagePickerControllerMediaURL] as! NSURL
+            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path!) {
+                //UISaveVideoAtPathToSavedPhotosAlbum(url.path!, self, nil, nil)
             }
-            let url = info[UIImagePickerControllerMediaURL] as! NSURL
             playerView.player.setUrl(url)
-            Alamofire.request(Router.CreateVideo(fileExtension: ".MOV"))
+            Alamofire.request(Router.CreateVideo(fileExtension: "MOV"))
                 .responseObject { (response: Response<Video, NSError>) in
                     switch response.result {
                     case .Success:
-                        let video = response.result.value!
-                        print(video.fileExtension)
+                        self.video = response.result.value!
+                        print(self.video.fileExtension)
+                        self.uploadVideoToS3()
                     case .Failure(let error):
                         print(error)
                     }
@@ -102,10 +95,27 @@ class VideoFormViewController:
 
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if nextButton === sender {
-            //print(liftPickerView.getSelectedLiftName())
-        }
+    func uploadVideoToS3(){
+        Alamofire.upload(
+            .POST,
+            "http://cd19dc2a.ngrok.io/upload-video-to-s3-2",
+            multipartFormData: { multipartFormData in
+                multipartFormData.appendBodyPart(fileURL: self.url, name: "file")
+                multipartFormData.appendBodyPart(data: self.video.filename.dataUsingEncoding(NSUTF8StringEncoding)!, name: "filename")
+            },
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .Success(let upload, _, _):
+                    upload.responseJSON { response in
+                        print("made it")
+                        print(response.result)
+                        debugPrint(response)
+                    }
+                case .Failure(let encodingError):
+                    print(encodingError)
+                }
+            }
+        )
         
     }
     
