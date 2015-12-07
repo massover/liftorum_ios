@@ -79,34 +79,33 @@ class VideoFormViewController:
                 //UISaveVideoAtPathToSavedPhotosAlbum(url.path!, self, nil, nil)
             }
             playerView.player.setUrl(url)
-            Video.create({result in
-                switch result{
-                    case .Success:
-                        let video = result.value!
-                        self.progressBar.hidden = false
-                        video.uploadToS3(url,
-                            completionHandler: {
-                                            encodingResult in
-                                            switch encodingResult {
-                                            case .Success(let upload, _, _):
-                                                upload.progress { bytesWritten, totalBytesWritten, totalBytesExpectedToBeWritten in
-                                                    dispatch_async(dispatch_get_main_queue()) {
-                                                        let progress = Float(totalBytesWritten/totalBytesExpectedToBeWritten)
-                                                        self.progressBar.setProgress(progress, animated: true)
-                                                    }
-                                                }
-                                                upload.responseJSON { response in
-                                                    self.nextButton.enabled = true
-                                                }
-                                            case .Failure(let encodingError):
-                                                print(encodingError)
-                                            }
-                            
-                        })
-                    case .Failure(let error):
-                        print(error)
+            let uploadToS3CompletionHandler = { (encodingResult: Manager.MultipartFormDataEncodingResult) in
+                switch encodingResult {
+                case .Success(let upload, _, _):
+                    upload.progress { bytesWritten, totalBytesWritten, totalBytesExpectedToBeWritten in
+                        dispatch_async(dispatch_get_main_queue()) {
+                            let progress = Float(totalBytesWritten/totalBytesExpectedToBeWritten)
+                            self.progressBar.setProgress(progress, animated: true)
+                        }
+                    }
+                    upload.responseJSON { response in
+                        self.nextButton.enabled = true
+                    }
+                case .Failure(let encodingError):
+                    print(encodingError)
                 }
-            })
+            }
+            let createVideoCompletionHandler = { (result:Result<Video, NSError>) in
+                switch result{
+                case .Success:
+                    let video = result.value!
+                    self.progressBar.hidden = false
+                    video.uploadToS3(url, completionHandler:uploadToS3CompletionHandler)
+                case .Failure(let error):
+                    print(error)
+                }
+            }
+            Video.create(createVideoCompletionHandler)
         }
 
     }
