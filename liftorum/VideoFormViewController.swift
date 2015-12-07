@@ -24,6 +24,8 @@ class VideoFormViewController:
     
     @IBOutlet var progressBar: UIProgressView!
     
+    var video: Video!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playerView.player.view.frame = playerView.bounds
@@ -84,9 +86,6 @@ class VideoFormViewController:
                 case .Success(let upload, _, _):
                     upload.progress { bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in
                         dispatch_async(dispatch_get_main_queue()) {
-                            print(totalBytesWritten)
-                            print("out of")
-                            print(totalBytesExpectedToWrite)
                             let progress = Float(totalBytesWritten/totalBytesExpectedToWrite) - 0.1
                             self.progressBar.setProgress(progress, animated: true)
                         }
@@ -102,9 +101,10 @@ class VideoFormViewController:
             let createVideoCompletionHandler = { (result:Result<Video, NSError>) in
                 switch result{
                 case .Success:
-                    let video = result.value!
+                    self.video = result.value!
+                    print(String(self.video.id))
                     self.progressBar.hidden = false
-                    video.uploadToS3(url, completionHandler:uploadToS3CompletionHandler)
+                    self.video.uploadToS3(url, completionHandler:uploadToS3CompletionHandler)
                 case .Failure(let error):
                     print(error)
                 }
@@ -112,6 +112,13 @@ class VideoFormViewController:
             Video.create(createVideoCompletionHandler)
         }
 
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("hello world!")
+        let navigationController = segue.destinationViewController as? UINavigationController
+        let liftFormViewController = navigationController?.topViewController as? LiftFormViewController
+        liftFormViewController!.video = self.video
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {

@@ -13,6 +13,13 @@ class LiftFormViewController: UIViewController {
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    var video: Video!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(video.id)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
             //print(liftPickerView.getSelectedLiftName())
