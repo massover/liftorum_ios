@@ -82,13 +82,17 @@ class VideoFormViewController:
             let uploadToS3CompletionHandler = { (encodingResult: Manager.MultipartFormDataEncodingResult) in
                 switch encodingResult {
                 case .Success(let upload, _, _):
-                    upload.progress { bytesWritten, totalBytesWritten, totalBytesExpectedToBeWritten in
+                    upload.progress { bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in
                         dispatch_async(dispatch_get_main_queue()) {
-                            let progress = Float(totalBytesWritten/totalBytesExpectedToBeWritten)
+                            print(totalBytesWritten)
+                            print("out of")
+                            print(totalBytesExpectedToWrite)
+                            let progress = Float(totalBytesWritten/totalBytesExpectedToWrite) - 0.1
                             self.progressBar.setProgress(progress, animated: true)
                         }
                     }
                     upload.responseJSON { response in
+                        self.progressBar.setProgress(1.0, animated: true)
                         self.nextButton.enabled = true
                     }
                 case .Failure(let encodingError):

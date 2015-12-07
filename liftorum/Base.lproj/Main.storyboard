@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="width" secondItem="njp-s4-C5h" secondAttribute="height" multiplier="4:3" id="6pl-eP-T92"/>
                                 </constraints>
                             </view>
-                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-sa-5HO">
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-sa-5HO">
                                 <rect key="frame" x="40" y="531" width="334" height="2"/>
                                 <animations/>
                             </progressView>
