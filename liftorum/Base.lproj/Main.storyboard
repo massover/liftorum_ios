@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="width" secondItem="njp-s4-C5h" secondAttribute="height" multiplier="4:3" id="6pl-eP-T92"/>
                                 </constraints>
                             </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-sa-5HO">
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-sa-5HO">
                                 <rect key="frame" x="40" y="531" width="334" height="2"/>
                                 <animations/>
                             </progressView>
@@ -176,7 +176,7 @@
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="Jd2-HY-r2G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="fS3-aP-m9I">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="fS3-aP-m9I">
                             <connections>
                                 <segue destination="QZS-ln-kZO" kind="show" id="pIB-OD-icE"/>
                             </connections>
@@ -187,6 +187,7 @@
                         <outlet property="cancelButton" destination="Osd-2R-bGu" id="kTc-kT-fVT"/>
                         <outlet property="nextButton" destination="fS3-aP-m9I" id="IXh-5p-8Y3"/>
                         <outlet property="playerView" destination="njp-s4-C5h" id="ITZ-VE-uKX"/>
+                        <outlet property="progressBar" destination="oYY-sa-5HO" id="aTQ-eX-63X"/>
                         <outlet property="selectVideoButton" destination="r32-pm-S4o" id="E34-hO-8I0"/>
                         <outlet property="takeVideoButton" destination="TTo-UU-0ov" id="tck-8Q-jkt"/>
                     </connections>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 final class Video: ResponseObjectSerializable{
     let id: Int
@@ -18,9 +19,35 @@ final class Video: ResponseObjectSerializable{
     }
     
     required init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        // map the values to the instance
         self.id = representation.valueForKeyPath("id") as! Int
         self.fileExtension = representation.valueForKeyPath("file_extension") as! String
     }
     
+    class func create(completionHandler: Result<Video, NSError> -> Void){
+        Alamofire.request(Router.CreateVideo()).responseObject{
+            (response: Response<Video, NSError>) in completionHandler(response.result)
+        }
+    }
+    
+    func uploadToS3(url: NSURL, completionHandler: Manager.MultipartFormDataEncodingResult -> Void) {
+        Alamofire.upload(
+            .POST,
+            "http://cd19dc2a.ngrok.io/upload-video-to-s3-2",
+            multipartFormData: { multipartFormData in
+                multipartFormData.appendBodyPart(fileURL: url, name: "file")
+                multipartFormData.appendBodyPart(
+                    data: self.filename.dataUsingEncoding(NSUTF8StringEncoding)!,
+                    name: "filename"
+                )
+            },
+            encodingCompletion: { encodingResult in completionHandler(encodingResult) }
+        )
+    }
+    
+
 }
+
+    
+
+
+

@@ -4,18 +4,15 @@ enum Router: URLRequestConvertible {
     static let baseURLString = "http://cd19dc2a.ngrok.io/api"
     
     case ReadLifts()
-    case CreateVideo(fileExtension: String)
+    case CreateVideo()
     
     var method: Alamofire.Method {
         switch self {
         case .ReadLifts:
             return .GET
-        case CreateVideo:
+        case .CreateVideo:
             return .POST
         }
-        
-        
-
     }
 
     var path: String {
@@ -34,10 +31,10 @@ enum Router: URLRequestConvertible {
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         switch self {
-        case .CreateVideo(let fileExtension):
+        case .CreateVideo():
             return Alamofire.ParameterEncoding.JSON.encode(
                 mutableURLRequest,
-                parameters: ["file_extension": fileExtension]
+                parameters: ["file_extension": "MOV"]
             ).0
         default:
             return mutableURLRequest
