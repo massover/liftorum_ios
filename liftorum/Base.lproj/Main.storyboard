@@ -209,8 +209,94 @@
                     <view key="view" contentMode="scaleToFill" id="2ZL-2C-vpS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgu-NW-iSo">
+                                <rect key="frame" x="20" y="204" width="374" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8za-gm-Ncu">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="iZn-YZ-eo1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KEa-Yq-kGm">
+                                        <rect key="frame" x="80" y="0.0" width="294" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="textFieldDidChange:" destination="4qm-3q-eOM" eventType="editingChanged" id="GP9-e6-W5W"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-wS-Iyq">
+                                <rect key="frame" x="20" y="254" width="374" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InP-0G-HAe">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="NKL-hQ-tVY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mUi-ek-j5Z">
+                                        <rect key="frame" x="80" y="0.0" width="294" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="textFieldDidChange:" destination="4qm-3q-eOM" eventType="editingChanged" id="u0h-rX-Gtk"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4M5-cU-Kps">
+                                <rect key="frame" x="20" y="104" width="374" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbY-AT-UCR">
+                                        <rect key="frame" x="0.0" y="30" width="80" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="hBX-An-vA6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhM-H0-KwQ" customClass="LiftPickerView" customModule="liftorum" customModuleProvider="target">
+                                        <rect key="frame" x="80" y="0.0" width="294" height="80"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="PXI-cd-6Sp"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tgu-NW-iSo" secondAttribute="trailing" id="1p6-US-cZZ"/>
+                            <constraint firstItem="tgu-NW-iSo" firstAttribute="leading" secondItem="2ZL-2C-vpS" secondAttribute="leadingMargin" id="HZz-a5-W2m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4M5-cU-Kps" secondAttribute="trailing" id="Ngz-r2-iNf"/>
+                            <constraint firstItem="tgu-NW-iSo" firstAttribute="top" secondItem="4M5-cU-Kps" secondAttribute="bottom" constant="20" id="Q2X-NT-xsp"/>
+                            <constraint firstItem="4HB-wS-Iyq" firstAttribute="leading" secondItem="2ZL-2C-vpS" secondAttribute="leadingMargin" id="SJk-58-alt"/>
+                            <constraint firstItem="4HB-wS-Iyq" firstAttribute="top" secondItem="tgu-NW-iSo" secondAttribute="bottom" constant="20" id="WCe-TT-kg5"/>
+                            <constraint firstItem="4M5-cU-Kps" firstAttribute="leading" secondItem="2ZL-2C-vpS" secondAttribute="leadingMargin" id="dhk-tK-Qg6"/>
+                            <constraint firstItem="4M5-cU-Kps" firstAttribute="top" secondItem="BTK-Ir-XUB" secondAttribute="bottom" constant="40" id="owJ-ed-9fj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4HB-wS-Iyq" secondAttribute="trailing" id="zq8-LA-r2E"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Save your lift" id="5IP-aW-CPw">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="voI-jE-vmY">
@@ -218,7 +304,7 @@
                                 <action selector="back:" destination="4qm-3q-eOM" id="mCT-Oj-EfX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ORP-oC-jJq">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="ORP-oC-jJq">
                             <connections>
                                 <segue destination="15H-fH-Vhg" kind="unwind" unwindAction="unwindToLiftList:" id="muW-CL-jUm"/>
                             </connections>
@@ -226,7 +312,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="voI-jE-vmY" id="Mh6-fm-B5u"/>
+                        <outlet property="repsTextField" destination="mUi-ek-j5Z" id="5UM-Ln-kGE"/>
                         <outlet property="saveButton" destination="ORP-oC-jJq" id="AIq-At-alj"/>
+                        <outlet property="weightTextField" destination="KEa-Yq-kGm" id="M6R-a5-wTI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2n-Ss-RyY" userLabel="First Responder" sceneMemberID="firstResponder"/>

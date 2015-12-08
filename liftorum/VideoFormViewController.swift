@@ -33,6 +33,7 @@ class VideoFormViewController:
         playerView.addSubview(playerView.player.view)
         playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
         playerView.player.didMoveToParentViewController(self)
+        nextButton.enabled = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,12 +46,12 @@ class VideoFormViewController:
             return
         }
         
-        let cameraController = UIImagePickerController()
-        cameraController.sourceType = .Camera
-        cameraController.mediaTypes = [kUTTypeMovie as String]
-        cameraController.allowsEditing = false
-        cameraController.delegate = self
-        presentViewController(cameraController, animated: true, completion: nil)
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .Camera
+        imagePickerController.mediaTypes = [kUTTypeMovie as String]
+        imagePickerController.allowsEditing = false
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
     }
 
     @IBAction func selectVideo(sender: UIButton) {
@@ -58,12 +59,12 @@ class VideoFormViewController:
             return
         }
         
-        let mediaUI = UIImagePickerController()
-        mediaUI.sourceType = .SavedPhotosAlbum
-        mediaUI.mediaTypes = [kUTTypeMovie as String]
-        mediaUI.allowsEditing = true
-        mediaUI.delegate = self
-        presentViewController(mediaUI, animated: true, completion: nil)
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .SavedPhotosAlbum
+        imagePickerController.mediaTypes = [kUTTypeMovie as String]
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
     
@@ -77,9 +78,6 @@ class VideoFormViewController:
         dismissViewControllerAnimated(true, completion: nil)
         if mediaType == kUTTypeMovie {
             let url = info[UIImagePickerControllerMediaURL] as! NSURL
-            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path!) {
-                //UISaveVideoAtPathToSavedPhotosAlbum(url.path!, self, nil, nil)
-            }
             playerView.player.setUrl(url)
             let uploadToS3CompletionHandler = { (encodingResult: Manager.MultipartFormDataEncodingResult) in
                 switch encodingResult {
@@ -110,15 +108,17 @@ class VideoFormViewController:
                 }
             }
             Video.create(createVideoCompletionHandler)
+//            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path!) {
+//                UISaveVideoAtPathToSavedPhotosAlbum(url.path!, self, nil, nil)
+//            }
         }
 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("hello world!")
         let navigationController = segue.destinationViewController as? UINavigationController
         let liftFormViewController = navigationController?.topViewController as? LiftFormViewController
-        liftFormViewController!.video = self.video
+        liftFormViewController!.video = video
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {

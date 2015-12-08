@@ -8,23 +8,38 @@
 
 import UIKit
 
-class LiftFormViewController: UIViewController {
+class LiftFormViewController: UIViewController{
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    @IBOutlet var weightTextField: UITextField!
+    @IBOutlet var repsTextField: UITextField!
     
     var video: Video!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(video.id)
+        print(video?.id)
+    }
+    
+    
+    @IBAction func textFieldDidChange(sender: AnyObject) {
+        print("hello world!")
+        if weightTextField.text != "" && repsTextField.text != ""{
+            saveButton.enabled = true
+        } else {
+            saveButton.enabled = false
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        weightTextField.resignFirstResponder()
+        repsTextField.resignFirstResponder()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if saveButton === sender {
-            //print(liftPickerView.getSelectedLiftName())
-        }
-        
+        //print(liftPickerView.getSelectedLiftName())
     }
     
     @IBAction func back(sender: UIBarButtonItem) {
