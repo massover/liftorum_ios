@@ -58,6 +58,8 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
         
     }
     
+    
+    
 }
 
 
