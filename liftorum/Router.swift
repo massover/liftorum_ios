@@ -5,7 +5,7 @@ enum Router: URLRequestConvertible {
     
     case ReadLifts()
     case CreateVideo()
-    case CreateLift()
+    case CreateLift([String: AnyObject])
     
     var method: Alamofire.Method {
         switch self {
@@ -41,11 +41,11 @@ enum Router: URLRequestConvertible {
                 mutableURLRequest,
                 parameters: ["file_extension": "MOV"]
             ).0
-        case .CreateLift():
+        case .CreateLift(let parameters):
             return Alamofire.ParameterEncoding.JSON.encode(
                 mutableURLRequest,
-                parameters: ["file_extension": "MOV"]
-                ).0
+                parameters: parameters
+            ).0
         default:
             return mutableURLRequest
         }

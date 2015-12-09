@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 class LiftFormViewController: UIViewController{
     
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     @IBOutlet var weightTextField: UITextField!
     @IBOutlet var repsTextField: UITextField!
-    
+    @IBOutlet var liftPickerView: LiftPickerView!
     @IBOutlet var commentTextView: UITextView!
+    
     var video: Video!
     
     override func viewDidLoad() {
@@ -37,7 +38,6 @@ class LiftFormViewController: UIViewController{
             name: UIKeyboardWillHideNotification,
             object: nil
         )
-        print(video?.id)
     }
     
     func keyboardWillShow(notification: NSNotification) {
@@ -57,8 +57,8 @@ class LiftFormViewController: UIViewController{
         }
     }
     
+
     @IBAction func textFieldDidChange(sender: AnyObject) {
-        print("hello world!")
         if weightTextField.text != "" && repsTextField.text != ""{
             saveButton.enabled = true
         } else {
@@ -73,8 +73,23 @@ class LiftFormViewController: UIViewController{
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //print(liftPickerView.getSelectedLiftName())
+    @IBAction func Save(sender: AnyObject) {
+        let completionHandler = { (result:Result<Lift, NSError>) in
+            switch result{
+            case .Success:
+                print("Success")
+                self.performSegueWithIdentifier("UnwindToLiftTable", sender: self)
+            case .Failure(let error):
+                print(error)
+            }
+        }
+        Lift.create(
+            liftPickerView.getSelectedLiftName(),
+            weight: Int(weightTextField.text!)!,
+            reps: Int(repsTextField.text!)!,
+            videoId: video.id,
+            completionHandler: completionHandler
+        )
     }
     
     @IBAction func back(sender: UIBarButtonItem) {

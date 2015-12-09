@@ -45,8 +45,12 @@ class LiftTableViewController: UITableViewController {
         return lifts.count
     }
     
-    @IBAction func unwindToLiftList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? LiftFormViewController {
+    @IBAction func unwindToLiftTable(sender: UIStoryboardSegue) {
+        print("Reloading Data")
+        Alamofire.request(Router.ReadLifts())
+            .responseCollection { (response: Response<[Lift], NSError>) in
+                self.lifts = response.result.value!
+                self.tableView.reloadData()
         }
     }
 

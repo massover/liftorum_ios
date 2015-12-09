@@ -54,7 +54,25 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
         }
         
         return lifts
-        
+    }
+    
+    class func create(
+        name: String,
+        weight: Int,
+        reps: Int,
+        videoId: Int,
+        completionHandler: Result<Lift, NSError> -> Void)
+    {
+        let parameters = [
+            "name": name,
+            "weight": weight,
+            "reps": reps,
+            "video_id": videoId,
+            "user_id": 1
+        ]
+        Alamofire.request(Router.CreateLift(parameters as! [String : AnyObject])).responseObject{
+            (response: Response<Lift, NSError>) in completionHandler(response.result)
+        }
         
     }
     

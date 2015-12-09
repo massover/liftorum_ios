@@ -219,7 +219,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="iZn-YZ-eo1"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -229,7 +229,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ate-gW-Nac"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="textFieldDidChange:" destination="4qm-3q-eOM" eventType="editingChanged" id="GP9-e6-W5W"/>
@@ -247,7 +247,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="NKL-hQ-tVY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -257,7 +257,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WGs-Oq-gUw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="textFieldDidChange:" destination="4qm-3q-eOM" eventType="editingChanged" id="u0h-rX-Gtk"/>
@@ -270,12 +270,12 @@
                                 <rect key="frame" x="20" y="84" width="374" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbY-AT-UCR">
-                                        <rect key="frame" x="0.0" y="28" width="80" height="24"/>
+                                        <rect key="frame" x="0.0" y="30" width="80" height="20"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="hBX-An-vA6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -296,12 +296,12 @@
                                 <rect key="frame" x="20" y="324" width="374" height="392"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bO-7q-FyE">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" id="T6H-kW-QOR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -311,12 +311,12 @@
                                         </variation>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xvu-tL-kqH">
-                                        <rect key="frame" x="0.0" y="29" width="374" height="363"/>
+                                        <rect key="frame" x="0.0" y="25" width="374" height="367"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="jTU-AF-HEp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -360,16 +360,18 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="ORP-oC-jJq">
                             <connections>
-                                <segue destination="15H-fH-Vhg" kind="unwind" unwindAction="unwindToLiftList:" id="muW-CL-jUm"/>
+                                <action selector="Save:" destination="4qm-3q-eOM" id="wf9-ww-CLs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="voI-jE-vmY" id="Mh6-fm-B5u"/>
                         <outlet property="commentTextView" destination="Xvu-tL-kqH" id="ehT-3t-P9M"/>
+                        <outlet property="liftPickerView" destination="RhM-H0-KwQ" id="KSS-xv-q5T"/>
                         <outlet property="repsTextField" destination="mUi-ek-j5Z" id="5UM-Ln-kGE"/>
                         <outlet property="saveButton" destination="ORP-oC-jJq" id="AIq-At-alj"/>
                         <outlet property="weightTextField" destination="KEa-Yq-kGm" id="M6R-a5-wTI"/>
+                        <segue destination="15H-fH-Vhg" kind="unwind" identifier="UnwindToLiftTable" unwindAction="unwindToLiftTable:" id="QNC-6F-ZXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2n-Ss-RyY" userLabel="First Responder" sceneMemberID="firstResponder"/>

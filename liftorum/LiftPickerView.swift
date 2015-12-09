@@ -35,7 +35,7 @@ class LiftPickerView:
     
     func getSelectedLiftName() -> String{
         let row = self.selectedRowInComponent(0)
-        return pickerDataSource[row]
+        return pickerDataSource[row].lowercaseString
     }
     
 }
