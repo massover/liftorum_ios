@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController {
 
@@ -24,5 +25,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
+        let completionHandler = {
+            (response: Response<AnyObject, NSError>) in
+            switch response.result {
+            case .Success:
+                print(response.result.value!)
+            case .Failure:
+                print("Error!")
+            }
+        }
+        User.login(
+            emailTextField.text!,
+            password: passwordTextField.text!,
+            completionHandler: completionHandler
+        )
     }
 }

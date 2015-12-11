@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 final class User: ResponseObjectSerializable{
     let username: String
@@ -16,6 +17,21 @@ final class User: ResponseObjectSerializable{
         // map the values to the instance
         self.id = representation.valueForKeyPath("id") as! Int
         self.username = representation.valueForKeyPath("username") as! String
+    }
+    
+    class func login(
+        email:String,
+        password: String,
+        completionHandler: Response<AnyObject, NSError> -> Void
+    ) {
+        let parameters = [
+            "email": email,
+            "password": password
+        ]
+        Alamofire.request(Router.Login(parameters)).responseJSON{
+            (response: Response) in completionHandler(response)
+        }
+        
     }
     
 }
