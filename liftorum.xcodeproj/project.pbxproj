@@ -18,6 +18,7 @@
 		843040F31BF963EB0066C48D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F21BF963EB0066C48D /* Video.swift */; };
 		843040F71BFEC0FF0066C48D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F61BFEC0FF0066C48D /* PlayerView.swift */; };
 		843040F91C0269750066C48D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F81C0269750066C48D /* Comment.swift */; };
+		846997901C1A5A0D00F46145 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469978F1C1A5A0D00F46145 /* LoginViewController.swift */; };
 		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
 		849A8DE31BE6A39D00F40D1C /* VideoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */; };
@@ -60,6 +61,7 @@
 		843040F21BF963EB0066C48D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		843040F61BFEC0FF0066C48D /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		843040F81C0269750066C48D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		8469978F1C1A5A0D00F46145 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,26 +142,27 @@
 		849A8DDF1BE6A39D00F40D1C /* liftorum */ = {
 			isa = PBXGroup;
 			children = (
-				843040EF1BF925890066C48D /* liftorum-Bridging-Header.h */,
-				849A8DEC1BE6A39D00F40D1C /* Info.plist */,
 				849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */,
-				843040E71BF7B3030066C48D /* Lift.swift */,
-				84A7376E1C191A8C002F29AC /* Utilities.swift */,
-				84BA8DB51C1350E70052AFEB /* Router.swift */,
 				843040F81C0269750066C48D /* Comment.swift */,
+				843040E71BF7B3030066C48D /* Lift.swift */,
+				841608101C113B0D006331D0 /* LiftFormViewController.swift */,
 				843040E91BF7D2DD0066C48D /* LiftPickerView.swift */,
 				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
 				8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */,
-				841608101C113B0D006331D0 /* LiftFormViewController.swift */,
-				849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */,
+				8469978F1C1A5A0D00F46145 /* LoginViewController.swift */,
 				843040F61BFEC0FF0066C48D /* PlayerView.swift */,
 				843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */,
 				843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */,
+				84BA8DB51C1350E70052AFEB /* Router.swift */,
 				843040F01BF929510066C48D /* User.swift */,
+				84A7376E1C191A8C002F29AC /* Utilities.swift */,
 				843040F21BF963EB0066C48D /* Video.swift */,
-				849A8DE71BE6A39D00F40D1C /* Assets.xcassets */,
+				849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */,
+				843040EF1BF925890066C48D /* liftorum-Bridging-Header.h */,
 				849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */,
 				849A8DE41BE6A39D00F40D1C /* Main.storyboard */,
+				849A8DE71BE6A39D00F40D1C /* Assets.xcassets */,
+				849A8DEC1BE6A39D00F40D1C /* Info.plist */,
 			);
 			path = liftorum;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				841608111C113B0D006331D0 /* LiftFormViewController.swift in Sources */,
 				8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */,
 				84BA8DB61C1350E70052AFEB /* Router.swift in Sources */,
+				846997901C1A5A0D00F46145 /* LoginViewController.swift in Sources */,
 				843040E81BF7B3030066C48D /* Lift.swift in Sources */,
 				843040EC1BF901F00066C48D /* ResponseObjectSerializable.swift in Sources */,
 				843040F31BF963EB0066C48D /* Video.swift in Sources */,
