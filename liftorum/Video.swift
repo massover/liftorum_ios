@@ -23,16 +23,16 @@ final class Video: ResponseObjectSerializable{
         self.fileExtension = representation.valueForKeyPath("file_extension") as! String
     }
     
-    class func create(completionHandler: Result<Video, NSError> -> Void){
+    class func create(completionHandler: Response<Video, NSError> -> Void){
         Alamofire.request(Router.CreateVideo()).responseObject{
-            (response: Response<Video, NSError>) in completionHandler(response.result)
+            (response: Response<Video, NSError>) in completionHandler(response)
         }
     }
     
     func uploadToS3(url: NSURL, completionHandler: Manager.MultipartFormDataEncodingResult -> Void) {
         Alamofire.upload(
             .POST,
-            "http://cd19dc2a.ngrok.io/upload-video-to-s3-2",
+            "http://f7fe8526.ngrok.io/upload-video-to-s3-2",
             multipartFormData: { multipartFormData in
                 multipartFormData.appendBodyPart(fileURL: url, name: "file")
                 multipartFormData.appendBodyPart(

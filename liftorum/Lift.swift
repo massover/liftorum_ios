@@ -10,13 +10,6 @@ import UIKit
 import Alamofire
 import DateTools
 
-func convertISOStringToNSDate(ISOString: String) -> NSDate{
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
-    return dateFormatter.dateFromString(ISOString)!
-}
-
 final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let createdAt: NSDate
     let id: Int
@@ -61,8 +54,8 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
         weight: Int,
         reps: Int,
         videoId: Int,
-        completionHandler: Result<Lift, NSError> -> Void)
-    {
+        completionHandler: Response<Lift, NSError> -> Void
+    ){
         let parameters = [
             "name": name,
             "weight": weight,
@@ -71,9 +64,15 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
             "user_id": 1
         ]
         Alamofire.request(Router.CreateLift(parameters as! [String : AnyObject])).responseObject{
-            (response: Response<Lift, NSError>) in completionHandler(response.result)
+            (response: Response<Lift, NSError>) in completionHandler(response)
         }
         
+    }
+    
+    class func getLifts(completionHandler: Response<[Lift], NSError> -> Void){
+        Alamofire.request(Router.GetLifts(page: 1)).responseCollection(){
+            (response: Response<[Lift], NSError>) in completionHandler(response)
+        }
     }
     
     

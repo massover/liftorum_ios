@@ -17,11 +17,22 @@ class LiftTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request(Router.ReadLifts())
-            .responseCollection { (response: Response<[Lift], NSError>) in
+        Lift.getLifts({(response:Response<[Lift], NSError>) in
+            switch response.result{
+            case .Success:
                 self.lifts = response.result.value!
                 self.tableView.reloadData()
-        }
+            case .Failure(let error):
+                let alert = UIAlertController(
+                    title: "Error",
+                    message: "Cannot connect to the server.",
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+        })
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,12 +57,10 @@ class LiftTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToLiftTable(sender: UIStoryboardSegue) {
-        print("Reloading Data")
-        Alamofire.request(Router.ReadLifts())
-            .responseCollection { (response: Response<[Lift], NSError>) in
-                self.lifts = response.result.value!
-                self.tableView.reloadData()
-        }
+        Lift.getLifts({(response:Response<[Lift], NSError>) in
+            self.lifts = response.result.value!
+            self.tableView.reloadData()
+        })
     }
 
     

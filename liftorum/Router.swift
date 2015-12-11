@@ -1,15 +1,15 @@
 import Alamofire
 
 enum Router: URLRequestConvertible {
-    static let baseURLString = "http://cd19dc2a.ngrok.io/api"
+    static let baseURLString = "http://f7fe8526.ngrok.io/api"
     
-    case ReadLifts()
+    case GetLifts(page: Int)
     case CreateVideo()
     case CreateLift([String: AnyObject])
     
     var method: Alamofire.Method {
         switch self {
-        case .ReadLifts:
+        case .GetLifts:
             return .GET
         case .CreateVideo:
             return .POST
@@ -20,7 +20,7 @@ enum Router: URLRequestConvertible {
 
     var path: String {
         switch self {
-        case .ReadLifts:
+        case .GetLifts:
             return "/lift"
         case .CreateVideo:
             return "/video"
@@ -46,8 +46,13 @@ enum Router: URLRequestConvertible {
                 mutableURLRequest,
                 parameters: parameters
             ).0
-        default:
-            return mutableURLRequest
+        case .GetLifts(let page):
+            return Alamofire.ParameterEncoding.URL.encode(
+                mutableURLRequest,
+                parameters: ["page": page]
+            ).0
         }
     }
+
 }
+

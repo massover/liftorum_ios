@@ -74,8 +74,8 @@ class LiftFormViewController: UIViewController{
     }
     
     @IBAction func Save(sender: AnyObject) {
-        let completionHandler = { (result:Result<Lift, NSError>) in
-            switch result{
+        let completionHandler = { (response:Response<Lift, NSError>) in
+            switch response.result{
             case .Success:
                 print("Success")
                 self.performSegueWithIdentifier("UnwindToLiftTable", sender: self)
