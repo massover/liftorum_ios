@@ -33,7 +33,6 @@ class VideoFormViewController:
         playerView.addSubview(playerView.player.view)
         playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
         playerView.player.didMoveToParentViewController(self)
-        nextButton.enabled = true
     }
     
     override func didReceiveMemoryWarning() {

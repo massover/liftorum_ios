@@ -49,10 +49,8 @@ class LiftTableViewController: UITableViewController {
 
     @IBAction func logout(sender: AnyObject) {
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(
-            nil,
-            forKey: "accessToken"
-        )
+        defaults.setObject(nil, forKey: "accessToken")
+        defaults.setObject(nil, forKey: "userId")
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
         let initialViewController = storyBoard.instantiateInitialViewController()
         self.presentViewController(initialViewController!, animated: true, completion: nil)

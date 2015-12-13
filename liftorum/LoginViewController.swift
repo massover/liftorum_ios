@@ -35,6 +35,10 @@ class LoginViewController: UIViewController {
                     response.result.value!["access_token"],
                     forKey: "accessToken"
                 )
+                defaults.setObject(
+                    response.result.value!["user_id"],
+                    forKey: "userId"
+                )
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let initialViewController = storyBoard.instantiateInitialViewController()
                 self.presentViewController(initialViewController!, animated: true, completion: nil)

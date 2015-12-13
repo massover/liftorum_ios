@@ -83,11 +83,13 @@ class LiftFormViewController: UIViewController{
                 print(error)
             }
         }
+        let defaults = NSUserDefaults.standardUserDefaults()
         Lift.create(
             liftPickerView.getSelectedLiftName(),
             weight: Int(weightTextField.text!)!,
             reps: Int(repsTextField.text!)!,
             videoId: video.id,
+            userId: Int(defaults.stringForKey("userId")!)!,
             completionHandler: completionHandler
         )
     }
