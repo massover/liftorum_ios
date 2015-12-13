@@ -1,7 +1,8 @@
 import Alamofire
 
 enum Router: URLRequestConvertible {
-    static let baseURLString = "http://f7fe8526.ngrok.io"
+    //static let baseURLString = "http://f7fe8526.ngrok.io"
+    static let baseURLString = "http://www.liftorum.com"
     
     case Login([String: AnyObject])
     case GetLifts(page: Int)

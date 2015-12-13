@@ -99,7 +99,6 @@ class VideoFormViewController:
                 switch response.result{
                 case .Success:
                     self.video = response.result.value!
-                    print(String(self.video.id))
                     self.progressBar.hidden = false
                     self.video.uploadToS3(url, completionHandler:uploadToS3CompletionHandler)
                 case .Failure(let error):

@@ -32,7 +32,7 @@ final class Video: ResponseObjectSerializable{
     func uploadToS3(url: NSURL, completionHandler: Manager.MultipartFormDataEncodingResult -> Void) {
         Alamofire.upload(
             .POST,
-            "http://f7fe8526.ngrok.io/upload-video-to-s3-2",
+            "http://liftorum.com/upload-video-to-s3-2",
             multipartFormData: { multipartFormData in
                 multipartFormData.appendBodyPart(fileURL: url, name: "file")
                 multipartFormData.appendBodyPart(

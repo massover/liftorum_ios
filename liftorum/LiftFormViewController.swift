@@ -77,7 +77,6 @@ class LiftFormViewController: UIViewController{
         let completionHandler = { (response:Response<Lift, NSError>) in
             switch response.result{
             case .Success:
-                print("Success")
                 self.performSegueWithIdentifier("UnwindToLiftTable", sender: self)
             case .Failure(let error):
                 print(error)
