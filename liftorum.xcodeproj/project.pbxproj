@@ -19,6 +19,7 @@
 		843040F71BFEC0FF0066C48D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F61BFEC0FF0066C48D /* PlayerView.swift */; };
 		843040F91C0269750066C48D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F81C0269750066C48D /* Comment.swift */; };
 		846997901C1A5A0D00F46145 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469978F1C1A5A0D00F46145 /* LoginViewController.swift */; };
+		846997961C1DE89300F46145 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846997951C1DE89300F46145 /* Login.storyboard */; };
 		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
 		849A8DE31BE6A39D00F40D1C /* VideoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */; };
@@ -62,6 +63,7 @@
 		843040F61BFEC0FF0066C48D /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		843040F81C0269750066C48D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		8469978F1C1A5A0D00F46145 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		846997951C1DE89300F46145 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				843040EF1BF925890066C48D /* liftorum-Bridging-Header.h */,
 				849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */,
 				849A8DE41BE6A39D00F40D1C /* Main.storyboard */,
+				846997951C1DE89300F46145 /* Login.storyboard */,
 				849A8DE71BE6A39D00F40D1C /* Assets.xcassets */,
 				849A8DEC1BE6A39D00F40D1C /* Info.plist */,
 			);
@@ -300,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846997961C1DE89300F46145 /* Login.storyboard in Resources */,
 				849A8DEB1BE6A39D00F40D1C /* LaunchScreen.storyboard in Resources */,
 				849A8DE81BE6A39D00F40D1C /* Assets.xcassets in Resources */,
 				849A8DE61BE6A39D00F40D1C /* Main.storyboard in Resources */,

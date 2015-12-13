@@ -13,6 +13,7 @@ import Player
 
 class LiftTableViewController: UITableViewController {
     
+    @IBOutlet var logoutButton: UIBarButtonItem!
     var lifts = [Lift]()
 
     override func viewDidLoad() {
@@ -46,6 +47,16 @@ class LiftTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func logout(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(
+            nil,
+            forKey: "accessToken"
+        )
+        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+        let initialViewController = storyBoard.instantiateInitialViewController()
+        self.presentViewController(initialViewController!, animated: true, completion: nil)
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

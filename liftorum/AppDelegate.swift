@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let accessToken = defaults.stringForKey("accessToken") {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            self.window?.rootViewController = storyBoard.instantiateInitialViewController()
+        
+        } else {
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            self.window?.rootViewController = storyBoard.instantiateInitialViewController()
+        }
         // Override point for customization after application launch.
         return true
     }

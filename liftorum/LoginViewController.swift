@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     
+    @IBOutlet var errorTextField: UILabel!
     @IBOutlet var loginButton: UIButton!
     
     @IBAction func textFieldDidChange(sender: AnyObject) {
@@ -29,10 +30,29 @@ class LoginViewController: UIViewController {
             (response: Response<AnyObject, NSError>) in
             switch response.result {
             case .Success:
-                print(response.result.value!)
+                if response.response?.statusCode == 200 {
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setObject(
+                        response.result.value!["access_token"],
+                        forKey: "accessToken"
+                    )
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let initialViewController = storyBoard.instantiateInitialViewController()
+                    self.presentViewController(initialViewController!, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(
+                        title: "Invalid email or password",
+                        message: "The username and password combination doesn't appear to belong to an account. Please try again.",
+                        preferredStyle: UIAlertControllerStyle.Alert
+                    )
+                    let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    alert.addAction(action)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
             case .Failure:
                 print("Error!")
             }
+            
         }
         User.login(
             emailTextField.text!,
