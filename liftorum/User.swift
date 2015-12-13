@@ -28,7 +28,7 @@ final class User: ResponseObjectSerializable{
             "email": email,
             "password": password
         ]
-        Alamofire.request(Router.Login(parameters)).responseJSON{
+        Alamofire.request(Router.Login(parameters)).validate().responseJSON{
             (response: Response) in completionHandler(response)
         }
         

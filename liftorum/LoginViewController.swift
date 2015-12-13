@@ -30,16 +30,16 @@ class LoginViewController: UIViewController {
             (response: Response<AnyObject, NSError>) in
             switch response.result {
             case .Success:
-                if response.response?.statusCode == 200 {
-                    let defaults = NSUserDefaults.standardUserDefaults()
-                    defaults.setObject(
-                        response.result.value!["access_token"],
-                        forKey: "accessToken"
-                    )
-                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                    let initialViewController = storyBoard.instantiateInitialViewController()
-                    self.presentViewController(initialViewController!, animated: true, completion: nil)
-                } else {
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject(
+                    response.result.value!["access_token"],
+                    forKey: "accessToken"
+                )
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let initialViewController = storyBoard.instantiateInitialViewController()
+                self.presentViewController(initialViewController!, animated: true, completion: nil)
+            case .Failure:
+                if response.response?.statusCode == 401 {
                     let alert = UIAlertController(
                         title: "Invalid email or password",
                         message: "The username and password combination doesn't appear to belong to an account. Please try again.",
@@ -48,9 +48,9 @@ class LoginViewController: UIViewController {
                     let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
                     alert.addAction(action)
                     self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    print("Error!")
                 }
-            case .Failure:
-                print("Error!")
             }
             
         }
