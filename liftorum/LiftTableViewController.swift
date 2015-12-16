@@ -86,10 +86,9 @@ class LiftTableViewController: UITableViewController {
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
         if lift.comments.count == 0{
-            cell.commentsButton.hidden = true
-        } else {
-            cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
+            cell.commentsButton.enabled = false
         }
+        cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
         cell.playerView.player.setUrl(NSURL(string:lift.video.url)!)
         self.addChildViewController(cell.playerView.player)
         cell.playerView.player.didMoveToParentViewController(self)

@@ -8,7 +8,6 @@
         <!--Login View Controller-->
         <scene sceneID="WqD-mI-IQg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-TG-o9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="UOf-hD-bkF" customClass="LoginViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fMs-8e-Nsr"/>
@@ -122,6 +121,7 @@
                         <outlet property="passwordTextField" destination="0Vb-OH-cVW" id="EQN-61-95x"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-TG-o9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-635" y="583"/>
         </scene>

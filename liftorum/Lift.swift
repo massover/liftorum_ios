@@ -19,7 +19,9 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     
     var commentsButtonTitle : String{
         get{
-            if comments.count == 1{
+            if comments.count == 0 {
+                return ""
+            } else if comments.count == 1{
                 return String(comments.count) + " Comment"
             } else {
                 return String(comments.count) + " Comments"
