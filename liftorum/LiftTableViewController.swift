@@ -87,19 +87,11 @@ class LiftTableViewController: UITableViewController {
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
         if lift.comments.count == 0{
             cell.commentsButton.hidden = true
-        } else if lift.comments.count == 1{
-            let title = String(lift.comments.count) + " Comment"
-            cell.commentsButton.setTitle(title, forState: .Normal)
         } else {
-            let title = String(lift.comments.count) + " Comments"
-            cell.commentsButton.setTitle(title, forState: .Normal)
+            cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
         }
-
         cell.playerView.player.setUrl(NSURL(string:lift.video.url)!)
-        cell.playerView.player.view.frame = cell.playerView.bounds
         self.addChildViewController(cell.playerView.player)
-        cell.playerView.addSubview(cell.playerView.player.view)
-        cell.playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
         cell.playerView.player.didMoveToParentViewController(self)
         return cell
     }

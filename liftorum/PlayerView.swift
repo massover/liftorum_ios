@@ -25,6 +25,10 @@ class PlayerView: UIView, PlayerDelegate {
         let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTapGestureRecognizer:")
         tapGestureRecognizer.numberOfTapsRequired = 1
         self.player.view.addGestureRecognizer(tapGestureRecognizer)
+        
+        self.player.view.frame = self.bounds
+        self.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
+        self.addSubview(self.player.view)
     }
     
     func handleTapGestureRecognizer(gestureRecognizer: UITapGestureRecognizer) {

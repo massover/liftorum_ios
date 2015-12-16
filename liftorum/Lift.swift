@@ -17,6 +17,16 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let comments: [Comment]
     let video: Video
     
+    var commentsButtonTitle : String{
+        get{
+            if comments.count == 1{
+                return String(comments.count) + " Comment"
+            } else {
+                return String(comments.count) + " Comments"
+            }
+        }
+    }
+    
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
         self.id = representation.valueForKeyPath("id") as! Int
         let createdAt = representation.valueForKeyPath("created_at") as! String
