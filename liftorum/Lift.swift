@@ -37,7 +37,6 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     
     static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [Lift] {
         var lifts: [Lift] = []
-        
         if let representation = representation as? [[String: AnyObject]] {
             for liftRepresentation in representation {
                 if let lift = Lift(response: response, representation: liftRepresentation) {

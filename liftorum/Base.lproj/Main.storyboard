@@ -407,7 +407,6 @@
         <!--Login View Controller-->
         <scene sceneID="Z0c-RD-bLQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hOY-mY-ec3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="U5d-It-4M2" customClass="LoginViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3O2-oC-Dag"/>
@@ -516,6 +515,7 @@
                         <outlet property="passwordTextField" destination="2u5-0Z-rte" id="D6w-6t-BMA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOY-mY-ec3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-635" y="583"/>
         </scene>

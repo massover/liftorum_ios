@@ -24,6 +24,7 @@ class LiftTableViewController: UITableViewController {
                 self.lifts = response.result.value!
                 self.tableView.reloadData()
             case .Failure(let error):
+                print(error)
                 let alert = UIAlertController(
                     title: "Error",
                     message: "Cannot connect to the server.",

@@ -1,8 +1,9 @@
 import Alamofire
+import SwiftyJSON
 
 enum Router: URLRequestConvertible {
-    //static let baseURLString = "http://f7fe8526.ngrok.io"
-    static let baseURLString = "http://www.liftorum.com"
+    static let baseURLString = "http://f7fe8526.ngrok.io"
+    //static let baseURLString = "http://www.liftorum.com"
     
     case Login([String: AnyObject])
     case GetLifts(page: Int)
@@ -48,10 +49,20 @@ enum Router: URLRequestConvertible {
                 parameters: parameters
                 ).0
         case .GetLifts(let page):
+            let orderBy = [
+                "order_by": [[
+                    "field": "created_at",
+                    "direction": "desc"
+                ]],
+                "page": page
+            ]
             return Alamofire.ParameterEncoding.URL.encode(
                 mutableURLRequest,
-                parameters: ["page": page]
-                ).0
+                parameters: [
+                    "q": JSON(orderBy).rawString(NSUTF8StringEncoding)!,
+                    "page": page
+                ]
+            ).0
         case .CreateVideo():
             return Alamofire.ParameterEncoding.JSON.encode(
                 mutableURLRequest,
