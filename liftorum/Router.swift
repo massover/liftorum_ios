@@ -42,6 +42,12 @@ enum Router: URLRequestConvertible {
         let URL = NSURL(string: Router.baseURLString)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let accessToken = defaults.stringForKey("accessToken") {
+            mutableURLRequest.setValue("JWT \(accessToken)", forHTTPHeaderField: "Authorization")
+        }
+        
         switch self {
         case .Login(let parameters):
             return Alamofire.ParameterEncoding.JSON.encode(
