@@ -56,6 +56,7 @@ class LiftTableViewController: UITableViewController {
         let initialViewController = storyBoard.instantiateInitialViewController()
         self.presentViewController(initialViewController!, animated: true, completion: nil)
     }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -94,15 +95,12 @@ class LiftTableViewController: UITableViewController {
             cell.commentsButton.setTitle(title, forState: .Normal)
         }
 
-        let videoUrl = NSURL(string: "https://s3-us-west-2.amazonaws.com/lift-videos-bucket-production/60.MOV")!
-        cell.playerView.player.setUrl(videoUrl)
+        cell.playerView.player.setUrl(NSURL(string:lift.video.url)!)
         cell.playerView.player.view.frame = cell.playerView.bounds
         self.addChildViewController(cell.playerView.player)
         cell.playerView.addSubview(cell.playerView.player.view)
         cell.playerView.player.view.autoresizingMask = ([UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight])
         cell.playerView.player.didMoveToParentViewController(self)
-        
-        
         return cell
     }
     

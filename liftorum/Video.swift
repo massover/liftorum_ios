@@ -12,6 +12,8 @@ import Alamofire
 final class Video: ResponseObjectSerializable{
     let id: Int
     let fileExtension: String
+    let url: String
+    
     var filename : String{
         get{
             return String(id) + "." + fileExtension
@@ -21,6 +23,7 @@ final class Video: ResponseObjectSerializable{
     required init?(response: NSHTTPURLResponse, representation: AnyObject) {
         self.id = representation.valueForKeyPath("id") as! Int
         self.fileExtension = representation.valueForKeyPath("file_extension") as! String
+        self.url = representation.valueForKeyPath("url") as! String
     }
     
     class func create(completionHandler: Response<Video, NSError> -> Void){
