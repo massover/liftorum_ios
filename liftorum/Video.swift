@@ -27,7 +27,7 @@ final class Video: ResponseObjectSerializable{
     }
     
     class func create(completionHandler: Response<Video, NSError> -> Void){
-        Alamofire.request(Router.CreateVideo()).responseObject{
+        Alamofire.request(Router.CreateVideo()).validate().responseObject{
             (response: Response<Video, NSError>) in completionHandler(response)
         }
     }

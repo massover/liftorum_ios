@@ -75,14 +75,15 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
             "video_id": videoId,
             "user_id": userId,
         ]
-        Alamofire.request(Router.CreateLift(parameters as! [String : AnyObject])).responseObject{
+        let request = Alamofire.request(Router.CreateLift(parameters as! [String : AnyObject]))
+        request.validate().responseObject{
             (response: Response<Lift, NSError>) in completionHandler(response)
         }
         
     }
     
     class func getLifts(completionHandler: Response<[Lift], NSError> -> Void){
-        Alamofire.request(Router.GetLifts(page: 1)).responseCollection(){
+        Alamofire.request(Router.GetLifts(page: 1)).validate().responseCollection(){
             (response: Response<[Lift], NSError>) in completionHandler(response)
         }
     }
