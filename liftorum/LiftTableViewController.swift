@@ -73,6 +73,28 @@ class LiftTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
+    
+    @IBAction func refresh(sender: AnyObject) {
+        Lift.getLifts({(response:Response<[Lift], NSError>) in
+            switch response.result{
+            case .Success:
+                self.lifts = response.result.value!
+                self.tableView.reloadData()
+            case .Failure(let error):
+                print(error)
+                let alert = UIAlertController(
+                    title: "Error",
+                    message: "Cannot connect to the server.",
+                    preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            
+        })
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
