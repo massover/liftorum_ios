@@ -48,14 +48,7 @@ class LiftTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func logout(sender: AnyObject) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(nil, forKey: "accessToken")
-        defaults.setObject(nil, forKey: "userId")
-        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-        let initialViewController = storyBoard.instantiateInitialViewController()
-        self.presentViewController(initialViewController!, animated: true, completion: nil)
-    }
+
     
     // MARK: - Table view data source
 
@@ -65,6 +58,15 @@ class LiftTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lifts.count
+    }
+    
+    @IBAction func logout(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(nil, forKey: "accessToken")
+        defaults.setObject(nil, forKey: "userId")
+        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+        let initialViewController = storyBoard.instantiateInitialViewController()
+        self.presentViewController(initialViewController!, animated: true, completion: nil)
     }
     
     @IBAction func unwindToLiftTable(sender: UIStoryboardSegue) {
