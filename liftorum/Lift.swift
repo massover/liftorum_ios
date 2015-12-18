@@ -13,6 +13,9 @@ import DateTools
 final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let createdAt: NSDate
     let id: Int
+    let name: String
+    let weight: Int
+    let reps: Int
     let user: User
     let comments: [Comment]
     let video: Video
@@ -31,7 +34,12 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
         self.id = representation.valueForKeyPath("id") as! Int
+        self.name = representation.valueForKeyPath("name") as! String
+        self.weight = representation.valueForKeyPath("weight") as! Int
+        self.reps = representation.valueForKeyPath("reps") as! Int
+        
         let createdAt = representation.valueForKeyPath("created_at") as! String
+        
         self.createdAt = convertISOStringToNSDate(createdAt)
         self.user = User(
             response:response,

@@ -14,7 +14,8 @@ class LiftTableViewCell: UITableViewCell{
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var playerView: PlayerView!
-    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet weak var commentsButton: UIButton!
     
     override func awakeFromNib() {

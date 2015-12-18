@@ -24,13 +24,8 @@ class LiftTableViewController: UITableViewController {
 
         tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
             let tableView = scrollView as! UITableView
-            
             self.loadLifts()
-            
-            // make sure you reload tableView before calling -finishInfiniteScroll
             tableView.reloadData()
-            
-            // finish infinite scroll animation
             tableView.finishInfiniteScroll()
         }
         
@@ -60,8 +55,13 @@ class LiftTableViewController: UITableViewController {
         let lift = lifts[indexPath.row]
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
+        cell.nameLabel.text = lift.name
+        cell.descriptionLabel.text = String(lift.weight) + "lbs for " + String(lift.reps) + " reps"
+        
         if lift.comments.count == 0{
             cell.commentsButton.enabled = false
+        } else {
+            cell.commentsButton.enabled = true
         }
         cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
         cell.playerView.player.setUrl(NSURL(string:lift.video.url)!)
