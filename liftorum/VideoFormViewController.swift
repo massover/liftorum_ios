@@ -38,6 +38,12 @@ class VideoFormViewController:
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let navigationController = segue.destinationViewController as? UINavigationController
+        let liftFormViewController = navigationController?.topViewController as? LiftFormViewController
+        liftFormViewController!.video = video
+    }
 
     
     @IBAction func takeVideo(sender: UIButton) {
@@ -66,11 +72,14 @@ class VideoFormViewController:
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
@@ -111,16 +120,6 @@ class VideoFormViewController:
 //            }
         }
 
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let navigationController = segue.destinationViewController as? UINavigationController
-        let liftFormViewController = navigationController?.topViewController as? LiftFormViewController
-        liftFormViewController!.video = video
-    }
-    
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

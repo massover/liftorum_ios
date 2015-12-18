@@ -14,7 +14,6 @@ final class User: ResponseObjectSerializable{
     let id: Int
     
     required init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        // map the values to the instance
         self.id = representation.valueForKeyPath("id") as! Int
         self.username = representation.valueForKeyPath("username") as! String
     }
