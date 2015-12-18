@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3ADF90DFCAB69091CA9B855B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B6FF67BC55F26532FE4B64 /* Pods.framework */; };
+		84026DAD1C2266C8006083CC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84026DAC1C2266C8006083CC /* Config.swift */; };
 		841608111C113B0D006331D0 /* LiftFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841608101C113B0D006331D0 /* LiftFormViewController.swift */; };
 		843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E51BF7A9200066C48D /* LiftTableViewCell.swift */; };
 		843040E81BF7B3030066C48D /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E71BF7B3030066C48D /* Lift.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		66B6FF67BC55F26532FE4B64 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84026DAC1C2266C8006083CC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		841608101C113B0D006331D0 /* LiftFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftFormViewController.swift; sourceTree = "<group>"; };
 		843040E51BF7A9200066C48D /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewCell.swift; sourceTree = "<group>"; };
 		843040E71BF7B3030066C48D /* Lift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */,
 				843040F81C0269750066C48D /* Comment.swift */,
 				843040E71BF7B3030066C48D /* Lift.swift */,
+				84026DAC1C2266C8006083CC /* Config.swift */,
 				841608101C113B0D006331D0 /* LiftFormViewController.swift */,
 				843040E91BF7D2DD0066C48D /* LiftPickerView.swift */,
 				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
@@ -383,6 +386,7 @@
 				843040EE1BF902BE0066C48D /* ResponseCollectionSerializable.swift in Sources */,
 				849A8DE31BE6A39D00F40D1C /* VideoFormViewController.swift in Sources */,
 				84A7376F1C191A8C002F29AC /* Utilities.swift in Sources */,
+				84026DAD1C2266C8006083CC /* Config.swift in Sources */,
 				843040F71BFEC0FF0066C48D /* PlayerView.swift in Sources */,
 				849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */,
 				843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */,
@@ -541,6 +545,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = liftorum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liftorum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -557,6 +562,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = liftorum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liftorum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

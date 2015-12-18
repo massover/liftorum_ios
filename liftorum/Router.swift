@@ -1,9 +1,8 @@
 import Alamofire
 import SwiftyJSON
 
+
 enum Router: URLRequestConvertible {
-    static let baseURLString = "http://f7fe8526.ngrok.io"
-    //static let baseURLString = "http://www.liftorum.com"
     
     case Login([String: AnyObject])
     case GetLifts(page: Int)
@@ -39,7 +38,7 @@ enum Router: URLRequestConvertible {
     // MARK: URLRequestConvertible
     
     var URLRequest: NSMutableURLRequest {
-        let URL = NSURL(string: Router.baseURLString)!
+        let URL = NSURL(string: SERVER_URL)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
