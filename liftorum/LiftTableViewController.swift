@@ -15,13 +15,14 @@ class LiftTableViewController: UITableViewController {
     
     @IBOutlet var logoutButton: UIBarButtonItem!
     var lifts = [Lift]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        Lift.getLifts({(response:Response<[Lift], NSError>) in
+    var currentPage = 1
+    
+    private func getLifts() {
+        Lift.getLifts(self.currentPage, completionHandler: {(response:Response<[Lift], NSError>) in
             switch response.result{
             case .Success:
-                self.lifts = response.result.value!
+                self.lifts += response.result.value!
+                self.currentPage += 1
                 self.tableView.reloadData()
             case .Failure(let error):
                 print(error)
@@ -35,7 +36,31 @@ class LiftTableViewController: UITableViewController {
             }
             
         })
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // change indicator view style to white
+        tableView.infiniteScrollIndicatorStyle = .White
         
+        // Add infinite scroll handler
+        tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
+            let tableView = scrollView as! UITableView
+            
+            //
+            // fetch your data here, can be async operation,
+            // just make sure to call finishInfiniteScroll in the end
+            //
+            self.getLifts()
+            
+            // make sure you reload tableView before calling -finishInfiniteScroll
+            tableView.reloadData()
+            
+            // finish infinite scroll animation
+            tableView.finishInfiniteScroll()
+        }
+        
+        self.getLifts()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -70,30 +95,15 @@ class LiftTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToLiftTable(sender: UIStoryboardSegue) {
-        Lift.getLifts({(response:Response<[Lift], NSError>) in
-            self.lifts = response.result.value!
-            self.tableView.reloadData()
-        })
+        self.lifts = []
+        self.currentPage = 1
+        self.getLifts()
     }
     
     @IBAction func refresh(sender: AnyObject) {
-        Lift.getLifts({(response:Response<[Lift], NSError>) in
-            switch response.result{
-            case .Success:
-                self.lifts = response.result.value!
-                self.tableView.reloadData()
-            case .Failure(let error):
-                print(error)
-                let alert = UIAlertController(
-                    title: "Error",
-                    message: "Cannot connect to the server.",
-                    preferredStyle: UIAlertControllerStyle.Alert)
-                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-                alert.addAction(action)
-                self.presentViewController(alert, animated: true, completion: nil)
-            }
-            
-        })
+        self.lifts = []
+        self.currentPage = 1
+        self.getLifts()
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }

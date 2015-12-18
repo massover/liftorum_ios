@@ -82,8 +82,8 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
         
     }
     
-    class func getLifts(completionHandler: Response<[Lift], NSError> -> Void){
-        Alamofire.request(Router.GetLifts(page: 1)).validate().responseCollection(){
+    class func getLifts(page: Int, completionHandler: Response<[Lift], NSError> -> Void){
+        Alamofire.request(Router.GetLifts(page: page)).validate().responseCollection(){
             (response: Response<[Lift], NSError>) in completionHandler(response)
         }
     }
