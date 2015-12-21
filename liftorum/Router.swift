@@ -5,6 +5,7 @@ import SwiftyJSON
 enum Router: URLRequestConvertible {
     
     case Login([String: AnyObject])
+    case GetLift(id: Int)
     case GetLifts(page: Int)
     case CreateVideo()
     case CreateLift([String: AnyObject])
@@ -13,6 +14,8 @@ enum Router: URLRequestConvertible {
         switch self {
         case .Login:
             return .POST
+        case .GetLift:
+            return .GET
         case .GetLifts:
             return .GET
         case .CreateVideo:
@@ -26,6 +29,8 @@ enum Router: URLRequestConvertible {
         switch self {
         case .Login:
             return "/auth"
+        case .GetLift(let id):
+            return "/api/lift/\(id)"
         case .GetLifts:
             return "/api/lift"
         case .CreateVideo:
@@ -53,6 +58,8 @@ enum Router: URLRequestConvertible {
                 mutableURLRequest,
                 parameters: parameters
                 ).0
+        case .GetLift:
+            return mutableURLRequest
         case .GetLifts(let page):
             let orderBy = [
                 "order_by": [[

@@ -96,7 +96,11 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
         }
     }
     
-    
+    class func getLift(id: Int, completionHandler: Response<Lift, NSError> -> Void){
+        Alamofire.request(Router.GetLift(id:id)).validate().responseObject(){
+             (response: Response<Lift, NSError>) in completionHandler(response)
+        }
+    }
     
 }
 

@@ -22,6 +22,8 @@
 		846997901C1A5A0D00F46145 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469978F1C1A5A0D00F46145 /* LoginViewController.swift */; };
 		846997961C1DE89300F46145 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846997951C1DE89300F46145 /* Login.storyboard */; };
 		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
+		847A91811C2738B7000553F5 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A91801C2738B7000553F5 /* CommentTableViewController.swift */; };
+		847A91831C27397E000553F5 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A91821C27397E000553F5 /* CommentTableViewCell.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
 		849A8DE31BE6A39D00F40D1C /* VideoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */; };
 		849A8DE61BE6A39D00F40D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE41BE6A39D00F40D1C /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		8469978F1C1A5A0D00F46145 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		846997951C1DE89300F46145 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
+		847A91801C2738B7000553F5 /* CommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
+		847A91821C27397E000553F5 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFormViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				843040F81C0269750066C48D /* Comment.swift */,
 				843040E71BF7B3030066C48D /* Lift.swift */,
 				84026DAC1C2266C8006083CC /* Config.swift */,
+				847A91801C2738B7000553F5 /* CommentTableViewController.swift */,
+				847A91821C27397E000553F5 /* CommentTableViewCell.swift */,
 				841608101C113B0D006331D0 /* LiftFormViewController.swift */,
 				843040E91BF7D2DD0066C48D /* LiftPickerView.swift */,
 				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
@@ -385,6 +391,7 @@
 				843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */,
 				843040EE1BF902BE0066C48D /* ResponseCollectionSerializable.swift in Sources */,
 				849A8DE31BE6A39D00F40D1C /* VideoFormViewController.swift in Sources */,
+				847A91811C2738B7000553F5 /* CommentTableViewController.swift in Sources */,
 				84A7376F1C191A8C002F29AC /* Utilities.swift in Sources */,
 				84026DAD1C2266C8006083CC /* Config.swift in Sources */,
 				843040F71BFEC0FF0066C48D /* PlayerView.swift in Sources */,
@@ -397,6 +404,7 @@
 				84BA8DB61C1350E70052AFEB /* Router.swift in Sources */,
 				846997901C1A5A0D00F46145 /* LoginViewController.swift in Sources */,
 				843040E81BF7B3030066C48D /* Lift.swift in Sources */,
+				847A91831C27397E000553F5 /* CommentTableViewCell.swift in Sources */,
 				843040EC1BF901F00066C48D /* ResponseObjectSerializable.swift in Sources */,
 				843040F31BF963EB0066C48D /* Video.swift in Sources */,
 			);

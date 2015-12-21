@@ -46,7 +46,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-qt-lGP">
                                             <rect key="frame" x="8" y="36" width="398" height="20"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeD-5V-KAW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="lift.name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeD-5V-KAW">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="d1k-NK-8Wy"/>
@@ -74,19 +74,22 @@
                                                 <constraint firstAttribute="height" constant="20" id="jPU-8d-Wqf"/>
                                             </constraints>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-ss-vke">
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-ss-vke">
                                             <rect key="frame" x="8" y="371" width="398" height="27"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-f4-0lQ">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYN-f4-0lQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="198" height="27"/>
                                                     <state key="normal" title="100 Comments"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-gW-fJB">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obf-gW-fJB">
                                                     <rect key="frame" x="198" y="0.0" width="200" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="9YY-rZ-jx6"/>
                                                     </constraints>
                                                     <state key="normal" title="Add a comment"/>
+                                                    <connections>
+                                                        <segue destination="VfU-pt-7BI" kind="showDetail" identifier="segueToCommentTableViewController" id="FE3-nJ-fKe"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -130,6 +133,7 @@
                                     <outlet property="createdAtLabel" destination="cip-x2-8wW" id="dY2-wp-8Q6"/>
                                     <outlet property="descriptionLabel" destination="zbm-au-d6e" id="Qyb-5y-Ygi"/>
                                     <outlet property="nameLabel" destination="QeD-5V-KAW" id="BJF-1o-b0G"/>
+                                    <outlet property="newCommentButton" destination="Obf-gW-fJB" id="TR4-0H-ovk"/>
                                     <outlet property="playerView" destination="ihx-fd-FAI" id="KUM-Ez-8dy"/>
                                     <outlet property="usernameLabel" destination="mIC-64-iIa" id="PdT-Ya-gef"/>
                                 </connections>
@@ -566,6 +570,82 @@
             </objects>
             <point key="canvasLocation" x="1187" y="583"/>
         </scene>
+        <!--Comments-->
+        <scene sceneID="ClE-Hs-Kl9">
+            <objects>
+                <tableViewController id="q59-rE-yar" customClass="CommentTableViewController" customModule="liftorum" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="kOy-PD-FZK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentTableViewCell" id="ss5-pu-7hx" customClass="CommentTableViewCell" customModule="liftorum" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="414" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ss5-pu-7hx" id="uTo-sV-TFO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnU-6v-H1k">
+                                            <rect key="frame" x="8" y="16" width="398" height="24"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="comment.username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TP-1Q-tM4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="comment.createdAt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGO-7p-Clf">
+                                                    <rect key="frame" x="246" y="0.0" width="152" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="comment.text" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObM-IU-L7h">
+                                            <rect key="frame" x="8" y="47" width="398" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GnU-6v-H1k" secondAttribute="trailing" id="7gq-7d-8p7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ObM-IU-L7h" secondAttribute="bottom" constant="8" id="8eV-Z8-3LZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ObM-IU-L7h" secondAttribute="trailing" id="Baa-mp-iaY"/>
+                                        <constraint firstItem="ObM-IU-L7h" firstAttribute="leading" secondItem="uTo-sV-TFO" secondAttribute="leadingMargin" id="LBI-VE-ZAM"/>
+                                        <constraint firstItem="ObM-IU-L7h" firstAttribute="top" secondItem="GnU-6v-H1k" secondAttribute="bottom" constant="8" id="Oks-9p-55q"/>
+                                        <constraint firstItem="GnU-6v-H1k" firstAttribute="top" secondItem="uTo-sV-TFO" secondAttribute="topMargin" constant="8" id="iTY-Rl-Gly"/>
+                                        <constraint firstItem="GnU-6v-H1k" firstAttribute="leading" secondItem="uTo-sV-TFO" secondAttribute="leadingMargin" id="mDc-BK-wmn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentTextLabel" destination="ObM-IU-L7h" id="nr0-72-dnh"/>
+                                    <outlet property="createdAtLabel" destination="MGO-7p-Clf" id="igO-ZD-sds"/>
+                                    <outlet property="usernameLabel" destination="7TP-1Q-tM4" id="232-Nv-kEv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="q59-rE-yar" id="H2e-78-xhZ"/>
+                            <outlet property="delegate" destination="q59-rE-yar" id="hhT-oR-jQU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Comments" id="3vb-yO-bN7">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="jh9-Hz-OoT">
+                            <connections>
+                                <segue destination="caQ-R8-c59" kind="unwind" unwindAction="unwindToLiftTable:" id="K5x-Ml-ole"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9x-T5-A6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="caQ-R8-c59" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="1489"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="E7b-w3-QTU">
             <objects>
@@ -584,6 +664,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g74-28-bJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2282" y="583"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Je-Jh-cjq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VfU-pt-7BI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UgX-yt-BMV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q59-rE-yar" kind="relationship" relationship="rootViewController" id="TzU-6f-gL6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ftg-DN-veY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="1489"/>
         </scene>
     </scenes>
 </document>

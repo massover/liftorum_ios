@@ -17,6 +17,8 @@ class LiftTableViewCell: UITableViewCell{
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet weak var commentsButton: UIButton!
+    @IBOutlet var newCommentButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

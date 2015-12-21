@@ -57,17 +57,25 @@ class LiftTableViewController: UITableViewController {
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
         cell.nameLabel.text = lift.name
         cell.descriptionLabel.text = String(lift.weight) + "lbs for " + String(lift.reps) + " reps"
-        
         if lift.comments.count == 0{
             cell.commentsButton.enabled = false
         } else {
             cell.commentsButton.enabled = true
         }
         cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
+        cell.newCommentButton.tag = indexPath.row
         cell.playerView.player.setUrl(NSURL(string:lift.video.url)!)
         self.addChildViewController(cell.playerView.player)
         cell.playerView.player.didMoveToParentViewController(self)
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueToCommentTableViewController" {
+            let navigationController = segue.destinationViewController as? UINavigationController
+            let commentTableViewController = navigationController?.topViewController as? CommentTableViewController
+            commentTableViewController!.lift = lifts[sender!.tag]
+        }
     }
     
     @IBAction func logout(sender: AnyObject) {
