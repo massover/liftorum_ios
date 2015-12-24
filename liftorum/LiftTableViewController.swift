@@ -55,8 +55,7 @@ class LiftTableViewController: UITableViewController {
         let lift = lifts[indexPath.row]
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
-        cell.nameLabel.text = lift.name
-        cell.descriptionLabel.text = String(lift.weight) + "lbs for " + String(lift.reps) + " reps"
+        cell.descriptionLabel.text = lift.description
         if lift.comments.count == 0{
             cell.commentsButton.enabled = false
         } else {

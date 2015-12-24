@@ -20,7 +20,7 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let comments: [Comment]
     let video: Video
     
-    var commentsButtonTitle : String{
+    var commentsButtonTitle: String{
         get{
             if comments.count == 0 {
                 return ""
@@ -29,6 +29,12 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
             } else {
                 return String(comments.count) + " Comments"
             }
+        }
+    }
+    
+    var description: String{
+        get{
+            return name + ": " + String(weight) + "lbs for " + String(reps) + " reps"
         }
     }
     

@@ -16,7 +16,9 @@ class CommentTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // http://stackoverflow.com/questions/32558084/multiline-uilabel-within-a-static-uitableviewcell-on-ios-9/32816593#32816593
+        tableView.estimatedRowHeight = 200.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         self.loadLift()
         
     }
@@ -40,11 +42,8 @@ class CommentTableViewController: UITableViewController {
             forIndexPath: indexPath
             ) as! CommentTableViewCell
         let comment = lift.comments[indexPath.row]
-        cell.commentTextLabel.numberOfLines = 0
-        cell.commentTextLabel.lineBreakMode = .ByWordWrapping
-        cell.commentTextLabel.text = "this is a lot of text. I want to see how it renders. This is a lot more text. What happens now??"
-        cell.commentTextLabel.sizeToFit()
-        cell.usernameLabel.text = "Username"
+        cell.commentTextLabel.text = comment.text
+        cell.usernameLabel.text = comment.user.username
         cell.createdAtLabel.text = comment.createdAt.timeAgoSinceNow()
         return cell
     }

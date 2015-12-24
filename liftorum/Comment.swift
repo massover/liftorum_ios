@@ -11,7 +11,7 @@ final class Comment : ResponseObjectSerializable, ResponseCollectionSerializable
     let createdAt: NSDate
     let text: String
     let lift_id: Int
-    let user_id: Int
+    let user: User
 
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
@@ -20,7 +20,10 @@ final class Comment : ResponseObjectSerializable, ResponseCollectionSerializable
         self.createdAt = convertISOStringToNSDate(createdAt)
         self.text = representation.valueForKeyPath("text") as! String
         self.lift_id = representation.valueForKeyPath("lift_id") as! Int
-        self.user_id = representation.valueForKeyPath("user_id") as! Int
+        self.user = User(
+            response:response,
+            representation: representation.valueForKeyPath("user")!
+        )!
     }
     
     static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [Comment] {
