@@ -39,7 +39,6 @@ class LiftFormViewController: UIViewController{
         weightTextField.resignFirstResponder()
         repsTextField.resignFirstResponder()
         commentTextView.resignFirstResponder()
-        
     }
     
     @IBAction func Save(sender: AnyObject) {

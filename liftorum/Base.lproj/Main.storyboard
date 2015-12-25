@@ -76,7 +76,7 @@
                                                 <constraint firstAttribute="width" secondItem="ihx-fd-FAI" secondAttribute="height" multiplier="4:3" id="PFg-ez-Ywp"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lift.text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeD-2F-28f">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lift.text" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeD-2F-28f">
                                             <rect key="frame" x="8" y="65" width="398" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -574,6 +574,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="eHJ-4P-PCc">
+                            <rect key="frame" x="0.0" y="177" width="414" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPf-UM-e7v">
+                                    <rect key="frame" x="10" y="8" width="394" height="32"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KzK-w7-Kej">
+                                            <rect key="frame" x="0.0" y="0.0" width="324" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMO-ow-ZFS">
+                                            <rect key="frame" x="324" y="0.0" width="70" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="gKU-0u-CrK"/>
+                                            </constraints>
+                                            <state key="normal" title="Submit"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="aPf-UM-e7v" firstAttribute="top" secondItem="eHJ-4P-PCc" secondAttribute="top" constant="8" id="1u3-lm-Zpu"/>
+                                <constraint firstItem="aPf-UM-e7v" firstAttribute="leading" secondItem="eHJ-4P-PCc" secondAttribute="leading" constant="10" id="EYn-gu-zGY"/>
+                                <constraint firstItem="aPf-UM-e7v" firstAttribute="top" secondItem="eHJ-4P-PCc" secondAttribute="top" constant="20" id="U5K-WH-NW1"/>
+                                <constraint firstItem="aPf-UM-e7v" firstAttribute="leading" secondItem="eHJ-4P-PCc" secondAttribute="leading" id="co2-fC-Shp"/>
+                                <constraint firstAttribute="trailing" secondItem="aPf-UM-e7v" secondAttribute="trailing" constant="10" id="fxA-Wp-rsN"/>
+                                <constraint firstAttribute="trailing" secondItem="aPf-UM-e7v" secondAttribute="trailing" id="qC8-3b-IRq"/>
+                                <constraint firstAttribute="bottom" secondItem="aPf-UM-e7v" secondAttribute="bottom" constant="20" id="toR-my-y2I"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="U5K-WH-NW1"/>
+                                    <exclude reference="co2-fC-Shp"/>
+                                    <exclude reference="qC8-3b-IRq"/>
+                                </mask>
+                            </variation>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentTableViewCell" id="ss5-pu-7hx" customClass="CommentTableViewCell" customModule="liftorum" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="414" height="85"/>
@@ -654,6 +694,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="newCommentTextField" destination="KzK-w7-Kej" id="8Q2-vk-7ym"/>
+                        <outlet property="submitButton" destination="NMO-ow-ZFS" id="ci8-qk-o7l"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9x-T5-A6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="caQ-R8-c59" userLabel="Exit" sceneMemberID="exit"/>

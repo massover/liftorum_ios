@@ -9,9 +9,12 @@
 import UIKit
 import Alamofire
 
-class CommentTableViewController: UITableViewController {
+class CommentTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var logoutButton: UIBarButtonItem!
+    @IBOutlet var newCommentTextField: UITextField!
+    @IBOutlet var submitButton: UIButton!
+    
     var lift: Lift!
     
     override func viewDidLoad() {
@@ -19,6 +22,7 @@ class CommentTableViewController: UITableViewController {
         // http://stackoverflow.com/questions/32558084/multiline-uilabel-within-a-static-uitableviewcell-on-ios-9/32816593#32816593
         tableView.estimatedRowHeight = 200.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        self.newCommentTextField.delegate = self
         self.loadLift()
         
     }
@@ -33,6 +37,11 @@ class CommentTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lift.comments.count
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

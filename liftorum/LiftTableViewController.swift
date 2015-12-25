@@ -29,6 +29,10 @@ class LiftTableViewController: UITableViewController {
             tableView.finishInfiniteScroll()
         }
         
+        // http://stackoverflow.com/questions/32558084/multiline-uilabel-within-a-static-uitableviewcell-on-ios-9/32816593#32816593
+        tableView.estimatedRowHeight = 200.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         self.loadLifts()
         
     }
