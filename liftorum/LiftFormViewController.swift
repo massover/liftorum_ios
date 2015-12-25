@@ -25,44 +25,13 @@ class LiftFormViewController: UIViewController{
         commentTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         commentTextView.layer.borderWidth = 1.0
         commentTextView.layer.cornerRadius = 5.0
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: Selector("keyboardWillShow:"),
-            name: UIKeyboardWillShowNotification,
-            object: nil
-        )
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: Selector("keyboardWillHide:"),
-            name: UIKeyboardWillHideNotification,
-            object: nil
-        )
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        if commentTextView.isFirstResponder() {
-            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-        
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        if commentTextView.isFirstResponder() {
-            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
-    
-
     @IBAction func textFieldDidChange(sender: AnyObject) {
-        if weightTextField.text != "" && repsTextField.text != ""{
-            saveButton.enabled = true
-        } else {
+        if weightTextField.text!.isEmpty && repsTextField.text!.isEmpty {
             saveButton.enabled = false
+        } else {
+            saveButton.enabled = true
         }
     }
     
@@ -83,14 +52,27 @@ class LiftFormViewController: UIViewController{
             }
         }
         let defaults = NSUserDefaults.standardUserDefaults()
-        Lift.create(
-            liftPickerView.getSelectedLiftName(),
-            weight: Int(weightTextField.text!)!,
-            reps: Int(repsTextField.text!)!,
-            videoId: video.id,
-            userId: Int(defaults.stringForKey("userId")!)!,
-            completionHandler: completionHandler
-        )
+        if commentTextView.text.isEmpty {
+            Lift.create(
+                liftPickerView.getSelectedLiftName(),
+                weight: Int(weightTextField.text!)!,
+                reps: Int(repsTextField.text!)!,
+                videoId: video.id,
+                userId: Int(defaults.stringForKey("userId")!)!,
+                completionHandler: completionHandler
+            )
+            
+        } else {
+            Lift.create(
+                liftPickerView.getSelectedLiftName(),
+                weight: Int(weightTextField.text!)!,
+                reps: Int(repsTextField.text!)!,
+                videoId: video.id,
+                userId: Int(defaults.stringForKey("userId")!)!,
+                text: commentTextView.text,
+                completionHandler: completionHandler
+            )
+        }
     }
     
     @IBAction func back(sender: UIBarButtonItem) {

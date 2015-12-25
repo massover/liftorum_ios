@@ -50,18 +50,24 @@ class LiftTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(
             cellIdentifier,
             forIndexPath: indexPath
-            ) as! LiftTableViewCell
+        ) as! LiftTableViewCell
         
         let lift = lifts[indexPath.row]
         cell.usernameLabel.text = lift.user.username
         cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
+        cell.textLabel_.text = lift.text
         cell.descriptionLabel.text = lift.description
+        cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
         if lift.comments.count == 0{
             cell.commentsButton.enabled = false
         } else {
             cell.commentsButton.enabled = true
         }
-        cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
+        if let text = lift.text {
+            cell.textLabel_.text = text
+        } else {
+            cell.textLabel_.hidden = true
+        }
         cell.newCommentButton.tag = indexPath.row
         cell.playerView.player.setUrl(NSURL(string:lift.video.url)!)
         self.addChildViewController(cell.playerView.player)

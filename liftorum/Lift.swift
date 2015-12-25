@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import DateTools
+import Foundation
 
 final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let createdAt: NSDate
@@ -16,6 +17,7 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
     let name: String
     let weight: Int
     let reps: Int
+    let text: String?
     let user: User
     let comments: [Comment]
     let video: Video
@@ -43,7 +45,11 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
         self.name = representation.valueForKeyPath("name") as! String
         self.weight = representation.valueForKeyPath("weight") as! Int
         self.reps = representation.valueForKeyPath("reps") as! Int
-        
+        if representation.valueForKeyPath("text") is NSNull {
+            self.text = nil
+        } else {
+            self.text = representation.valueForKeyPath("text") as? String
+        }
         let createdAt = representation.valueForKeyPath("created_at") as! String
         
         self.createdAt = convertISOStringToNSDate(createdAt)
@@ -80,16 +86,21 @@ final class Lift : ResponseObjectSerializable, ResponseCollectionSerializable{
         reps: Int,
         videoId: Int,
         userId: Int,
+        text: String?=nil,
         completionHandler: Response<Lift, NSError> -> Void
     ){
-        let parameters = [
+        var parameters: [String: AnyObject] = [
             "name": name,
             "weight": weight,
             "reps": reps,
             "video_id": videoId,
             "user_id": userId,
         ]
-        let request = Alamofire.request(Router.CreateLift(parameters as! [String : AnyObject]))
+        if let text = text {
+            parameters["text"] = text
+        }
+        
+        let request = Alamofire.request(Router.CreateLift(parameters))
         request.validate().responseObject{
             (response: Response<Lift, NSError>) in completionHandler(response)
         }
