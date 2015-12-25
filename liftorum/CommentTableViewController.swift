@@ -64,6 +64,26 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate {
         self.refreshControl?.endRefreshing()
     }
     
+    @IBAction func submit(sender: AnyObject) {
+        let completionHandler = { (response:Response<Comment, NSError>) in
+            switch response.result{
+            case .Success:
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+                self.loadLift()
+            case .Failure(let error):
+                print(error)
+            }
+        }
+        let defaults = NSUserDefaults.standardUserDefaults()
+        Comment.create(
+            self.newCommentTextField.text!,
+            liftId: lift.id,
+            userId: Int(defaults.stringForKey("userId")!)!,
+            completionHandler: completionHandler
+        )
+    }
+    
     private func loadLift() {
         Lift.getLift(self.lift.id, completionHandler: {(response:Response<Lift, NSError>) in
             switch response.result{

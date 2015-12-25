@@ -6,6 +6,8 @@
 //  Copyright © 2015 liftorum. All rights reserved.
 //
 
+import Alamofire
+
 final class Comment : ResponseObjectSerializable, ResponseCollectionSerializable{
     let id: Int
     let createdAt: NSDate
@@ -37,6 +39,25 @@ final class Comment : ResponseObjectSerializable, ResponseCollectionSerializable
             }
         }
         return comments
+    }
+    
+    class func create(
+        text: String,
+        liftId: Int,
+        userId: Int,
+        completionHandler: Response<Comment, NSError> -> Void
+    ){
+        let parameters: [String: AnyObject] = [
+            "text": text,
+            "lift_id": liftId,
+            "user_id": userId,
+        ]
+        
+        let request = Alamofire.request(Router.CreateComment(parameters))
+        request.validate().responseObject{
+            (response: Response<Comment, NSError>) in completionHandler(response)
+        }
+        
     }
     
 }
