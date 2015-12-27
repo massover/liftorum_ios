@@ -5,7 +5,7 @@
 //  Created by Voxy on 12/9/15.
 //  Copyright © 2015 liftorum. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
 func convertISOStringToNSDate(ISOString: String) -> NSDate{

@@ -10,6 +10,7 @@ enum Router: URLRequestConvertible {
     case CreateVideo()
     case CreateLift([String: AnyObject])
     case CreateComment([String: AnyObject])
+    case CreateUser([String: AnyObject])
     
     var method: Alamofire.Method {
         switch self {
@@ -24,6 +25,8 @@ enum Router: URLRequestConvertible {
         case .CreateLift:
             return .POST
         case .CreateComment:
+            return .POST
+        case .CreateUser:
             return .POST
         }
     }
@@ -42,6 +45,8 @@ enum Router: URLRequestConvertible {
             return "/api/lift"
         case .CreateComment:
             return "/api/comment"
+        case .CreateUser:
+            return "/api/user"
         }
     }
     
@@ -95,7 +100,11 @@ enum Router: URLRequestConvertible {
                 mutableURLRequest,
                 parameters: parameters
             ).0
-
+        case .CreateUser(let parameters):
+            return Alamofire.ParameterEncoding.JSON.encode(
+                mutableURLRequest,
+                parameters: parameters
+            ).0
         }
     }
 

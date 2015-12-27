@@ -5,7 +5,6 @@
 //  Created by Voxy on 11/1/15.
 //  Copyright © 2015 liftorum. All rights reserved.
 //
-
 import XCTest
 @testable import liftorum
 
@@ -21,16 +20,18 @@ class liftorumTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testConvertISOStringToNSDate() {
+        let date = convertISOStringToNSDate("2015-12-25T05:00:00.000000")
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        components.day = 25
+        components.month = 12
+        components.year = 2015
+        XCTAssertEqual(date, calendar.dateFromComponents(components))
+        
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }
