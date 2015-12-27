@@ -8,6 +8,10 @@
 
 #if DEBUG
     
+let SERVER_URL = "http://localhost:5000"
+    
+#elseif NRGOK
+    
 let SERVER_URL = "http://f7fe8526.ngrok.io"
     
 #else
