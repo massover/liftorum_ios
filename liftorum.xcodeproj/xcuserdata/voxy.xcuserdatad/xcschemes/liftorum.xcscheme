@@ -23,7 +23,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Testing"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -32,7 +32,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cd ~/Web/liftorum&#10;source venv/bin/activate&#10;honcho start -f Procfile -e ~/Web/liftorum/.env.testing &amp;&#10;&#10;&#10;&#10;&#10;">
+               scriptText = "cd ~/Web/liftorum&#10;source venv/bin/activate&#10;honcho start -f Procfile.testing -e ~/Web/liftorum/envs/.env.testing &amp;&#10;&#10;&#10;&#10;&#10;">
             </ActionContent>
          </ExecutionAction>
       </PreActions>
@@ -80,7 +80,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Testing"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -126,7 +126,7 @@
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Testing">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"

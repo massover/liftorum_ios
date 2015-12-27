@@ -555,7 +555,7 @@
 			};
 			name = ngrok;
 		};
-		849A8E031BE6A39D00F40D1C /* Debug */ = {
+		84634F0F1C30A7CA008CCD68 /* Local */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -598,7 +598,134 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Local;
+		};
+		84634F101C30A7CA008CCD68 /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A6E1F83E16A6694351E868 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = liftorum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DLOCAL";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftorum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "liftorum/liftorum-Bridging-Header.h";
+			};
+			name = Local;
+		};
+		84634F111C30A7CA008CCD68 /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = liftorumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftorumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liftorum.app/liftorum";
+			};
+			name = Local;
+		};
+		84634F121C30A7CA008CCD68 /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = liftorumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftorumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = liftorum;
+				USES_XCTRUNNER = YES;
+			};
+			name = Local;
+		};
+		84634F131C30A7D2008CCD68 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Testing;
+		};
+		84634F141C30A7D2008CCD68 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A6E1F83E16A6694351E868 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = liftorum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DTESTING";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftorum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "liftorum/liftorum-Bridging-Header.h";
+			};
+			name = Testing;
+		};
+		84634F151C30A7D2008CCD68 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = liftorumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftorumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liftorum.app/liftorum";
+			};
+			name = Testing;
+		};
+		84634F161C30A7D2008CCD68 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = liftorumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liftorumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = liftorum;
+				USES_XCTRUNNER = YES;
+			};
+			name = Testing;
 		};
 		849A8E041BE6A39D00F40D1C /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -638,23 +765,6 @@
 			};
 			name = Release;
 		};
-		849A8E061BE6A39D00F40D1C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4A6E1F83E16A6694351E868 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = liftorum/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liftorum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "liftorum/liftorum-Bridging-Header.h";
-			};
-			name = Debug;
-		};
 		849A8E071BE6A39D00F40D1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A7648A9BD3126733A8F72014 /* Pods.release.xcconfig */;
@@ -673,18 +783,6 @@
 			};
 			name = Release;
 		};
-		849A8E091BE6A39D00F40D1C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = liftorumTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liftorumTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liftorum.app/liftorum";
-			};
-			name = Debug;
-		};
 		849A8E0A1BE6A39D00F40D1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -696,18 +794,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liftorum.app/liftorum";
 			};
 			name = Release;
-		};
-		849A8E0C1BE6A39D00F40D1C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = liftorumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liftorumUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = liftorum;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
 		};
 		849A8E0D1BE6A39D00F40D1C /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -727,7 +813,8 @@
 		849A8DD81BE6A39D00F40D1C /* Build configuration list for PBXProject "liftorum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				849A8E031BE6A39D00F40D1C /* Debug */,
+				84634F131C30A7D2008CCD68 /* Testing */,
+				84634F0F1C30A7CA008CCD68 /* Local */,
 				84634F0B1C309297008CCD68 /* ngrok */,
 				849A8E041BE6A39D00F40D1C /* Release */,
 			);
@@ -737,7 +824,8 @@
 		849A8E051BE6A39D00F40D1C /* Build configuration list for PBXNativeTarget "liftorum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				849A8E061BE6A39D00F40D1C /* Debug */,
+				84634F141C30A7D2008CCD68 /* Testing */,
+				84634F101C30A7CA008CCD68 /* Local */,
 				84634F0C1C309297008CCD68 /* ngrok */,
 				849A8E071BE6A39D00F40D1C /* Release */,
 			);
@@ -747,7 +835,8 @@
 		849A8E081BE6A39D00F40D1C /* Build configuration list for PBXNativeTarget "liftorumTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				849A8E091BE6A39D00F40D1C /* Debug */,
+				84634F151C30A7D2008CCD68 /* Testing */,
+				84634F111C30A7CA008CCD68 /* Local */,
 				84634F0D1C309297008CCD68 /* ngrok */,
 				849A8E0A1BE6A39D00F40D1C /* Release */,
 			);
@@ -757,7 +846,8 @@
 		849A8E0B1BE6A39D00F40D1C /* Build configuration list for PBXNativeTarget "liftorumUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				849A8E0C1BE6A39D00F40D1C /* Debug */,
+				84634F161C30A7D2008CCD68 /* Testing */,
+				84634F121C30A7CA008CCD68 /* Local */,
 				84634F0E1C309297008CCD68 /* ngrok */,
 				849A8E0D1BE6A39D00F40D1C /* Release */,
 			);

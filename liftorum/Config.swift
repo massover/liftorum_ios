@@ -6,9 +6,13 @@
 //  Copyright © 2015 liftorum. All rights reserved.
 //
 
-#if DEBUG
+#if LOCAL
     
 let SERVER_URL = "http://localhost:5000"
+    
+#elseif TESTING
+
+let SERVER_URL = "http://localhost:7357"
     
 #elseif NRGOK
     

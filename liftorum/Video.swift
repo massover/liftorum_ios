@@ -40,7 +40,7 @@ final class Video: ResponseObjectSerializable{
         ]
         Alamofire.upload(
             .POST,
-            SERVER_URL + "/upload-video-to-s3-2",
+            SERVER_URL + "/upload-video-to-s3",
             headers: headers,
             multipartFormData: { multipartFormData in
                 multipartFormData.appendBodyPart(fileURL: url, name: "file")
