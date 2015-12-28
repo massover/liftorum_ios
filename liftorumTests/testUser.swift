@@ -10,7 +10,6 @@ import XCTest
 import Alamofire
 @testable import liftorum
 
-
 class testUser: XCTestCase {
     var user: User!
 
@@ -51,5 +50,4 @@ class testUser: XCTestCase {
         XCTAssertEqual(self.user.email, "testing2@example.com")
         
     }
-
 }
