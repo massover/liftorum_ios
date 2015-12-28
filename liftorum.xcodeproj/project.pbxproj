@@ -9,31 +9,32 @@
 /* Begin PBXBuildFile section */
 		3ADF90DFCAB69091CA9B855B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B6FF67BC55F26532FE4B64 /* Pods.framework */; };
 		84026DAD1C2266C8006083CC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84026DAC1C2266C8006083CC /* Config.swift */; };
-		841608111C113B0D006331D0 /* LiftFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841608101C113B0D006331D0 /* LiftFormViewController.swift */; };
-		843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E51BF7A9200066C48D /* LiftTableViewCell.swift */; };
-		843040E81BF7B3030066C48D /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E71BF7B3030066C48D /* Lift.swift */; };
-		843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040E91BF7D2DD0066C48D /* LiftPickerView.swift */; };
-		843040EC1BF901F00066C48D /* ResponseObjectSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */; };
-		843040EE1BF902BE0066C48D /* ResponseCollectionSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */; };
-		843040F11BF929510066C48D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F01BF929510066C48D /* User.swift */; };
-		843040F31BF963EB0066C48D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F21BF963EB0066C48D /* Video.swift */; };
-		843040F71BFEC0FF0066C48D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F61BFEC0FF0066C48D /* PlayerView.swift */; };
-		843040F91C0269750066C48D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843040F81C0269750066C48D /* Comment.swift */; };
 		84634F081C2CF15F008CCD68 /* testUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84634F071C2CF15F008CCD68 /* testUser.swift */; };
 		84634F0A1C305FA4008CCD68 /* XCTestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84634F091C305FA4008CCD68 /* XCTestCaseExtension.swift */; };
-		846997901C1A5A0D00F46145 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469978F1C1A5A0D00F46145 /* LoginViewController.swift */; };
+		84634F1B1C30C735008CCD68 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84634F1A1C30C735008CCD68 /* Utilities.swift */; };
 		846997961C1DE89300F46145 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846997951C1DE89300F46145 /* Login.storyboard */; };
-		8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */; };
-		847A91811C2738B7000553F5 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A91801C2738B7000553F5 /* CommentTableViewController.swift */; };
-		847A91831C27397E000553F5 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A91821C27397E000553F5 /* CommentTableViewCell.swift */; };
 		849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */; };
-		849A8DE31BE6A39D00F40D1C /* VideoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */; };
 		849A8DE61BE6A39D00F40D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE41BE6A39D00F40D1C /* Main.storyboard */; };
 		849A8DE81BE6A39D00F40D1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE71BE6A39D00F40D1C /* Assets.xcassets */; };
 		849A8DEB1BE6A39D00F40D1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */; };
-		849A8DF61BE6A39D00F40D1C /* testUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8DF51BE6A39D00F40D1C /* testUtilities.swift */; };
 		849A8E011BE6A39D00F40D1C /* liftorumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A8E001BE6A39D00F40D1C /* liftorumUITests.swift */; };
-		84A7376F1C191A8C002F29AC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7376E1C191A8C002F29AC /* Utilities.swift */; };
+		84ACD0111C30CA4B00A0DEE7 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 84ACD0101C30CA4A00A0DEE7 /* Models */; };
+		84ACD0131C30CA7500A0DEE7 /* ViewControllers in Resources */ = {isa = PBXBuildFile; fileRef = 84ACD0121C30CA7500A0DEE7 /* ViewControllers */; };
+		84ACD0151C30CAD100A0DEE7 /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 84ACD0141C30CAD100A0DEE7 /* Views */; };
+		84ACD01B1C30CB3300A0DEE7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0171C30CB3300A0DEE7 /* Comment.swift */; };
+		84ACD01C1C30CB3300A0DEE7 /* Lift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0181C30CB3300A0DEE7 /* Lift.swift */; };
+		84ACD01D1C30CB3300A0DEE7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0191C30CB3300A0DEE7 /* User.swift */; };
+		84ACD01E1C30CB3300A0DEE7 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD01A1C30CB3300A0DEE7 /* Video.swift */; };
+		84ACD0241C30CB4A00A0DEE7 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0201C30CB4A00A0DEE7 /* CommentTableViewCell.swift */; };
+		84ACD0251C30CB4A00A0DEE7 /* LiftPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0211C30CB4A00A0DEE7 /* LiftPickerView.swift */; };
+		84ACD0261C30CB4A00A0DEE7 /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0221C30CB4A00A0DEE7 /* LiftTableViewCell.swift */; };
+		84ACD0271C30CB4A00A0DEE7 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0231C30CB4A00A0DEE7 /* PlayerView.swift */; };
+		84ACD02F1C30CB5C00A0DEE7 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD0291C30CB5C00A0DEE7 /* CommentTableViewController.swift */; };
+		84ACD0301C30CB5C00A0DEE7 /* LiftFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD02A1C30CB5C00A0DEE7 /* LiftFormViewController.swift */; };
+		84ACD0311C30CB5C00A0DEE7 /* LiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD02B1C30CB5C00A0DEE7 /* LiftTableViewController.swift */; };
+		84ACD0321C30CB5C00A0DEE7 /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD02C1C30CB5C00A0DEE7 /* LiftViewController.swift */; };
+		84ACD0331C30CB5C00A0DEE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD02D1C30CB5C00A0DEE7 /* LoginViewController.swift */; };
+		84ACD0341C30CB5C00A0DEE7 /* VideoFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD02E1C30CB5C00A0DEE7 /* VideoFormViewController.swift */; };
 		84BA8DB61C1350E70052AFEB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA8DB51C1350E70052AFEB /* Router.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,38 +58,39 @@
 /* Begin PBXFileReference section */
 		66B6FF67BC55F26532FE4B64 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84026DAC1C2266C8006083CC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		841608101C113B0D006331D0 /* LiftFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftFormViewController.swift; sourceTree = "<group>"; };
-		843040E51BF7A9200066C48D /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewCell.swift; sourceTree = "<group>"; };
-		843040E71BF7B3030066C48D /* Lift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lift.swift; sourceTree = "<group>"; };
-		843040E91BF7D2DD0066C48D /* LiftPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftPickerView.swift; sourceTree = "<group>"; };
-		843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObjectSerializable.swift; sourceTree = "<group>"; };
-		843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCollectionSerializable.swift; sourceTree = "<group>"; };
 		843040EF1BF925890066C48D /* liftorum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "liftorum-Bridging-Header.h"; sourceTree = "<group>"; };
-		843040F01BF929510066C48D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		843040F21BF963EB0066C48D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		843040F61BFEC0FF0066C48D /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		843040F81C0269750066C48D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		84634F071C2CF15F008CCD68 /* testUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testUser.swift; sourceTree = "<group>"; };
 		84634F091C305FA4008CCD68 /* XCTestCaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtension.swift; sourceTree = "<group>"; };
-		8469978F1C1A5A0D00F46145 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84634F1A1C30C735008CCD68 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		846997951C1DE89300F46145 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewController.swift; sourceTree = "<group>"; };
-		847A91801C2738B7000553F5 /* CommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
-		847A91821C27397E000553F5 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		849A8DDD1BE6A39D00F40D1C /* liftorum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liftorum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFormViewController.swift; sourceTree = "<group>"; };
 		849A8DE51BE6A39D00F40D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		849A8DE71BE6A39D00F40D1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		849A8DEA1BE6A39D00F40D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		849A8DEC1BE6A39D00F40D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849A8DF11BE6A39D00F40D1C /* liftorumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liftorumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		849A8DF51BE6A39D00F40D1C /* testUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testUtilities.swift; sourceTree = "<group>"; };
 		849A8DF71BE6A39D00F40D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849A8DFC1BE6A39D00F40D1C /* liftorumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liftorumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A8E001BE6A39D00F40D1C /* liftorumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liftorumUITests.swift; sourceTree = "<group>"; };
 		849A8E021BE6A39D00F40D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84A7376E1C191A8C002F29AC /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		84ACD0101C30CA4A00A0DEE7 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		84ACD0121C30CA7500A0DEE7 /* ViewControllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewControllers; sourceTree = "<group>"; };
+		84ACD0141C30CAD100A0DEE7 /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
+		84ACD0171C30CB3300A0DEE7 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Models/Comment.swift; sourceTree = "<group>"; };
+		84ACD0181C30CB3300A0DEE7 /* Lift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lift.swift; path = Models/Lift.swift; sourceTree = "<group>"; };
+		84ACD0191C30CB3300A0DEE7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		84ACD01A1C30CB3300A0DEE7 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Models/Video.swift; sourceTree = "<group>"; };
+		84ACD0201C30CB4A00A0DEE7 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentTableViewCell.swift; path = Views/CommentTableViewCell.swift; sourceTree = "<group>"; };
+		84ACD0211C30CB4A00A0DEE7 /* LiftPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiftPickerView.swift; path = Views/LiftPickerView.swift; sourceTree = "<group>"; };
+		84ACD0221C30CB4A00A0DEE7 /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiftTableViewCell.swift; path = Views/LiftTableViewCell.swift; sourceTree = "<group>"; };
+		84ACD0231C30CB4A00A0DEE7 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerView.swift; path = Views/PlayerView.swift; sourceTree = "<group>"; };
+		84ACD0291C30CB5C00A0DEE7 /* CommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentTableViewController.swift; path = ViewControllers/CommentTableViewController.swift; sourceTree = "<group>"; };
+		84ACD02A1C30CB5C00A0DEE7 /* LiftFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiftFormViewController.swift; path = ViewControllers/LiftFormViewController.swift; sourceTree = "<group>"; };
+		84ACD02B1C30CB5C00A0DEE7 /* LiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiftTableViewController.swift; path = ViewControllers/LiftTableViewController.swift; sourceTree = "<group>"; };
+		84ACD02C1C30CB5C00A0DEE7 /* LiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiftViewController.swift; path = ViewControllers/LiftViewController.swift; sourceTree = "<group>"; };
+		84ACD02D1C30CB5C00A0DEE7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
+		84ACD02E1C30CB5C00A0DEE7 /* VideoFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoFormViewController.swift; path = ViewControllers/VideoFormViewController.swift; sourceTree = "<group>"; };
 		84BA8DB51C1350E70052AFEB /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A7648A9BD3126733A8F72014 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F4A6E1F83E16A6694351E868 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,31 +156,22 @@
 		849A8DDF1BE6A39D00F40D1C /* liftorum */ = {
 			isa = PBXGroup;
 			children = (
+				84ACD0281C30CB5000A0DEE7 /* ViewControllers */,
+				84ACD01F1C30CB4000A0DEE7 /* Views */,
+				84ACD0161C30CB2600A0DEE7 /* Models */,
 				849A8DE01BE6A39D00F40D1C /* AppDelegate.swift */,
-				843040F81C0269750066C48D /* Comment.swift */,
-				843040E71BF7B3030066C48D /* Lift.swift */,
+				84634F1A1C30C735008CCD68 /* Utilities.swift */,
 				84026DAC1C2266C8006083CC /* Config.swift */,
-				847A91801C2738B7000553F5 /* CommentTableViewController.swift */,
-				847A91821C27397E000553F5 /* CommentTableViewCell.swift */,
-				841608101C113B0D006331D0 /* LiftFormViewController.swift */,
-				843040E91BF7D2DD0066C48D /* LiftPickerView.swift */,
-				843040E51BF7A9200066C48D /* LiftTableViewCell.swift */,
-				8471B8C61BF0016C00DE368E /* LiftTableViewController.swift */,
-				8469978F1C1A5A0D00F46145 /* LoginViewController.swift */,
-				843040F61BFEC0FF0066C48D /* PlayerView.swift */,
-				843040ED1BF902BE0066C48D /* ResponseCollectionSerializable.swift */,
-				843040EB1BF901F00066C48D /* ResponseObjectSerializable.swift */,
 				84BA8DB51C1350E70052AFEB /* Router.swift */,
-				843040F01BF929510066C48D /* User.swift */,
-				84A7376E1C191A8C002F29AC /* Utilities.swift */,
-				843040F21BF963EB0066C48D /* Video.swift */,
-				849A8DE21BE6A39D00F40D1C /* VideoFormViewController.swift */,
 				843040EF1BF925890066C48D /* liftorum-Bridging-Header.h */,
 				849A8DE91BE6A39D00F40D1C /* LaunchScreen.storyboard */,
 				849A8DE41BE6A39D00F40D1C /* Main.storyboard */,
 				846997951C1DE89300F46145 /* Login.storyboard */,
 				849A8DE71BE6A39D00F40D1C /* Assets.xcassets */,
 				849A8DEC1BE6A39D00F40D1C /* Info.plist */,
+				84ACD0101C30CA4A00A0DEE7 /* Models */,
+				84ACD0141C30CAD100A0DEE7 /* Views */,
+				84ACD0121C30CA7500A0DEE7 /* ViewControllers */,
 			);
 			path = liftorum;
 			sourceTree = "<group>";
@@ -186,7 +179,6 @@
 		849A8DF41BE6A39D00F40D1C /* liftorumTests */ = {
 			isa = PBXGroup;
 			children = (
-				849A8DF51BE6A39D00F40D1C /* testUtilities.swift */,
 				849A8DF71BE6A39D00F40D1C /* Info.plist */,
 				84634F071C2CF15F008CCD68 /* testUser.swift */,
 				84634F091C305FA4008CCD68 /* XCTestCaseExtension.swift */,
@@ -201,6 +193,41 @@
 				849A8E021BE6A39D00F40D1C /* Info.plist */,
 			);
 			path = liftorumUITests;
+			sourceTree = "<group>";
+		};
+		84ACD0161C30CB2600A0DEE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84ACD0171C30CB3300A0DEE7 /* Comment.swift */,
+				84ACD0181C30CB3300A0DEE7 /* Lift.swift */,
+				84ACD0191C30CB3300A0DEE7 /* User.swift */,
+				84ACD01A1C30CB3300A0DEE7 /* Video.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		84ACD01F1C30CB4000A0DEE7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84ACD0201C30CB4A00A0DEE7 /* CommentTableViewCell.swift */,
+				84ACD0211C30CB4A00A0DEE7 /* LiftPickerView.swift */,
+				84ACD0221C30CB4A00A0DEE7 /* LiftTableViewCell.swift */,
+				84ACD0231C30CB4A00A0DEE7 /* PlayerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		84ACD0281C30CB5000A0DEE7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84ACD0291C30CB5C00A0DEE7 /* CommentTableViewController.swift */,
+				84ACD02A1C30CB5C00A0DEE7 /* LiftFormViewController.swift */,
+				84ACD02B1C30CB5C00A0DEE7 /* LiftTableViewController.swift */,
+				84ACD02C1C30CB5C00A0DEE7 /* LiftViewController.swift */,
+				84ACD02D1C30CB5C00A0DEE7 /* LoginViewController.swift */,
+				84ACD02E1C30CB5C00A0DEE7 /* VideoFormViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DAF00FD468C8692C5472B08C /* Frameworks */ = {
@@ -318,10 +345,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84ACD0111C30CA4B00A0DEE7 /* Models in Resources */,
 				846997961C1DE89300F46145 /* Login.storyboard in Resources */,
 				849A8DEB1BE6A39D00F40D1C /* LaunchScreen.storyboard in Resources */,
 				849A8DE81BE6A39D00F40D1C /* Assets.xcassets in Resources */,
 				849A8DE61BE6A39D00F40D1C /* Main.storyboard in Resources */,
+				84ACD0131C30CA7500A0DEE7 /* ViewControllers in Resources */,
+				84ACD0151C30CAD100A0DEE7 /* Views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,25 +424,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843040E61BF7A9200066C48D /* LiftTableViewCell.swift in Sources */,
-				843040EE1BF902BE0066C48D /* ResponseCollectionSerializable.swift in Sources */,
-				849A8DE31BE6A39D00F40D1C /* VideoFormViewController.swift in Sources */,
-				847A91811C2738B7000553F5 /* CommentTableViewController.swift in Sources */,
-				84A7376F1C191A8C002F29AC /* Utilities.swift in Sources */,
+				84ACD0341C30CB5C00A0DEE7 /* VideoFormViewController.swift in Sources */,
+				84ACD01C1C30CB3300A0DEE7 /* Lift.swift in Sources */,
+				84ACD0321C30CB5C00A0DEE7 /* LiftViewController.swift in Sources */,
+				84ACD01B1C30CB3300A0DEE7 /* Comment.swift in Sources */,
 				84026DAD1C2266C8006083CC /* Config.swift in Sources */,
-				843040F71BFEC0FF0066C48D /* PlayerView.swift in Sources */,
+				84ACD0271C30CB4A00A0DEE7 /* PlayerView.swift in Sources */,
+				84ACD02F1C30CB5C00A0DEE7 /* CommentTableViewController.swift in Sources */,
+				84ACD0261C30CB4A00A0DEE7 /* LiftTableViewCell.swift in Sources */,
 				849A8DE11BE6A39D00F40D1C /* AppDelegate.swift in Sources */,
-				843040EA1BF7D2DD0066C48D /* LiftPickerView.swift in Sources */,
-				843040F11BF929510066C48D /* User.swift in Sources */,
-				843040F91C0269750066C48D /* Comment.swift in Sources */,
-				841608111C113B0D006331D0 /* LiftFormViewController.swift in Sources */,
-				8471B8C71BF0016C00DE368E /* LiftTableViewController.swift in Sources */,
+				84ACD0241C30CB4A00A0DEE7 /* CommentTableViewCell.swift in Sources */,
+				84ACD0311C30CB5C00A0DEE7 /* LiftTableViewController.swift in Sources */,
+				84634F1B1C30C735008CCD68 /* Utilities.swift in Sources */,
+				84ACD0301C30CB5C00A0DEE7 /* LiftFormViewController.swift in Sources */,
+				84ACD01E1C30CB3300A0DEE7 /* Video.swift in Sources */,
+				84ACD0331C30CB5C00A0DEE7 /* LoginViewController.swift in Sources */,
 				84BA8DB61C1350E70052AFEB /* Router.swift in Sources */,
-				846997901C1A5A0D00F46145 /* LoginViewController.swift in Sources */,
-				843040E81BF7B3030066C48D /* Lift.swift in Sources */,
-				847A91831C27397E000553F5 /* CommentTableViewCell.swift in Sources */,
-				843040EC1BF901F00066C48D /* ResponseObjectSerializable.swift in Sources */,
-				843040F31BF963EB0066C48D /* Video.swift in Sources */,
+				84ACD01D1C30CB3300A0DEE7 /* User.swift in Sources */,
+				84ACD0251C30CB4A00A0DEE7 /* LiftPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +451,6 @@
 			files = (
 				84634F0A1C305FA4008CCD68 /* XCTestCaseExtension.swift in Sources */,
 				84634F081C2CF15F008CCD68 /* testUser.swift in Sources */,
-				849A8DF61BE6A39D00F40D1C /* testUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

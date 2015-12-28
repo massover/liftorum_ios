@@ -36,7 +36,7 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lift.comments.count
+        return lift.comments!.count
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -50,10 +50,10 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate {
             cellIdentifier,
             forIndexPath: indexPath
             ) as! CommentTableViewCell
-        let comment = lift.comments[indexPath.row]
+        let comment = lift.comments![indexPath.row]
         cell.commentTextLabel.text = comment.text
-        cell.usernameLabel.text = comment.user.username
-        cell.createdAtLabel.text = comment.createdAt.timeAgoSinceNow()
+        cell.usernameLabel.text = comment.user!.username
+        cell.createdAtLabel.text = comment.createdAt!.timeAgoSinceNow()
         return cell
     }
     
@@ -78,14 +78,14 @@ class CommentTableViewController: UITableViewController, UITextFieldDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         Comment.create(
             self.newCommentTextField.text!,
-            liftId: lift.id,
+            liftId: lift.id!,
             userId: Int(defaults.stringForKey("userId")!)!,
             completionHandler: completionHandler
         )
     }
     
     private func loadLift() {
-        Lift.getLift(self.lift.id, completionHandler: {(response:Response<Lift, NSError>) in
+        Lift.getLift(self.lift.id!, completionHandler: {(response:Response<Lift, NSError>) in
             switch response.result{
             case .Success:
                 self.lift = response.result.value!

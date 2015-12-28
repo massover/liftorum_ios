@@ -56,7 +56,7 @@ class LiftFormViewController: UIViewController{
                 liftPickerView.getSelectedLiftName(),
                 weight: Int(weightTextField.text!)!,
                 reps: Int(repsTextField.text!)!,
-                videoId: video.id,
+                videoId: video.id!,
                 userId: Int(defaults.stringForKey("userId")!)!,
                 completionHandler: completionHandler
             )
@@ -66,7 +66,7 @@ class LiftFormViewController: UIViewController{
                 liftPickerView.getSelectedLiftName(),
                 weight: Int(weightTextField.text!)!,
                 reps: Int(repsTextField.text!)!,
-                videoId: video.id,
+                videoId: video.id!,
                 userId: Int(defaults.stringForKey("userId")!)!,
                 text: commentTextView.text,
                 completionHandler: completionHandler

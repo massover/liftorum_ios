@@ -8,16 +8,22 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 
-final class User: ResponseObjectSerializable{
-    let username: String
-    let id: Int
-    let email: String
+final class User: Mappable{
+    var username: String?
+    var id: Int?
+    var email: String?
     
-    required init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        self.id = representation.valueForKeyPath("id") as! Int
-        self.username = representation.valueForKeyPath("username") as! String
-        self.email = representation.valueForKeyPath("email") as! String
+    required init?(_ map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+        username <- map["username"]
+        email <- map["email"]
+        id <- map["id"]
     }
     
     class func login(
@@ -30,7 +36,10 @@ final class User: ResponseObjectSerializable{
             "password": password
         ]
         Alamofire.request(Router.Login(parameters)).validate().responseJSON{
-            (response: Response) in completionHandler(response)
+            (response: Response) in
+            print(response)
+            print("amde it")
+            completionHandler(response)
         }
         
     }

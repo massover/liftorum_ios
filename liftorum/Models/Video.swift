@@ -7,24 +7,29 @@
 //
 
 import UIKit
+import ObjectMapper
 import Alamofire
 
-final class Video: ResponseObjectSerializable{
-    let id: Int
-    let fileExtension: String
-    let url: String
+final class Video: Mappable{
+    var id: Int?
+    var fileExtension: String?
+    var url: String?
     
     var filename : String{
         get{
-            return String(id) + "." + fileExtension
+            return String(id) + "." + fileExtension!
         }
     }
     
-    required init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        self.id = representation.valueForKeyPath("id") as! Int
-        self.fileExtension = representation.valueForKeyPath("file_extension") as! String
-        self.url = representation.valueForKeyPath("url") as! String
-}
+    required init?(_ map: Map){
+        
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        fileExtension <- map["fileExtension"]
+        url <- map["url"]
+    }
     
     class func create(completionHandler: Response<Video, NSError> -> Void){
         Alamofire.request(Router.CreateVideo()).validate().responseObject{

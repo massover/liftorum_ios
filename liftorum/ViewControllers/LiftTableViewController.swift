@@ -57,12 +57,12 @@ class LiftTableViewController: UITableViewController {
         ) as! LiftTableViewCell
         
         let lift = lifts[indexPath.row]
-        cell.usernameLabel.text = lift.user.username
-        cell.createdAtLabel.text = lift.createdAt.timeAgoSinceNow()
+        cell.usernameLabel.text = lift.user!.username
+        cell.createdAtLabel.text = lift.createdAt!.timeAgoSinceNow()
         cell.textLabel_.text = lift.text
         cell.descriptionLabel.text = lift.description
         cell.commentsButton.setTitle(lift.commentsButtonTitle, forState: .Normal)
-        if lift.comments.count == 0{
+        if lift.comments!.count == 0{
             cell.commentsButton.enabled = false
         } else {
             cell.commentsButton.enabled = true
@@ -73,7 +73,7 @@ class LiftTableViewController: UITableViewController {
             cell.textLabel_.hidden = true
         }
         cell.newCommentButton.tag = indexPath.row
-        cell.playerView.player.setUrl(NSURL(string:lift.video.url)!)
+        cell.playerView.player.setUrl(NSURL(string:lift.video!.url!)!)
         self.addChildViewController(cell.playerView.player)
         cell.playerView.player.didMoveToParentViewController(self)
         return cell
@@ -118,7 +118,8 @@ class LiftTableViewController: UITableViewController {
                 self.currentPage += 1
                 self.tableView.reloadData()
             case .Failure(let error):
-                print(error)
+                print(response)
+//                print(error)
                 let alert = UIAlertController(
                     title: "Error",
                     message: "Cannot connect to the server.",
