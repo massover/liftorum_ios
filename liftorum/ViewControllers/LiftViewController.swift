@@ -16,14 +16,6 @@ class LiftViewController:
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate
 {
-//    @IBOutlet weak var weightTextField: UITextField!
-//    @IBOutlet weak var repsTextField: UITextField!
-//    @IBOutlet weak var saveButton: UIBarButtonItem!
-//    @IBOutlet weak var cancelButton: UIBarButtonItem!
-//    @IBOutlet weak var liftPickerView: LiftPickerView!
-    
-
-    
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var takeVideoButton: UIButton!

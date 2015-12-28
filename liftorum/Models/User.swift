@@ -36,10 +36,7 @@ final class User: Mappable{
             "password": password
         ]
         Alamofire.request(Router.Login(parameters)).validate().responseJSON{
-            (response: Response) in
-            print(response)
-            print("amde it")
-            completionHandler(response)
+            (response: Response) in completionHandler(response)
         }
         
     }

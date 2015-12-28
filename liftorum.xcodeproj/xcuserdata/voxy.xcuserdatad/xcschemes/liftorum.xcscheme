@@ -32,7 +32,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cd ~/Web/liftorum&#10;source venv/bin/activate&#10;honcho start -f Procfile.testing -e ~/Web/liftorum/envs/.env.testing &amp;&#10;&#10;&#10;&#10;&#10;">
+               scriptText = "cd ~/Web/liftorum&#10;source venv/bin/activate&#10;honcho start -f Procfile.testing -e ~/Web/liftorum/.envs/testing &amp;&#10;&#10;&#10;&#10;&#10;">
             </ActionContent>
          </ExecutionAction>
       </PreActions>
