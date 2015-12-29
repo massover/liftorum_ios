@@ -217,7 +217,7 @@
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="Jd2-HY-r2G"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="fS3-aP-m9I">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="fS3-aP-m9I">
                             <connections>
                                 <action selector="prepareForSegue:" destination="BYZ-38-t0r" id="1dv-dD-khL"/>
                                 <segue destination="QZS-ln-kZO" kind="show" identifier="" id="pIB-OD-icE"/>
