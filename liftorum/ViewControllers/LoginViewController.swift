@@ -9,13 +9,23 @@
 import UIKit
 import Alamofire
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     
     @IBOutlet var errorTextField: UILabel!
     @IBOutlet var loginButton: UIButton!
+    
+    override func viewDidLoad(){
+        self.passwordTextField.delegate = self
+        self.emailTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
     
     @IBAction func textFieldDidChange(sender: AnyObject) {
         if emailTextField.text != "" && passwordTextField.text != ""{
