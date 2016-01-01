@@ -27,7 +27,7 @@ final class Video: Mappable{
     
     func mapping(map: Map) {
         id <- map["id"]
-        fileExtension <- map["fileExtension"]
+        fileExtension <- map["file_extension"]
         url <- map["url"]
     }
     

@@ -29,7 +29,7 @@ extension XCTestCase{
         
         waitForExpectationsWithTimeout(5, handler: nil)
         XCTAssertEqual(_response?.statusCode, 201)
-        XCTAssertNotNil(video)
+        XCTAssertEqual(video.fileExtension, "MOV")
         return video
     }
 }
