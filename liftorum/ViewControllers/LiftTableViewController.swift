@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import DateTools
 import Player
+import SwiftLoader
 
 class LiftTableViewController: UITableViewController {
     
@@ -19,6 +20,7 @@ class LiftTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        SwiftLoader.show(animated: true)
         
         tableView.infiniteScrollIndicatorStyle = .Gray
 
@@ -32,9 +34,15 @@ class LiftTableViewController: UITableViewController {
         // http://stackoverflow.com/questions/32558084/multiline-uilabel-within-a-static-uitableviewcell-on-ios-9/32816593#32816593
         tableView.estimatedRowHeight = 200.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        print("count: ", lifts.count)
         
         self.loadLifts()
         
+    }
+    
+    override func viewDidAppear(animated: Bool){
+        super.viewDidAppear(animated)
+        print("count: ", lifts.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +120,7 @@ class LiftTableViewController: UITableViewController {
     
     private func loadLifts() {
         Lift.getLifts(self.currentPage, completionHandler: {(response:Response<[Lift], NSError>) in
+            SwiftLoader.hide()
             switch response.result{
             case .Success:
                 self.lifts += response.result.value!
