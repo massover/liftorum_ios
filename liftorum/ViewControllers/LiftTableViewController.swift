@@ -34,7 +34,6 @@ class LiftTableViewController: UITableViewController {
         // http://stackoverflow.com/questions/32558084/multiline-uilabel-within-a-static-uitableviewcell-on-ios-9/32816593#32816593
         tableView.estimatedRowHeight = 200.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        print("count: ", lifts.count)
         
         self.loadLifts()
         
@@ -42,7 +41,6 @@ class LiftTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated)
-        print("count: ", lifts.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,7 +126,6 @@ class LiftTableViewController: UITableViewController {
                 self.tableView.reloadData()
             case .Failure(let error):
                 print(response)
-//                print(error)
                 let alert = UIAlertController(
                     title: "Error",
                     message: "Cannot connect to the server.",

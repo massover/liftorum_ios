@@ -16,7 +16,7 @@ let SERVER_URL = "http://localhost:7357"
     
 #elseif NGROK
     
-let SERVER_URL = "http://f7fe8526.ngrok.io"
+let SERVER_URL = "http://02dec740.ngrok.io"
     
 #else
     

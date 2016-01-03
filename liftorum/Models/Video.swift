@@ -17,7 +17,7 @@ final class Video: Mappable{
     
     var filename : String{
         get{
-            return String(id) + "." + fileExtension!
+            return String(id!) + "." + fileExtension!
         }
     }
     
